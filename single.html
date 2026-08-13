@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joy Nepal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="./assets/joy-logo.png" type="image/png" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- header -->
+    <header
+      id="siteHeader"
+      class="sticky top-0 z-50 bg-[var(--primary-color)] text-white"
+    >
+      <!-- TOP HEADER CONTAINER -->
+      <div
+        id="topHeaderWrapper"
+        class="grid grid-rows-[1fr] transition-[grid-template-rows,opacity] duration-300 ease-in-out [.is-scrolled_&]:grid-rows-[0fr] [.is-scrolled_&]:opacity-0 [.is-scrolled_&]:pointer-events-none"
+      >
+        <!-- Overflow hidden wrapper inside grid -->
+        <div class="overflow-hidden">
+          <div
+            class="mx-auto grid max-w-7xl grid-cols-3 items-center px-4 py-4"
+          >
+            <!-- DATE / DAY -->
+            <div class="text-start">
+              <p id="currentDay" class="text-lg font-semibold"></p>
+              <p id="currentDate" class="mt-1 text-sm text-white/80"></p>
+            </div>
+
+            <!-- CENTER LOGO -->
+            <div class="flex justify-center">
+              <a href="/" aria-label="Joy Nepal Home">
+                <img
+                  src="./assets/joy-logo.png"
+                  alt="Joy Nepal"
+                  class="h-20 w-20 object-contain md:h-24 md:w-24"
+                />
+              </a>
+            </div>
+
+            <!-- WEATHER -->
+            <div class="flex items-center justify-end gap-4">
+              <div
+                class="flex h-11 w-11 items-center justify-center rounded-full bg-white/10"
+              >
+                <i id="weatherIcon" class="ph ph-cloud-sun text-2xl"></i>
+              </div>
+              <div>
+                <div class="flex items-center gap-1">
+                  <p
+                    id="weatherTemperature"
+                    class="text-lg font-semibold leading-none"
+                  >
+                    --°
+                  </p>
+                  <span class="text-xs text-white/70">C</span>
+                </div>
+                <p id="weatherLocation" class="mt-1 text-xs text-white/75">
+                  काठमाडौं
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOP / NAV SEPARATOR -->
+      <div
+        id="headerDivider"
+        class="mx-auto max-w-7xl border-t border-white/20 transition-opacity duration-300 [.is-scrolled_&]:opacity-0 [.is-scrolled_&]:border-transparent"
+      ></div>
+
+      <!-- MAIN NAVIGATION BAR -->
+      <nav
+        id="mainNavbar"
+        class="mx-auto flex h-[64px] max-w-7xl items-center px-4"
+      >
+        <!-- STICKY LOGO -->
+        <a
+          id="stickyLogo"
+          href="/"
+          class="flex items-center overflow-hidden transition-all duration-300 ease-in-out w-0 opacity-0 pointer-events-none mr-0 [.is-scrolled_&]:w-14 [.is-scrolled_&]:mr-5 [.is-scrolled_&]:opacity-100 [.is-scrolled_&]:pointer-events-auto shrink-0"
+          aria-label="Joy Nepal Home"
+        >
+          <img
+            src="./assets/joy-logo.png"
+            alt="Joy Nepal"
+            class="h-14 w-14 object-contain"
+          />
+        </a>
+
+        <!-- NAV LINKS -->
+        <div
+          id="desktopNavLinks"
+          class="nav-links hidden flex-1 items-center justify-center whitespace-nowrap lg:flex"
+        >
+          <a href="/">गृहपृष्ठ</a>
+          <a href="./category.html">मोडल वाच</a>
+          <a href="./category.html">मनोरञ्जन</a>
+          <a href="./category.html">स्वास्थ्य</a>
+          <a href="./category.html">जीवनशैली</a>
+          <a href="./category.html">सूचना-प्रविधि</a>
+          <a href="./category.html">समाज</a>
+
+          <!-- Other Dropdown -->
+          <div class="group relative">
+            <button type="button" class="flex items-center gap-1">
+              अन्य
+              <i
+                class="ph ph-caret-down -mt-1.5 text-xs font-bold transition-transform duration-200 group-hover:rotate-180"
+              ></i>
+            </button>
+
+            <!-- Dropdown menu -->
+            <div
+              class="invisible absolute left-1/2 top-full z-[70] mt-5 w-48 -translate-x-1/2 translate-y-2 rounded-xl bg-white py-2 text-[var(--dark-text-color)] opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
+            >
+              <div
+                class="absolute -top-2 left-1/2 h-4 w-4 -translate-x-1/2 rotate-45 bg-white"
+              ></div>
+              <div class="dropdown-links relative">
+                <a href="./category.html" class="block px-5 py-2.5">
+                  राजनीति
+                </a>
+                <a href="./category.html" class="block px-5 py-2.5"> खेलकुद </a>
+                <a href="./category.html" class="block px-5 py-2.5"> अर्थ </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT BUTTONS -->
+        <div class="ml-auto flex items-center gap-1">
+          <button
+            id="searchButton"
+            type="button"
+            class="flex h-11 w-11 items-center justify-center rounded-full transition hover:bg-white/10"
+            aria-label="Search"
+          >
+            <i class="ph ph-magnifying-glass text-2xl"></i>
+          </button>
+
+          <button
+            id="menuButton"
+            type="button"
+            class="flex h-11 w-11 items-center justify-center rounded-full transition hover:bg-white/10"
+            aria-label="Open menu"
+          >
+            <i class="ph ph-text-outdent text-3xl"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <!-- search overlay -->
+    <div
+      id="searchOverlay"
+      class="pointer-events-none fixed inset-0 z-[100] flex items-start justify-center bg-black/50 px-5 pt-28 opacity-0 backdrop-blur-sm transition-all duration-300"
+    >
+      <!-- Search Box -->
+      <div
+        id="searchBox"
+        class="w-full max-w-3xl -translate-y-4 rounded-2xl bg-white p-5 opacity-0 shadow-2xl transition-all duration-300 md:p-7"
+      >
+        <!-- Search Top -->
+        <div class="mb-5 flex items-center justify-between">
+          <h2 class="text-xl font-semibold text-[var(--dark-text-color)]">
+            समाचार खोज्नुहोस्
+          </h2>
+
+          <button
+            id="closeSearchButton"
+            type="button"
+            class="flex h-10 w-10 items-center justify-center rounded-full text-[var(--dark-text-color)] transition hover:bg-gray-100"
+          >
+            <i class="ph ph-x text-2xl"></i>
+          </button>
+        </div>
+
+        <!-- Search Form -->
+        <form id="searchForm">
+          <div
+            class="flex items-center overflow-hidden rounded-xl border border-gray-200 bg-gray-50 focus-within:border-[var(--primary-color)] focus-within:bg-white"
+          >
+            <i class="ph ph-magnifying-glass ml-4 text-xl text-gray-400"></i>
+
+            <input
+              id="searchInput"
+              type="search"
+              autocomplete="off"
+              placeholder="समाचार खोज्नुहोस्..."
+              class="w-full bg-transparent px-4 py-4 text-[var(--dark-text-color)] outline-none placeholder:text-gray-400"
+            />
+
+            <button
+              type="submit"
+              class="mr-2 rounded-lg bg-[var(--primary-color)] px-5 py-2.5 font-medium text-white transition hover:opacity-90"
+            >
+              खोज्नुहोस्
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!--  Sidebar Backdrop  -->
+    <div
+      id="sidebarBackdrop"
+      class="pointer-events-none fixed inset-0 z-[110] bg-black/50 opacity-0 backdrop-blur-[2px] transition-opacity duration-300"
+    ></div>
+
+    <!-- Sidebar  -->
+    <aside
+      id="sidebar"
+      class="fixed right-0 top-0 z-[120] h-screen w-[350px] max-w-[90vw] translate-x-full bg-white shadow-2xl transition-transform duration-300"
+    >
+      <!--Sidebar Header  -->
+      <div
+        class="sidebar-header flex items-center justify-between bg-[var(--primary-color)] px-5 py-5"
+      >
+        <a href="/" class="sidebar-logo">
+          <img
+            src="./assets/joy-logo.png"
+            alt="Joy Nepal"
+            class="h-16 w-16 object-contain"
+          />
+        </a>
+
+        <button
+          id="closeSidebarButton"
+          type="button"
+          class="sidebar-close-btn flex h-10 w-10 items-center justify-center rounded-full"
+          aria-label="Close menu"
+        >
+          <i class="ph ph-x text-2xl"></i>
+        </button>
+      </div>
+
+      <!-- Sidebar Content  -->
+      <div
+        class="sidebar-content h-[calc(100vh-104px)] overflow-y-auto px-4 py-5"
+      >
+        <nav class="sidebar-nav flex flex-col">
+          <!-- Main Links  -->
+          <a href="#" class="sidebar-link">
+            <span>गृहपृष्ठ</span>
+          </a>
+
+          <a href="#" class="sidebar-link">
+            <span>मोडल वाच</span>
+          </a>
+
+          <a href="#" class="sidebar-link">
+            <span>मनोरञ्जन</span>
+          </a>
+
+          <a href="#" class="sidebar-link">
+            <span>स्वास्थ्य</span>
+          </a>
+
+          <a href="#" class="sidebar-link">
+            <span>जीवनशैली</span>
+          </a>
+
+          <a href="#" class="sidebar-link">
+            <span>सूचना-प्रविधि</span>
+          </a>
+
+          <a href="#" class="sidebar-link">
+            <span>समाज</span>
+          </a>
+
+          <!-- Other Section -->
+          <div class="sidebar-section">
+            <p class="sidebar-section-title">अन्य</p>
+
+            <a href="#" class="sidebar-sub-link">
+              <span>राजनीति</span>
+            </a>
+
+            <a href="#" class="sidebar-sub-link">
+              <span>खेलकुद</span>
+            </a>
+
+            <a href="#" class="sidebar-sub-link">
+              <span>अर्थ</span>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Single News Page Section -->
+    <section class="py-12">
+      <div class="max-w-7xl mx-auto px-4">
+        <!-- Main 2-Column Grid (Main Content Left, Sidebar Right) -->
+        <div
+          class="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-8 items-start"
+        >
+          <!-- Left Main News Content Column -->
+          <div class="space-y-6">
+            <!-- Title -->
+            <h1
+              class="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight text-[var(--color-white)]"
+            >
+              के रास्वपाले खडा गर्ला विकासको कानूनी हाइवे ?
+            </h1>
+
+            <!-- Meta + Share Buttons -->
+            <div
+              class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-y border-[var(--border-color)] py-4"
+            >
+              <!-- Meta Data -->
+              <div
+                class="flex flex-wrap items-center gap-4 text-sm text-gray-500"
+              >
+                <span class="flex items-center gap-2 meta-author">
+                  <i class="fa-regular fa-user text-[var(--primary-color)]"></i>
+                  KIT
+                </span>
+                <span class="flex items-center gap-2 meta-author">
+                  <i
+                    class="fa-regular fa-calendar text-[var(--primary-color)]"
+                  ></i>
+                  date
+                </span>
+              </div>
+
+              <!-- Share Buttons -->
+              <div class="flex items-center gap-3">
+                <span class="text-sm font-medium text-white/80">Share:</span>
+
+                <!-- Facebook -->
+                <a
+                  href="<?php echo esc_url($fb_share); ?>"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-[#1877F2] transition hover:border-[#1877F2]"
+                  aria-label="Share on Facebook"
+                >
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <!-- Instagram -->
+                <a
+                  href="<?php echo esc_url($instagram_link); ?>"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-[#E4405F] transition hover:border-[#E4405F]"
+                  aria-label="Open Instagram"
+                >
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <!-- WhatsApp -->
+                <a
+                  href="<?php echo esc_url($wa_share); ?>"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-[#48C758] transition hover:border-[#48C758]"
+                  aria-label="Share on WhatsApp"
+                >
+                  <i class="fa-brands fa-whatsapp text-lg"></i>
+                </a>
+
+                <!-- Twitter / X -->
+                <a
+                  href="<?php echo esc_url($x_share); ?>"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-black transition hover:border-black"
+                  aria-label="Share on X"
+                >
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Big Featured Image -->
+            <div class="w-full aspect-video overflow-hidden">
+              <img
+                src="./assets/news-1.jpg"
+                alt="Main Featured News"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <!-- Main Body Article Content -->
+            <article class="min-w-0 w-full">
+              <p
+                class="space-y-4 text-justify text-[var(--content-color)] text-[22px] leading-[35px]"
+              >
+                त्यसपछि अस्ट्रिया विरुद्ध मेसीले दुई गोल गरे । यो दुई गोल पछि
+                उनी विश्वकपमा सर्वाधिक गोल गर्ने खेलाडी बने । जोर्डन विरुद्ध
+                तेस्रो खेलमा मेसीले बेन्चबाट आएर दोस्रो हाफमा गोल गरे । यस
+                विश्वकपमा ६ गोलसहित मेसी सर्वाधिक गोल गर्नेमा एकल रुपमा अघि छन्
+                र गोल्डेन बुटको दाबेदारको रुपमा छन् । मेसीले अहिलेसम्म दुई पटक
+                उत्कृष्ट खेलाडी हुँदै गोल्डेन बल अवार्ड जितेपनि गोल्डेन बुट भने
+                जित्न सकेका छैनन् । यस्तै जोर्डन विरुद्ध गोल गर्दै मेसीले
+                विश्वकपमा गोल संख्या १९ पुर्‍याए भने अर्को कीर्तिमान पनि थपे ।
+                उनी विश्वकपमा लगातार ७ खेलमा गोल गर्ने पहिलो खेलाडी बने । सन्
+                २०२२ मा अन्तिम चार खेलमा लगातार गोल गरेका उनले यस विश्वकपमा
+                समूहको तीनवटै खेलमा गोल गरेका हुन् । यस्तै समूह चरणमा क्यानाडाका
+                डेभिडले कतार विरुद्ध र फ्रान्सका डेम्बेलेले नर्वे विरुद्ध
+                ह्याट्रिक गरे ।
+              </p>
+            </article>
+          </div>
+
+          <!-- Right Trending Sidebar Column -->
+          <aside class="space-y-6 self-start lg:sticky lg:top-24">
+            <div
+              class="border border-[#e5e7eb]/40 rounded-md bg-[var(--footer-color)] p-5"
+            >
+              <h3 class="category-title-white text-[30px] mb-5">ट्रेन्डिङ</h3>
+
+              <div class="space-y-4">
+                <a
+                  href="#"
+                  class="grid grid-cols-[130px_1fr] gap-2 items-center group border-b border-[#e5e7eb]/40 pb-4"
+                >
+                  <div class="w-[120px] h-[80px] overflow-hidden flex-shrink-0">
+                    <img
+                      src="/assets/artha4.jpg"
+                      alt=""
+                      class="w-full h-full object-cover"
+                    />
+                    <?php endif; ?>
+                  </div>
+
+                  <div class="self-start">
+                    <h4 class="news-small-white line-clamp-2">
+                      कृषि र वातावरण क्षेत्रमा रोजगारीका अवसर सृजना गरिनेछ :
+                      मन्त्री चौधरी
+                    </h4>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related News Section -->
+    <section class="pt-12 bg-[var(--primary-color)]">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="mb-8">
+          <h2 class="category-title-white">सम्बन्धित समाचार</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 pb-12">
+          <a href="/single.html" class="group block space-y-2 w-full">
+            <div class="h-64 overflow-hidden w-full">
+              <img
+                src="/assets/samaj1.png"
+                alt="रास्वपा समाचार"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <h3 class="news-medium-white">इन्फ्लुएन्जा ‘फ्लू’बाट बच्न आग्रह</h3>
+          </a>
+          <a href="/single.html" class="group block space-y-2 w-full">
+            <div class="h-64 overflow-hidden w-full">
+              <img
+                src="/assets/1.png"
+                alt="रास्वपा समाचार"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <h3 class="news-medium-white">
+              म्युजिक भिडियो कलाकार सङ्घको वार्षिक क्यालेन्डर विमोचन
+            </h3>
+          </a>
+          <a href="/single.html" class="group block space-y-2 w-full">
+            <div class="h-64 overflow-hidden w-full">
+              <img
+                src="/assets/rajniti1.png"
+                alt="रास्वपा समाचार"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <h3 class="news-medium-white">
+              महिलाले सधैँ गोप्य राख्छन् यी कुरा
+            </h3>
+          </a>
+          <a href="/single.html" class="group block space-y-2 w-full">
+            <div class="h-64 overflow-hidden w-full">
+              <img
+                src="/assets/health.jpg"
+                alt="रास्वपा समाचार"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <h3 class="news-medium-white">
+              दयाहाङ र मिरुनाको नयाँ चलचित्र ‘रातो घेरा’ घोषणा
+            </h3>
+          </a>
+
+          <!-- <p class="col-span-4 text-center text-white">
+            Related news not found.
+          </p> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="bg-[var(--footer-color)] pt-12">
+      <!-- TIER 1: Main Info & Useful Links -->
+      <div class="mx-auto max-w-7xl px-4 pb-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
+          <!-- Column 1 -->
+          <div class="lg:col-span-5 space-y-6">
+            <h3 class="category-title text-[#f5c518]">हाम्रो बारेमा</h3>
+            <p class="text-white/80 text-[20px] font-normal leading-[33px]">
+              जोय नेपाल (Joy Nepal) आधिकारिक समाचार पोर्टल हो। यस पोर्टल मार्फत
+              समसामयिक समाचार, ताजा अपडेट तथा विभिन्न क्षेत्रका विश्वसनीय सूचना
+              र जानकारी पाठकमाझ निष्पक्ष, छिटो र तथ्यपरक रूपमा प्रस्तुत गरिन्छ।
+            </p>
+
+            <div class="space-y-4 text-lg">
+              <p class="text-white/80 font-thin">
+                <span class="font-semibold text-white">ठेगाना -</span> का.म.पा.
+                वडा नं. १०, नयाँबानेश्वर, काठमाडौं
+              </p>
+              <p class="text-white/80 font-thin">
+                <span class="font-semibold text-white">फोन न -</span> +९७७
+                ०१-४२२२३८०
+              </p>
+              <p class="text-white/80 font-thin">
+                <span class="font-semibold text-white">ई-मेल -</span>
+                info@joynepal.com, news@joynepal.com
+              </p>
+            </div>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="lg:col-span-7 space-y-6">
+            <h3 class="category-title text-[#f5c518]">उपयोगी लिङ्कहरू</h3>
+
+            <div
+              class="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-4 text-lg text-white/80 font-thin"
+            >
+              <a
+                href="#"
+                class="hover:text-[var(--color-yellow)] transition-colors"
+                >गृहपृष्ठ</a
+              >
+              <a
+                href="#"
+                class="hover:text-[var(--color-yellow)] transition-colors"
+                >मनोरञ्जन</a
+              >
+              <a
+                href="#"
+                class="hover:text-[var(--color-yellow)] transition-colors"
+                >स्वास्थ्य</a
+              >
+              <a
+                href="#"
+                class="hover:text-[var(--color-yellow)] transition-colors"
+                >जीवनशैली</a
+              >
+              <a
+                href="#"
+                class="hover:text-[var(--color-yellow)] transition-colors"
+                >सूचना-प्रविधि</a
+              >
+              <a
+                href="#"
+                class="hover:text-[var(--color-yellow)] transition-colors"
+                >समाज</a
+              >
+              <a
+                href="#"
+                class="hover:text-[var(--color-yellow)] transition-colors"
+                >मोडल वाच</a
+              >
+              <a
+                href="#"
+                class="hover:text-[var(--color-yellow)] transition-colors"
+                >राजनीति</a
+              >
+              <a
+                href="#"
+                class="hover:text-[var(--color-yellow)] transition-colors"
+                >खेलकुद</a
+              >
+              <a
+                href="#"
+                class="hover:text-[var(--color-yellow)] transition-colors"
+                >अर्थ</a
+              >
+              <a
+                href="#"
+                class="hover:text-[var(--color-yellow)] transition-colors"
+                >डेट कन्भर्टर</a
+              >
+              <a
+                href="#"
+                class="hover:text-[var(--color-yellow)] transition-colors"
+                >युनिकोड</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIER 2: Middle Management & Social Bar -->
+      <div class="border-t border-b border-white/10 bg-black/20 py-6">
+        <div
+          class="mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-between gap-6"
+        >
+          <!-- Left: Logo & Publisher Name -->
+          <div class="flex items-center gap-4 text-center md:text-left">
+            <img
+              src="./assets/joy-logo.png"
+              alt="Joy Nepal"
+              class="h-14 w-auto object-contain"
+            />
+            <div class="border-l border-white/20 pl-4">
+              <p class="font-normal text-lg text-white">
+                क्रेडिबल मल्टिमिडिया प्रा.लि.
+              </p>
+              <p class="text-base font-thin text-white/80">
+                दर्ता नं. : ४३३४-२०८०/२०८१
+              </p>
+            </div>
+          </div>
+
+          <!-- Center: Key Personnel Info -->
+          <div
+            class="flex flex-wrap items-center justify-center gap-6 text-xs text-white/80"
+          >
+            <div class="text-center md:text-left space-y-2">
+              <span class="block font-thin text-white/80 text-base"
+                >अध्यक्ष</span
+              >
+              <span class="font-medium text-white text-lg"
+                >प्रमोदराज सेढाई</span
+              >
+            </div>
+            <div class="h-8 w-[1px] bg-white/20 hidden sm:block"></div>
+            <div class="text-center md:text-left space-y-2">
+              <span class="block text-white/80 text-base font-thin"
+                >सम्पादक</span
+              >
+              <span class="font-medium text-white text-lg"
+                >अनिल थापा (अर्घेलो)</span
+              >
+            </div>
+            <div class="h-8 w-[1px] bg-white/20 hidden sm:block"></div>
+            <div class="text-center md:text-left space-y-2">
+              <span class="block text-white/50 text-base font-thin"
+                >सूचना विभाग दर्ता नं</span
+              >
+              <span class="font-medium text-white text-lg">४३३४-२०८०/२०८१</span>
+            </div>
+          </div>
+
+          <!-- Right: Social Media Icons -->
+          <div class="flex items-center gap-3">
+            <a
+              href="#"
+              aria-label="Facebook"
+              class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-[var(--color-yellow)] transition-colors text-white"
+            >
+              <i class="ph ph-facebook-logo text-lg"></i>
+            </a>
+            <a
+              href="#"
+              aria-label="Instagram"
+              class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-[var(--color-yellow)] transition-colors text-white"
+            >
+              <i class="ph ph-instagram-logo text-lg"></i>
+            </a>
+            <a
+              href="#"
+              aria-label="YouTube"
+              class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-[var(--color-yellow)] transition-colors text-white"
+            >
+              <i class="ph ph-youtube-logo text-lg"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIER 3: Bottom Copyright & Developer Credit -->
+      <div class="bg-black/40 py-4 text-white/80">
+        <div
+          class="mx-auto max-w-7xl px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left"
+        >
+          <!-- Copyright -->
+          <div class="text-[16px] font-normal">
+            © 2026 Joy Nepal. सर्वाधिकार सुरक्षित
+          </div>
+
+          <!-- Quick Nav Links -->
+          <div class="flex items-center gap-4 text-[16px] text-white/80">
+            <a href="#" class="hover:underline">About</a>
+            <span>|</span>
+            <a href="#" class="hover:underline">Privacy Policy</a>
+            <span>|</span>
+            <a href="#" class="hover:underline">Terms & Condition</a>
+          </div>
+
+          <!-- Developer Credit -->
+          <div class="flex items-center gap-4">
+            <span class="text-[16px] font-medium"> Developed by </span>
+            <img src="./assets/kit-logo-white.png" class="h-7 w-auto" alt="" />
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- scripts -->
+    <script src="./scripts/index.js"></script>
+    <script src="./scripts/carousel.js"></script>
+    <script src="./scripts/tabs.js"></script>
+  </body>
+</html>

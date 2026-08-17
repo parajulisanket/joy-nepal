@@ -18,7 +18,7 @@
     />
   </head>
   <body>
-    <!-- header -->
+    <!-- HEADER -->
     <header
       id="siteHeader"
       class="sticky top-0 z-50 bg-[var(--primary-color)] text-white"
@@ -31,46 +31,54 @@
         <!-- Overflow hidden wrapper inside grid -->
         <div class="overflow-hidden">
           <div
-            class="mx-auto grid max-w-7xl grid-cols-3 items-center px-4 py-4"
+            class="mx-auto grid max-w-7xl grid-cols-3 items-center px-4 py-4 md:px-6"
           >
             <!-- DATE / DAY -->
             <div class="text-start">
-              <p id="currentDay" class="text-lg font-semibold"></p>
-              <p id="currentDate" class="mt-1 text-sm text-white/80"></p>
+              <p
+                id="currentDay"
+                class="text-base font-semibold leading-relaxed md:text-lg"
+              >
+                Friday
+              </p>
+              <p
+                id="currentDate"
+                class="mt-0.5 text-xs text-white/80 md:text-sm"
+              >
+                August 14, 2026
+              </p>
             </div>
 
             <!-- CENTER LOGO -->
             <div class="flex justify-center">
-              <a href="/" aria-label="Joy Nepal Home">
-                <img
-                  src="./assets/joy-logo.png"
-                  alt="Joy Nepal"
-                  class="h-20 w-20 object-contain md:h-24 md:w-24"
-                />
+              <a
+                href="/"
+                aria-label="Joy Nepal Home"
+                class="text-2xl font-black tracking-widest uppercase md:text-4xl"
+              >
+                JOY NEPAL
               </a>
             </div>
 
-            <!-- WEATHER -->
-            <div class="flex items-center justify-end gap-4">
-              <div
-                class="flex h-11 w-11 items-center justify-center rounded-full bg-white/10"
+            <!-- RIGHT ACTIONS (Search, Toggle, Menu) -->
+            <div class="flex items-center justify-end gap-1 md:gap-2">
+              <button
+                id="searchButton"
+                type="button"
+                class="flex h-10 w-10 items-center justify-center rounded-full transition hover:bg-white/10"
+                aria-label="Search"
               >
-                <i id="weatherIcon" class="ph ph-cloud-sun text-2xl"></i>
-              </div>
-              <div>
-                <div class="flex items-center gap-1">
-                  <p
-                    id="weatherTemperature"
-                    class="text-lg font-semibold leading-none"
-                  >
-                    --°
-                  </p>
-                  <span class="text-xs text-white/70">C</span>
-                </div>
-                <p id="weatherLocation" class="mt-1 text-xs text-white/75">
-                  काठमाडौं
-                </p>
-              </div>
+                <i class="ph ph-magnifying-glass text-xl md:text-2xl"></i>
+              </button>
+
+              <button
+                id="menuButton"
+                type="button"
+                class="flex h-10 w-10 items-center justify-center rounded-full transition hover:bg-white/10"
+                aria-label="Open menu"
+              >
+                <i class="ph ph-list text-2xl md:text-3xl"></i>
+              </button>
             </div>
           </div>
         </div>
@@ -85,85 +93,104 @@
       <!-- MAIN NAVIGATION BAR -->
       <nav
         id="mainNavbar"
-        class="mx-auto flex h-[64px] max-w-7xl items-center px-4"
+        class="mx-auto flex h-[56px] max-w-7xl items-center px-4"
       >
         <!-- STICKY LOGO -->
         <a
           id="stickyLogo"
           href="/"
-          class="flex items-center overflow-hidden transition-all duration-300 ease-in-out w-0 opacity-0 pointer-events-none mr-0 [.is-scrolled_&]:w-14 [.is-scrolled_&]:mr-5 [.is-scrolled_&]:opacity-100 [.is-scrolled_&]:pointer-events-auto shrink-0"
+          class="flex items-center overflow-hidden text-lg font-black tracking-widest uppercase transition-all duration-300 ease-in-out w-0 opacity-0 pointer-events-none mr-0 [.is-scrolled_&]:w-auto [.is-scrolled_&]:mr-6 [.is-scrolled_&]:opacity-100 [.is-scrolled_&]:pointer-events-auto shrink-0"
           aria-label="Joy Nepal Home"
         >
-          <img
-            src="./assets/joy-logo.png"
-            alt="Joy Nepal"
-            class="h-14 w-14 object-contain"
-          />
+          JOY NEPAL
         </a>
 
         <!-- NAV LINKS -->
         <div
           id="desktopNavLinks"
-          class="nav-links hidden flex-1 items-center justify-center whitespace-nowrap lg:flex"
+          class="nav-links hidden flex-1 items-center justify-center gap-10 text-sm font-semibold tracking-wide whitespace-nowrap lg:flex"
         >
-          <a href="/">गृहपृष्ठ</a>
-          <a href="./category.html">मोडल वाच</a>
-          <a href="./category.html">मनोरञ्जन</a>
-          <a href="./category.html">स्वास्थ्य</a>
-          <a href="./category.html">जीवनशैली</a>
-          <a href="./category.html">सूचना-प्रविधि</a>
-          <a href="./category.html">समाज</a>
+          <a href="/" class="hover:opacity-80 transition-opacity">Home</a>
+          <a href="./category.html" class="hover:opacity-80 transition-opacity"
+            >Entertainment</a
+          >
+          <a href="./category.html" class="hover:opacity-80 transition-opacity"
+            >Model Watch</a
+          >
+          <a href="./category.html" class="hover:opacity-80 transition-opacity"
+            >Lifestyle</a
+          >
+          <a href="./category.html" class="hover:opacity-80 transition-opacity"
+            >Fashion</a
+          >
+          <a href="./category.html" class="hover:opacity-80 transition-opacity"
+            >Health</a
+          >
+          <a href="./category.html" class="hover:opacity-80 transition-opacity"
+            >Technology</a
+          >
+          <a href="./category.html" class="hover:opacity-80 transition-opacity"
+            >Society</a
+          >
 
           <!-- Other Dropdown -->
           <div class="group relative">
-            <button type="button" class="flex items-center gap-1">
-              अन्य
+            <button
+              type="button"
+              class="flex items-center gap-1 hover:opacity-80 transition-opacity"
+            >
+              More
               <i
-                class="ph ph-caret-down -mt-1.5 text-xs font-bold transition-transform duration-200 group-hover:rotate-180"
+                class="ph ph-caret-down text-xs transition-transform duration-200 group-hover:rotate-180"
               ></i>
             </button>
 
             <!-- Dropdown menu -->
             <div
-              class="invisible absolute left-1/2 top-full z-[70] mt-5 w-48 -translate-x-1/2 translate-y-2 rounded-xl bg-white py-2 text-[var(--dark-text-color)] opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
+              class="invisible absolute left-1/2 top-full z-[70] mt-3 w-48 -translate-x-1/2 translate-y-2 rounded-xl bg-white py-2 text-[var(--dark-text-color)] opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
             >
               <div
                 class="absolute -top-2 left-1/2 h-4 w-4 -translate-x-1/2 rotate-45 bg-white"
               ></div>
               <div class="dropdown-links relative">
-                <a href="./category.html" class="block px-5 py-2.5">
-                  राजनीति
-                </a>
-                <a href="./category.html" class="block px-5 py-2.5"> खेलकुद </a>
-                <a href="./category.html" class="block px-5 py-2.5"> अर्थ </a>
+                <a
+                  href="./category.html"
+                  class="block px-5 py-2 hover:bg-gray-100 transition"
+                  >Interviews</a
+                >
+                <a
+                  href="./category.html"
+                  class="block px-5 py-2 hover:bg-gray-100 transition"
+                  >Profiles</a
+                >
+                <a
+                  href="./category.html"
+                  class="block px-5 py-2 hover:bg-gray-100 transition"
+                  >Tourism</a
+                >
+                <a
+                  href="./category.html"
+                  class="block px-5 py-2 hover:bg-gray-100 transition"
+                  >Sports</a
+                >
+                <a
+                  href="./category.html"
+                  class="block px-5 py-2 hover:bg-gray-100 transition"
+                  >Beauty</a
+                >
+                <a
+                  href="./category.html"
+                  class="block px-5 py-2 hover:bg-gray-100 transition"
+                  >Culture</a
+                >
               </div>
             </div>
           </div>
         </div>
-
-        <!-- RIGHT BUTTONS -->
-        <div class="ml-auto flex items-center gap-1">
-          <button
-            id="searchButton"
-            type="button"
-            class="flex h-11 w-11 items-center justify-center rounded-full transition hover:bg-white/10"
-            aria-label="Search"
-          >
-            <i class="ph ph-magnifying-glass text-2xl"></i>
-          </button>
-
-          <button
-            id="menuButton"
-            type="button"
-            class="flex h-11 w-11 items-center justify-center rounded-full transition hover:bg-white/10"
-            aria-label="Open menu"
-          >
-            <i class="ph ph-text-outdent text-3xl"></i>
-          </button>
-        </div>
       </nav>
     </header>
-    <!-- search overlay -->
+
+    <!-- SEARCH OVERLAY -->
     <div
       id="searchOverlay"
       class="pointer-events-none fixed inset-0 z-[100] flex items-start justify-center bg-black/50 px-5 pt-28 opacity-0 backdrop-blur-sm transition-all duration-300"
@@ -171,12 +198,12 @@
       <!-- Search Box -->
       <div
         id="searchBox"
-        class="w-full max-w-3xl -translate-y-4 rounded-2xl bg-white p-5 opacity-0 shadow-2xl transition-all duration-300 md:p-7"
+        class="w-full max-w-3xl -translate-y-4 bg-white p-5 opacity-0 shadow-2xl transition-all duration-300 md:p-7"
       >
         <!-- Search Top -->
         <div class="mb-5 flex items-center justify-between">
           <h2 class="text-xl font-semibold text-[var(--dark-text-color)]">
-            समाचार खोज्नुहोस्
+            Search News
           </h2>
 
           <button
@@ -191,7 +218,7 @@
         <!-- Search Form -->
         <form id="searchForm">
           <div
-            class="flex items-center overflow-hidden rounded-xl border border-gray-200 bg-gray-50 focus-within:border-[var(--primary-color)] focus-within:bg-white"
+            class="flex items-center overflow-hidden border border-gray-200 bg-gray-50 focus-within:border-[var(--primary-color)] focus-within:bg-white"
           >
             <i class="ph ph-magnifying-glass ml-4 text-xl text-gray-400"></i>
 
@@ -199,251 +226,376 @@
               id="searchInput"
               type="search"
               autocomplete="off"
-              placeholder="समाचार खोज्नुहोस्..."
+              placeholder="Search articles, categories..."
               class="w-full bg-transparent px-4 py-4 text-[var(--dark-text-color)] outline-none placeholder:text-gray-400"
             />
 
             <button
               type="submit"
-              class="mr-2 rounded-lg bg-[var(--primary-color)] px-5 py-2.5 font-medium text-white transition hover:opacity-90"
+              class="mr-2 bg-[var(--primary-color)] px-5 py-2.5 font-medium text-white transition hover:opacity-90"
             >
-              खोज्नुहोस्
+              Search
             </button>
           </div>
         </form>
       </div>
     </div>
 
-    <!--  Sidebar Backdrop  -->
+    <!-- SIDEBAR BACKDROP -->
     <div
       id="sidebarBackdrop"
       class="pointer-events-none fixed inset-0 z-[110] bg-black/50 opacity-0 backdrop-blur-[2px] transition-opacity duration-300"
     ></div>
 
-    <!-- Sidebar  -->
+    <!-- SIDEBAR -->
     <aside
       id="sidebar"
       class="fixed right-0 top-0 z-[120] h-screen w-[350px] max-w-[90vw] translate-x-full bg-white shadow-2xl transition-transform duration-300"
     >
-      <!--Sidebar Header  -->
+      <!-- Sidebar Header -->
       <div
-        class="sidebar-header flex items-center justify-between bg-[var(--primary-color)] px-5 py-5"
+        class="sidebar-header flex items-center justify-between bg-[var(--primary-color)] px-5 py-5 text-white"
       >
-        <a href="/" class="sidebar-logo">
-          <img
-            src="./assets/joy-logo.png"
-            alt="Joy Nepal"
-            class="h-16 w-16 object-contain"
-          />
+        <a href="/" class="text-xl font-black tracking-widest uppercase">
+          JOY NEPAL
         </a>
 
         <button
           id="closeSidebarButton"
           type="button"
-          class="sidebar-close-btn flex h-10 w-10 items-center justify-center rounded-full"
+          class="sidebar-close-btn flex h-10 w-10 items-center justify-center text-white rounded-full transition hover:bg-white/10"
           aria-label="Close menu"
         >
           <i class="ph ph-x text-2xl"></i>
         </button>
       </div>
 
-      <!-- Sidebar Content  -->
+      <!-- Sidebar Content -->
       <div
-        class="sidebar-content h-[calc(100vh-104px)] overflow-y-auto px-4 py-5"
+        class="sidebar-content h-[calc(100vh-80px)] overflow-y-auto px-4 py-5"
       >
-        <nav class="sidebar-nav flex flex-col">
-          <!-- Main Links  -->
-          <a href="#" class="sidebar-link">
-            <span>गृहपृष्ठ</span>
-          </a>
+        <nav class="sidebar-nav flex flex-col gap-1">
+          <a
+            href="#"
+            class="sidebar-link px-3 py-2 text-gray-700 hover:bg-gray-100 font-medium"
+            >Home</a
+          >
+          <a
+            href="#"
+            class="sidebar-link px-3 py-2 text-gray-700 hover:bg-gray-100 font-medium"
+            >Entertainment</a
+          >
+          <a
+            href="#"
+            class="sidebar-link px-3 py-2 text-gray-700 hover:bg-gray-100 font-medium"
+            >Model Watch</a
+          >
+          <a
+            href="#"
+            class="sidebar-link px-3 py-2 text-gray-700 hover:bg-gray-100 font-medium"
+            >Lifestyle</a
+          >
+          <a
+            href="#"
+            class="sidebar-link px-3 py-2 text-gray-700 hover:bg-gray-100 font-medium"
+            >Fashion</a
+          >
+          <a
+            href="#"
+            class="sidebar-link px-3 py-2 text-gray-700 hover:bg-gray-100 font-medium"
+            >Interviews</a
+          >
+          <a
+            href="#"
+            class="sidebar-link px-3 py-2 text-gray-700 hover:bg-gray-100 font-medium"
+            >Profiles</a
+          >
 
-          <a href="#" class="sidebar-link">
-            <span>मोडल वाच</span>
-          </a>
+          <!-- Sidebar Section -->
+          <div class="sidebar-section mt-4 pt-4">
+            <p
+              class="sidebar-section-title px-3 text-xs font-bold uppercase tracking-wider text-gray-400 mb-2"
+            >
+              More Categories
+            </p>
 
-          <a href="#" class="sidebar-link">
-            <span>मनोरञ्जन</span>
-          </a>
-
-          <a href="#" class="sidebar-link">
-            <span>स्वास्थ्य</span>
-          </a>
-
-          <a href="#" class="sidebar-link">
-            <span>जीवनशैली</span>
-          </a>
-
-          <a href="#" class="sidebar-link">
-            <span>सूचना-प्रविधि</span>
-          </a>
-
-          <a href="#" class="sidebar-link">
-            <span>समाज</span>
-          </a>
-
-          <!-- Other Section -->
-          <div class="sidebar-section">
-            <p class="sidebar-section-title">अन्य</p>
-
-            <a href="#" class="sidebar-sub-link">
-              <span>राजनीति</span>
-            </a>
-
-            <a href="#" class="sidebar-sub-link">
-              <span>खेलकुद</span>
-            </a>
-
-            <a href="#" class="sidebar-sub-link">
-              <span>अर्थ</span>
-            </a>
+            <a
+              href="#"
+              class="sidebar-sub-link block px-3 py-2 text-gray-700 hover:bg-gray-100 font-medium"
+              >Health</a
+            >
+            <a
+              href="#"
+              class="sidebar-sub-link block px-3 py-2 text-gray-700 hover:bg-gray-100 font-medium"
+              >Tourism</a
+            >
+            <a
+              href="#"
+              class="sidebar-sub-link block px-3 py-2 text-gray-700 hover:bg-gray-100 font-medium"
+              >Sports</a
+            >
+            <a
+              href="#"
+              class="sidebar-sub-link block px-3 py-2 text-gray-700 hover:bg-gray-100 font-medium"
+              >Technology</a
+            >
+            <a
+              href="#"
+              class="sidebar-sub-link block px-3 py-2 text-gray-700 hover:bg-gray-100 font-medium"
+              >Society</a
+            >
+            <a
+              href="#"
+              class="sidebar-sub-link block px-3 py-2 text-gray-700 hover:bg-gray-100 font-medium"
+              >Beauty</a
+            >
+            <a
+              href="#"
+              class="sidebar-sub-link block px-3 py-2 text-gray-700 hover:bg-gray-100 font-medium"
+              >Culture</a
+            >
           </div>
         </nav>
       </div>
     </aside>
 
-    <!-- News Banner / breaking banners -->
+    <!-- News Banner / Breaking Banners + Sticky Sidebar -->
     <section class="py-8">
-      <div class="mx-auto max-w-7xl px-4 divide-y divide-[var(--border-color)]">
-        <!-- breaking banner -->
-        <div class="py-6 space-y-4">
-          <div class="mx-auto text-center space-y-4">
-            <a href="./single.html" class="news-banner">
-              एलोभेराः बहुउपयोगी प्राकृतिक औषधि, यस्ता छन् स्वास्थ्य लाभहरू
-            </a>
+      <div class="mx-auto max-w-7xl px-4">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-[70%_30%]">
+          <div class="divide-y divide-[var(--border-color)]">
+            <!-- Breaking Banner 1 -->
+            <div class="pb-6">
+              <div class="mx-auto text-center space-y-2">
+                <a href="./single.html" class="news-banner">
+                  Aloe Vera: A Versatile Natural Remedy & Its Top Health
+                  Benefits
+                </a>
 
-            <!-- meta -->
-            <div class="flex items-center justify-center gap-4">
-              <img
-                src="./assets/dummy.jpeg"
-                alt="शम्भु रेग्मी"
-                class="h-11 w-11 rounded-full border border-gray-400 object-cover p-1"
-              />
-              <div class="text-left">
-                <p class="meta-author">शम्भु रेग्मी</p>
+                <!-- Meta -->
+                <div class="flex items-center justify-center gap-2">
+                  <img
+                    src="./assets/dummy.jpeg"
+                    alt="Shambhu Regmi"
+                    class="h-9 w-9 rounded-full border border-gray-400 object-cover p-0.5"
+                  />
+                  <div class="text-left">
+                    <p class="meta-author text-sm font-medium">Shambhu Regmi</p>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
 
-        <!-- banner -->
-        <div class="py-6 space-y-4">
-          <div class="mx-auto text-center space-y-4">
-            <a href="./single.html" class="news-banner">छुट्टै इजलासको सकस</a>
+            <!-- Banner 2 with Image -->
+            <div class="py-6 space-y-4">
+              <div class="mx-auto text-center space-y-2">
+                <a href="./single.html" class="news-banner">
+                  The Struggle for a Separate Special Bench
+                </a>
 
-            <!-- meta -->
-            <div class="flex items-center justify-center gap-4">
-              <img
-                src="./assets/dummy.jpeg"
-                alt="शम्भु रेग्मी"
-                class="h-11 w-11 rounded-full border border-gray-400 object-cover p-1"
-              />
-              <div class="text-left">
-                <p class="meta-author">शम्भु रेग्मी</p>
+                <!-- Meta -->
+                <div class="flex items-center justify-center gap-2">
+                  <img
+                    src="./assets/dummy.jpeg"
+                    alt="Shambhu Regmi"
+                    class="h-9 w-9 rounded-full border border-gray-400 object-cover p-0.5"
+                  />
+                  <div class="text-left">
+                    <p class="meta-author text-sm font-medium">Shambhu Regmi</p>
+                  </div>
+                </div>
               </div>
+
+              <!-- Image -->
+              <figure class="overflow-hidden">
+                <img
+                  src="./assets/news-2.jpeg"
+                  alt="History Standing in the Forest"
+                  class="h-[260px] w-full object-cover md:h-[340px] lg:h-[500px]"
+                />
+              </figure>
             </div>
           </div>
 
-          <!-- image -->
-          <figure>
-            <img
-              src="./assets/news-2.jpeg"
-              alt="जंगलबीच उभिएको इतिहास"
-              class="w-full object-cover h-[260px] md:h-[340px] lg:h-[640px]"
-            />
-          </figure>
+          <!-- RIGHT COLUMN: Sticky Trending Now Sidebar -->
+          <aside class="relative">
+            <div class="sticky top-24 border-l border-[#d1d5db] p-6">
+              <!-- Header -->
+              <div
+                class="mb-4 flex items-center gap-2 border-b border-[#d1d5db] pb-2"
+              >
+                <i
+                  class="ph ph-trend-up text-3xl text-[var(--primary-color)]"
+                ></i>
+                <h3 class="category-title uppercase">Trending</h3>
+              </div>
+
+              <!-- Trending List -->
+              <ul class="divide-y divide-[#d1d5db]">
+                <li class="py-3 first:pt-0 last:pb-0">
+                  <a href="./single.html" class="group flex">
+                    <div>
+                      <h4 class="news-small">
+                        Tech Innovations Reshaping Digital Media in 2026
+                      </h4>
+                      <span class="mt-4 block text-sm text-gray-500"
+                        >Technology • 5 min read</span
+                      >
+                    </div>
+                  </a>
+                </li>
+
+                <li class="py-3 first:pt-0 last:pb-0">
+                  <a href="./single.html" class="group flex">
+                    <div>
+                      <h4 class="news-small">
+                        Sustainable Lifestyle Choices for Modern Living
+                      </h4>
+                      <span class="mt-4 block text-sm text-gray-500"
+                        >Lifestyle • 3 min read</span
+                      >
+                    </div>
+                  </a>
+                </li>
+
+                <li class="py-3 first:pt-0 last:pb-0">
+                  <a href="./single.html" class="group flex">
+                    <div>
+                      <h4 class="news-small">
+                        Top Cultural Destinations to Visit This Season
+                      </h4>
+                      <span class="mt-4 block text-sm text-gray-500"
+                        >Tourism • 4 min read</span
+                      >
+                    </div>
+                  </a>
+                </li>
+
+                <li class="py-3 first:pt-0 last:pb-0">
+                  <a href="./single.html" class="group flex">
+                    <div>
+                      <h4 class="news-small">
+                        Health Benefits of Daily Mindful Practices
+                      </h4>
+                      <span class="mt-4 block text-sm text-gray-500"
+                        >Health • 6 min read</span
+                      >
+                    </div>
+                  </a>
+                </li>
+
+                <li class="py-3 first:pt-0 last:pb-0">
+                  <a href="./single.html" class="group flex">
+                    <div>
+                      <h4 class="news-small">
+                        The Evolution of Himalayan Fashion & Modern Trends
+                      </h4>
+                      <span class="mt-4 block text-sm text-gray-500"
+                        >Fashion • 4 min read</span
+                      >
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
 
-    <!-- bishesh news -->
+    <!-- Entertainment News Section -->
     <section class="py-8">
       <div class="mx-auto max-w-7xl px-4 space-y-6">
         <!-- Heading -->
         <div class="flex items-center justify-between gap-4">
           <div class="flex flex-1 items-center gap-3">
-            <h2 class="category-title">बिशेष</h2>
+            <h2 class="category-title uppercase">Entertainment</h2>
             <div class="hr-line"></div>
           </div>
           <a
             href="#"
-            class="group flex items-center gap-1 text-sm font-medium text-[var(--meta-color)] hover:text-[var(--primary-color)]"
+            class="group flex items-center gap-2 text-sm font-medium text-[var(--meta-color)] hover:text-[var(--primary-color)]"
           >
-            <span class="hidden sm:inline">सबै</span>
+            <span class="hidden sm:inline">All</span>
             <i
-              class="ph ph-arrow-up-right inline-block -mt-1 transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              class="ph ph-arrow-right inline-block mt-0.5 transition-transform duration-500 group-hover:translate-x-0.5"
             ></i>
           </a>
         </div>
-        <!-- news part -->
+
+        <!-- News Grid -->
         <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <!-- LEFT  -->
+          <!-- LEFT COLUMN -->
           <div
-            class="flex flex-col justify-between divide-y divide-[var(--border-color)] md:border-r md:border-[var(--border-color)] pr-0 lg:pr-4"
+            class="flex flex-col justify-between divide-y divide-[#d1d5db] md:border-r md:border-[#d1d5db] pr-0 lg:pr-4"
           >
             <div class="py-2 first:pt-0 last:pb-0">
               <a href="./single.html" class="news-medium">
-                रातिको खाना पछि रगतमा ग्लुकोजको मात्रा नियन्त्रण गर्न अपनाउन
-                सकिने ५ प्रभावकारी उपाय
+                5 Effective Ways to Control Blood Glucose Levels After Dinner
               </a>
             </div>
             <div class="py-2 first:pt-0 last:pb-0">
               <a href="#" class="news-medium">
-                एलोभेराः बहुउपयोगी प्राकृतिक औषधि, यस्ता छन् स्वास्थ्य लाभहरू
+                Aloe Vera: A Versatile Natural Remedy and Its Top Health
+                Benefits
               </a>
             </div>
             <div class="py-2 first:pt-0 last:pb-0">
               <a href="#" class="news-medium">
-                स्वास्थ्यका लागि बिहानको पैदल यात्राः जान्नैपर्ने फाइदाहरू
+                Morning Walks for Better Health: Essential Benefits You Should
+                Know
               </a>
             </div>
             <div class="py-2 first:pt-0 last:pb-0">
               <a href="#" class="news-medium">
-                तनाव कम गर्ने सरल र प्रभावकारी घरेलु उपायहरू
+                Simple and Effective Home Remedies to Reduce Stress Easily
               </a>
             </div>
             <div class="py-2 first:pt-0 last:pb-0">
               <a href="#" class="news-medium">
-                सन्तुलित आहार र स्वस्थ जीवनशैलीको महत्व
+                The Vital Importance of a Balanced Diet and Healthy Lifestyle
               </a>
             </div>
           </div>
 
-          <!-- CENTER  -->
+          <!-- CENTER COLUMN -->
           <div
-            class="flex flex-col md:border-r md:border-[var(--border-color)] pr-0 lg:pr-6"
+            class="flex flex-col md:border-r md:border-[#d1d5db] pr-0 lg:pr-6"
           >
-            <a href="#" class="group block overflow-hidden space-y-4">
+            <a href="#" class="group block space-y-4">
               <figure class="overflow-hidden">
                 <img
                   src="./assets/news-3.jpg"
-                  alt="मुख्य समाचार"
+                  alt="Main News"
                   class="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </figure>
               <div class="space-y-2">
-                <h3 class="news-big">वनभित्रको अनौठो पुस्तकालय</h3>
+                <h3 class="news-big">A Unique Library Inside the Forest</h3>
                 <p class="line-clamp-3">
-                  के तपाईं गत्लाङको डढेलो लागेको वन हुँदै यात्रा गर्दै
-                  हुनुहुन्छ? केही क्षण रोकिनुहोस्। काठका सूचनापाटीमा राखिएको
-                  क्यूआर कोड स्क्यान गर्नुहोस्। वन डढेलोको इतिहास, गत्लाङ गाउँको
-                  कथा र उजाडिएको जंगल कसरी पुनर्जीवित हुँदै छ भन्ने
-                  पुन:स्थापनाको यात्रा पढ्नुहोस्।
+                  Are you traveling through the wildfire-affected forests of
+                  Gatlang? Stop for a moment and scan the QR code placed on the
+                  wooden information boards. Read about the history of forest
+                  fires, the story of Gatlang village, and the journey of how a
+                  devastated forest is coming back to life.
                 </p>
               </div>
             </a>
           </div>
 
-          <!-- RIGHT -->
+          <!-- RIGHT COLUMN -->
           <div class="flex flex-col space-y-4">
             <!-- Item 1 -->
             <a href="#" class="group flex items-start gap-4">
               <img
                 src="./assets/news-4.jpg"
-                alt="समाचार"
+                alt="News"
                 class="h-[100px] w-[120px] flex-shrink-0 object-cover"
               />
               <div>
-                <h4 class="news-small">निगरानीविनाका सुधार केन्द्र</h4>
+                <h4 class="news-small">
+                  Unmonitored Rehabilitation Centers Raise Concerns
+                </h4>
               </div>
             </a>
 
@@ -451,11 +603,13 @@
             <a href="#" class="group flex items-start gap-4">
               <img
                 src="./assets/news-5.png"
-                alt="समाचार"
+                alt="News"
                 class="h-[100px] w-[120px] flex-shrink-0 object-cover"
               />
               <div>
-                <h4 class="news-small">कामको आश्वासनमा शोषणको जाल</h4>
+                <h4 class="news-small">
+                  Trapped in Exploitation Under the Promise of Jobs
+                </h4>
               </div>
             </a>
 
@@ -463,22 +617,25 @@
             <a href="#" class="group flex items-start gap-4">
               <img
                 src="./assets/news-6.jpeg"
-                alt="समाचार"
+                alt="News"
                 class="h-[100px] w-[120px] flex-shrink-0 object-cover"
               />
               <div>
-                <h4 class="news-small">साताको कार्टुन</h4>
+                <h4 class="news-small">Cartoon of the Week</h4>
               </div>
             </a>
+
             <!-- Item 4 -->
             <a href="#" class="group flex items-start gap-4">
               <img
                 src="./assets/news-7.jpg"
-                alt="समाचार"
+                alt="News"
                 class="h-[100px] w-[120px] flex-shrink-0 object-cover"
               />
               <div>
-                <h4 class="news-small">बुढ्यौली समाज धान्न छैन तयारी</h4>
+                <h4 class="news-small">
+                  Lack of Preparation to Support an Aging Society
+                </h4>
               </div>
             </a>
           </div>
@@ -486,226 +643,238 @@
       </div>
     </section>
 
-    <!-- aartha  and rajniti and sticky at right  -->
+    <!-- Model Watch & Interviews Section with Sticky Popular Sidebar -->
     <section class="py-8">
       <div class="mx-auto max-w-7xl px-4 space-y-6">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12">
-          <!-- left -->
+          <!-- LEFT COLUMN  -->
           <div
             class="space-y-10 lg:col-span-8 md:border-r md:border-[var(--border-color)] pr-0 lg:pr-6"
           >
-            <!-- aartha -->
+            <!-- MODEL WATCH SECTION -->
             <section class="space-y-4">
               <!-- Heading -->
               <div class="flex items-center justify-between gap-4">
                 <div class="flex flex-1 items-center gap-3">
-                  <h2 class="category-title">अर्थ</h2>
+                  <h2 class="category-title uppercase">Model Watch</h2>
                   <div class="hr-line"></div>
                 </div>
                 <a
                   href="#"
-                  class="group flex items-center gap-1 text-sm font-medium text-[var(--meta-color)] hover:text-[var(--primary-color)]"
+                  class="group flex items-center gap-2 text-sm font-medium text-[var(--meta-color)] hover:text-[var(--primary-color)]"
                 >
-                  <span class="hidden sm:inline">सबै</span>
+                  <span class="hidden sm:inline">All</span>
                   <i
-                    class="ph ph-arrow-up-right inline-block transition-transform duration-500 -mt-1 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    class="ph ph-arrow-right inline-block transition-transform duration-500 mt-1 group-hover:translate-x-0.5"
                   ></i>
                 </a>
               </div>
 
               <div class="space-y-8">
-                <!-- TOP FEATURED SECTION -->
+                <!-- TOP FEATURED ITEM -->
                 <a
                   href="#"
                   class="group grid grid-cols-1 items-center gap-4 md:grid-cols-12"
                 >
-                  <!-- Left-->
+                  <!-- Left Text -->
                   <div class="space-y-3 md:col-span-5">
                     <h2 class="news-medium">
-                      योजनाको सङ्ख्याभन्दा गुणस्तर र नतिजा हाम्रो प्राथमिकता हो
-                      : मन्त्री तामाङ
+                      "Our Priority is Quality and Results Over the Number of
+                      Projects": Minister Tamang
                     </h2>
                     <p class="line-clamp-3">
-                      बागमती प्रदेशमा विकास र पूर्वाधारका क्षेत्रमा ठुलो लगानी
-                      भए तापनि आयोजनाहरू समयमै सम्पन्न नहुने र वर्षौंसम्म रुग्ण
-                      अवस्थामा रहने चुनौती देखा परेको छ । बजेट विनियोजनको कमजोर
-                      प्रणाली, पर्याप्त अध्ययनविनाको योजना छनोट र फितलो अनुगमन
+                      Despite major investments in development and
+                      infrastructure across the Bagmati province, projects face
+                      significant delays and remain stagnant for years. Weak
+                      budget allocation systems, project selection without
+                      thorough study, and lax monitoring continue to pose
+                      challenges.
                     </p>
                   </div>
 
-                  <!-- Right  -->
+                  <!-- Right Image -->
                   <div class="overflow-hidden md:col-span-7">
                     <img
                       src="./assets/artha1.jpg"
-                      alt="मुख्य समाचार"
+                      alt="Featured News"
                       class="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
                 </a>
 
-                <!-- BOTTOM 3-COLUMN CARDS SECTION -->
+                <!-- BOTTOM 3-COLUMN CARDS -->
                 <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
-                  <!-- Bottom Card 1 -->
+                  <!-- Card 1 -->
                   <a href="#" class="group block space-y-2">
                     <div class="overflow-hidden">
                       <img
                         src="./assets/artha2.jpg"
-                        alt="समाचार"
+                        alt="News Image"
                         class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                     </div>
                     <h3 class="news-small">
-                      ‘विदेशी ब्रान्डकै गुणस्तरका जुत्ता नेपालमै बन्छन्, तर
-                      राज्यले प्राथमिकता दिएन’
+                      "Footwear Matching Foreign Brand Quality Is Made in Nepal,
+                      Yet Lacks State Priority"
                     </h3>
                   </a>
 
-                  <!-- Bottom Card 2 -->
+                  <!-- Card 2 -->
                   <a href="#" class="group block space-y-2">
                     <div class="overflow-hidden">
                       <img
                         src="./assets/artha3.jpg"
-                        alt="समाचार"
+                        alt="News Image"
                         class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                     </div>
                     <h3 class="news-small">
-                      बजेट बरालिएकै हो, अब सुधार गर्छौँ : मन्त्री लिङ्थेप
+                      "The Budget Stray Off Course, We Will Rectify It Now":
+                      Minister Lingthep
                     </h3>
                   </a>
 
-                  <!-- Bottom Card 3 -->
+                  <!-- Card 3 -->
                   <a href="#" class="group block space-y-2">
                     <div class="overflow-hidden">
                       <img
                         src="./assets/artha4.jpg"
-                        alt="समाचार"
+                        alt="News Image"
                         class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                     </div>
                     <h3 class="news-small">
-                      आईपीओ रोकेर धितोपत्र बोर्डले निजी क्षेत्रमाथि ‘अपराध’
-                      गर्‍यो : इप्पान अध्यक्ष डाँगी
+                      SEBON Committed a "Crime" Against Private Sector by
+                      Halting IPOs: IPPAN President Dangi
                     </h3>
                   </a>
                 </div>
               </div>
             </section>
 
-            <!-- rajniti -->
+            <!-- Interviews SECTION -->
             <section class="space-y-4">
               <!-- Heading -->
               <div class="flex items-center justify-between gap-4">
                 <div class="flex flex-1 items-center gap-3">
-                  <h2 class="category-title">राजनीति</h2>
+                  <h2 class="category-title uppercase">Interviews</h2>
                   <div class="hr-line"></div>
                 </div>
                 <a
                   href="#"
-                  class="group flex items-center gap-1 text-sm font-medium text-[var(--meta-color)] hover:text-[var(--primary-color)]"
+                  class="group flex items-center gap-2 text-sm font-medium text-[var(--meta-color)] hover:text-[var(--primary-color)]"
                 >
-                  <span class="hidden sm:inline">सबै</span>
+                  <span class="hidden sm:inline">All</span>
                   <i
-                    class="ph ph-arrow-up-right inline-block transition-transform duration-500 -mt-1 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    class="ph ph-arrow-right inline-block transition-transform duration-500 mt-1 group-hover:translate-x-0.5"
                   ></i>
                 </a>
               </div>
 
-              <!-- News Grid for राजनीति -->
+              <!-- Lifestyle Grid (6 Cards) -->
               <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
-                <!-- News Card 1 -->
+                <!-- Card 1 -->
                 <a href="#" class="group block space-y-2">
                   <div class="overflow-hidden">
                     <img
                       src="./assets/rajniti1.png"
-                      alt="राजनीति समाचार"
+                      alt="Lifestyle News"
                       class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
                   <h3 class="news-small">
-                    ‘सामाजिक सञ्जाल क्रान्तिको नयाँ टुल भएको छ’
+                    "Social Media Has Become a Powerful New Tool for Cultural
+                    Revolution"
                   </h3>
                 </a>
-                <!-- News Card 2 -->
+
+                <!-- Card 2 -->
                 <a href="#" class="group block space-y-2">
                   <div class="overflow-hidden">
                     <img
                       src="./assets/rajniti2.jpg"
-                      alt="राजनीति समाचार"
+                      alt="Lifestyle News"
                       class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
                   <h3 class="news-small">
-                    नयाँ भूमि नीति : ६०० दिनको लक्ष्य, राजनीतिको डोजर र जमिनको
-                    यथार्थ
+                    New Land Policy: A 600-Day Target, Urbanization Pressures,
+                    and Ground Realities
                   </h3>
                 </a>
-                <!-- News Card 3 -->
+
+                <!-- Card 3 -->
                 <a href="#" class="group block space-y-2">
                   <div class="overflow-hidden">
                     <img
                       src="./assets/rajniti3.png"
-                      alt="राजनीति समाचार"
+                      alt="Lifestyle News"
                       class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
                   <h3 class="news-small">
-                    एकता होइन, पुनर्जन्म पर्खिरहेको वाम राजनीति
+                    Modern Ideologies: A Period of Rebirth and Transformation
                   </h3>
                 </a>
-                <!-- News Card 4 -->
+
+                <!-- Card 4 -->
                 <a href="#" class="group block space-y-2">
                   <div class="overflow-hidden">
                     <img
                       src="./assets/rajniti4.png"
-                      alt="राजनीति समाचार"
+                      alt="Lifestyle News"
                       class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
                   <h3 class="news-small">
-                    संविधान संशोधनअघि स्पष्ट हुनुपर्ने केही प्रश्न
+                    Key Questions to Clarify Prior to Constitutional Amendments
                   </h3>
                 </a>
-                <!-- News Card 5 -->
+
+                <!-- Card 5 -->
                 <a href="#" class="group block space-y-2">
                   <div class="overflow-hidden">
                     <img
                       src="./assets/rajniti5.jpg"
-                      alt="राजनीति समाचार"
-                      class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                  </div>
-                  <h3 class="news-small">अभियुक्त नागरिकको देशमा</h3>
-                </a>
-                <!-- News Card 6-->
-                <a href="#" class="group block space-y-2">
-                  <div class="overflow-hidden">
-                    <img
-                      src="./assets/rajniti6.png"
-                      alt="राजनीति समाचार"
+                      alt="Lifestyle News"
                       class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
                   <h3 class="news-small">
-                    प्रदेश राजनीतिमा परम्परागत दल : जनमतको सन्देश किन नबुझेको ?
+                    Navigating Civic Responsibilities in Today's Nation
+                  </h3>
+                </a>
+
+                <!-- Card 6 -->
+                <a href="#" class="group block space-y-2">
+                  <div class="overflow-hidden">
+                    <img
+                      src="./assets/rajniti6.png"
+                      alt="Lifestyle News"
+                      class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
+                  <h3 class="news-small">
+                    Traditional Parties in Regional Governance: Why Ignore the
+                    Public Mandate?
                   </h3>
                 </a>
               </div>
             </section>
           </div>
 
-          <!-- RIGHT SIDEBAR -->
+          <!-- RIGHT SIDEBAR (Popular) -->
           <div class="lg:col-span-4">
             <aside class="sticky top-24 space-y-6">
               <!-- Heading -->
               <div class="flex items-center justify-between gap-4">
                 <div class="flex flex-1 items-center gap-3">
-                  <h2 class="category-title">लोकप्रिय</h2>
+                  <h2 class="category-title uppercase">Popular</h2>
                   <div class="hr-line"></div>
                 </div>
               </div>
 
-              <!--  लोकप्रिय -->
+              <!-- Popular News List -->
               <div class="flex flex-col">
                 <!-- Item 1 -->
                 <a
@@ -716,8 +885,8 @@
                     class="h-2 w-2 flex-shrink-0 rounded-full bg-[var(--primary-color)]"
                   ></span>
                   <h4 class="news-small">
-                    संसदमा नयाँ विधेयक दर्ता, के-के छन् नयाँ व्यवस्थाहरू संसदमा
-                    नयाँ विधेयक दर्ता?
+                    New Bill Registered in Parliament: Key Provisions and What
+                    You Need to Know
                   </h4>
                 </a>
 
@@ -730,7 +899,8 @@
                     class="h-2 w-2 flex-shrink-0 rounded-full bg-[var(--primary-color)]"
                   ></span>
                   <h4 class="news-small">
-                    संसदमा नयाँ विधेयक दर्ता, के-के छन् नयाँ व्यवस्थाहरू?
+                    Government Outlines New Guidelines for Infrastructure and
+                    Digital Growth
                   </h4>
                 </a>
 
@@ -743,10 +913,11 @@
                     class="h-2 w-2 flex-shrink-0 rounded-full bg-[var(--primary-color)]"
                   ></span>
                   <h4 class="news-small">
-                    संसदमा नयाँ विधेयक दर्ता, के-के छन् नयाँ व्यवस्थाहरू संसदमा
-                    नयाँ विधेयक दर्ता?
+                    Central Bank Releases Updated Monetary Framework for the
+                    Upcoming Quarter
                   </h4>
                 </a>
+
                 <!-- Item 4 -->
                 <a
                   href="#"
@@ -756,7 +927,8 @@
                     class="h-2 w-2 flex-shrink-0 rounded-full bg-[var(--primary-color)]"
                   ></span>
                   <h4 class="news-small">
-                    संसदमा नयाँ विधेयक दर्ता, के-के छन् नयाँ व्यवस्थाहरू?
+                    Key Reforms Introduced to Streamline Public Sector Services
+                    Across Districts
                   </h4>
                 </a>
 
@@ -769,8 +941,8 @@
                     class="h-2 w-2 flex-shrink-0 rounded-full bg-[var(--primary-color)]"
                   ></span>
                   <h4 class="news-small">
-                    संसदमा नयाँ विधेयक दर्ता, के-के छन् नयाँ व्यवस्थाहरू संसदमा
-                    नयाँ विधेयक दर्ता?
+                    National Youth Summit Focuses on Digital Entrepreneurship
+                    and Employment
                   </h4>
                 </a>
 
@@ -783,7 +955,8 @@
                     class="h-2 w-2 flex-shrink-0 rounded-full bg-[var(--primary-color)]"
                   ></span>
                   <h4 class="news-small">
-                    संसदमा नयाँ विधेयक दर्ता, के-के छन् नयाँ व्यवस्थाहरू?
+                    Environmental Experts Urge Immediate Action on Urban
+                    Greenery Initiatives
                   </h4>
                 </a>
               </div>
@@ -793,22 +966,22 @@
       </div>
     </section>
 
-    <!-- मोडल वाच -->
+    <!-- Fashion Section -->
     <section class="py-8 bg-[var(--footer-color)]">
       <div class="max-w-7xl mx-auto px-4 space-y-6">
         <!-- Heading -->
         <div class="flex items-center justify-between gap-4">
           <div class="flex flex-1 items-center gap-3">
-            <h2 class="category-title-white">मोडल वाच</h2>
+            <h2 class="category-title-white uppercase">Fashion</h2>
             <div class="hr-line bg-white"></div>
           </div>
           <a
             href="#"
-            class="group flex items-center gap-1 text-sm font-medium text-[var(--secondary-color)]"
+            class="group flex items-center gap-2 text-sm font-medium text-[var(--secondary-color)]"
           >
-            <span class="hidden sm:inline">सबै</span>
+            <span class="hidden sm:inline">All</span>
             <i
-              class="ph ph-arrow-up-right inline-block -mt-1 transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              class="ph ph-arrow-right inline-block mt-1 transition-transform duration-500 group-hover:translate-x-0.5"
             ></i>
           </a>
         </div>
@@ -838,7 +1011,7 @@
               >
                 <img
                   src="./assets/img1.jpg"
-                  alt="समाचार"
+                  alt="Fashion News"
                   class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div
@@ -847,8 +1020,8 @@
 
                 <div class="absolute bottom-0 left-0 right-0 p-4 z-10">
                   <h3 class="news-medium-white">
-                    शाहरुखका छोरा आर्यनको डेब्यु निर्देशन ‘ब्याड्स अफ बलिउड’
-                    नेटफ्लिक्समा सार्वजनिक
+                    Shah Rukh Khan's Son Aryan's Directorial Debut 'Badds of
+                    Bollywood' Released on Netflix
                   </h3>
                 </div>
               </a>
@@ -860,7 +1033,7 @@
               >
                 <img
                   src="./assets/img2.jpg"
-                  alt="समाचार"
+                  alt="Fashion News"
                   class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div
@@ -868,7 +1041,7 @@
                 ></div>
                 <div class="absolute bottom-0 left-0 right-0 p-4 z-10">
                   <h3 class="news-medium-white">
-                    दीपिका पादुकोणको ‘किलर लुक’ देखेर रणवीर सिंह फिदा
+                    Ranveer Singh Stunned by Deepika Padukone's 'Killer Look'
                   </h3>
                 </div>
               </a>
@@ -880,7 +1053,7 @@
               >
                 <img
                   src="./assets/img3.jpg"
-                  alt="समाचार"
+                  alt="Fashion News"
                   class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div
@@ -888,7 +1061,7 @@
                 ></div>
                 <div class="absolute bottom-0 left-0 right-0 p-4 z-10">
                   <h3 class="news-medium-white">
-                    जान्हवी कपूरका प्रेमी शिखर पहारिया को हुन् ?
+                    Who is Janhvi Kapoor's Boyfriend Shikhar Pahariya?
                   </h3>
                 </div>
               </a>
@@ -900,7 +1073,7 @@
               >
                 <img
                   src="./assets/img4.png"
-                  alt="समाचार"
+                  alt="Fashion News"
                   class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div
@@ -908,8 +1081,8 @@
                 ></div>
                 <div class="absolute bottom-0 left-0 right-0 p-4 z-10">
                   <h3 class="news-medium-white">
-                    न्यूनतम मेकअपमा ज्याकलिनको किलर लुक्सले सामाजिक सञ्जालमा
-                    धमाका
+                    Jacqueline's Killer Looks in Minimal Makeup Take Social
+                    Media by Storm
                   </h3>
                 </div>
               </a>
@@ -921,7 +1094,7 @@
               >
                 <img
                   src="./assets/img5.jpg"
-                  alt="समाचार"
+                  alt="Fashion News"
                   class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div
@@ -929,8 +1102,8 @@
                 ></div>
                 <div class="absolute bottom-0 left-0 right-0 p-4 z-10">
                   <h3 class="news-medium-white">
-                    ग्ल्यामर ब्यान्डरोलभन्दा बाहिर: दिशा पटानीको गाईगोठमा माया र
-                    मुस्कान
+                    Beyond the Glamour: Love and Smiles in Disha Patani's
+                    Cowshed
                   </h3>
                 </div>
               </a>
@@ -950,28 +1123,29 @@
       </div>
     </section>
 
-    <!-- sports news -->
+    <!-- Sports Section -->
     <section class="py-8">
       <div class="mx-auto max-w-7xl px-4 space-y-6">
         <!-- Heading -->
         <div class="flex items-center justify-between gap-4">
           <div class="flex flex-1 items-center gap-3">
-            <h2 class="category-title">खेलकुद</h2>
+            <h2 class="category-title uppercase">SPORTS</h2>
             <div class="hr-line"></div>
           </div>
           <a
             href="#"
-            class="group flex items-center gap-1 text-sm font-medium text-[var(--meta-color)] hover:text-[var(--primary-color)]"
+            class="group flex items-center gap-2 text-sm font-medium text-[var(--meta-color)] hover:text-[var(--primary-color)]"
           >
-            <span class="hidden sm:inline">सबै</span>
+            <span class="hidden sm:inline">All</span>
             <i
-              class="ph ph-arrow-up-right inline-block -mt-1 transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              class="ph ph-arrow-right inline-block mt-1 transition-transform duration-500 group-hover:translate-x-0.5"
             ></i>
           </a>
         </div>
-        <!-- news part -->
+
+        <!-- News Grid -->
         <div class="grid grid-cols-1 gap-6 lg:grid-cols-10">
-          <!-- LEFT-->
+          <!-- LEFT -->
           <div class="lg:col-span-4">
             <a
               href="#"
@@ -979,7 +1153,7 @@
             >
               <img
                 src="./assets/sport1.jpg"
-                alt="मुख्य समाचार"
+                alt="Main Health News"
                 class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
 
@@ -989,14 +1163,14 @@
 
               <div class="absolute bottom-0 left-0 right-0 p-4">
                 <h2 class="news-big-white">
-                  जोर्डनविरूद्ध अर्जेन्टिनाको ३–१ को बिजय, मेस्सीको खातामा थप एक
-                  गोल
+                  Argentina 3–1 Victory Over Jordan: Another Goal Added to
+                  Messi's Tally
                 </h2>
               </div>
             </a>
           </div>
 
-          <!-- CENTER  -->
+          <!-- CENTER -->
           <div class="lg:col-span-3">
             <a
               href="#"
@@ -1004,7 +1178,7 @@
             >
               <img
                 src="./assets/sport2.jpg"
-                alt="मुख्य समाचार"
+                alt="Main Health News"
                 class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
 
@@ -1014,7 +1188,7 @@
 
               <div class="absolute bottom-0 left-0 right-0 p-4">
                 <h2 class="news-big-white">
-                  नर्वेलाई हराउँदै फ्रान्स समूह आईको विजेता
+                  France Wins Group I After Defeating Norway
                 </h2>
               </div>
             </a>
@@ -1027,13 +1201,12 @@
               <a href="#" class="group flex items-start gap-4">
                 <img
                   src="./assets/sport3.png"
-                  alt="समाचार"
+                  alt="Health News"
                   class="h-[100px] w-[120px] flex-shrink-0 object-cover"
                 />
                 <div>
                   <h4 class="news-small">
-                    अष्ट्रेलिया विश्वकपको नकआउट चरणमा अष्ट्रेलिया विश्वकपको
-                    नकआउट चरणमा
+                    Australia Advances to the World Cup Knockout Stage
                   </h4>
                 </div>
               </a>
@@ -1042,11 +1215,13 @@
               <a href="#" class="group flex items-start gap-4">
                 <img
                   src="./assets/sport4.jpg"
-                  alt="समाचार"
+                  alt="Health News"
                   class="h-[100px] w-[120px] flex-shrink-0 object-cover"
                 />
                 <div>
-                  <h4 class="news-small">इराकविरुद्ध सेनेगलको सानदार जित</h4>
+                  <h4 class="news-small">
+                    Senegal Secures an Impressive Win Against Iraq
+                  </h4>
                 </div>
               </a>
 
@@ -1054,12 +1229,13 @@
               <a href="#" class="group flex items-start gap-4">
                 <img
                   src="./assets/sport5.jpg"
-                  alt="समाचार"
+                  alt="Health News"
                   class="h-[100px] w-[120px] flex-shrink-0 object-cover"
                 />
                 <div>
                   <h4 class="news-small">
-                    ब्राजिल र मोरक्को नकआउट चरणमा, स्कटल्यान्डको सम्भावना कायमै
+                    Brazil and Morocco into Knockout Stage, Scotland Still Holds
+                    Hopes
                   </h4>
                 </div>
               </a>
@@ -1068,11 +1244,11 @@
               <a href="#" class="group flex items-start gap-4">
                 <img
                   src="./assets/sport6.jpg"
-                  alt="समाचार"
+                  alt="Health News"
                   class="h-[100px] w-[120px] flex-shrink-0 object-cover"
                 />
                 <div>
-                  <h4 class="news-small">फिफाले गर्‍यो एन्फालाई निलम्बन</h4>
+                  <h4 class="news-small">FIFA Suspends ANFA</h4>
                 </div>
               </a>
             </div>
@@ -1081,43 +1257,45 @@
       </div>
     </section>
 
-    <!-- अन्तर्वार्ता -->
+    <!-- Technology Section -->
     <section class="py-8">
       <div class="mx-auto max-w-7xl px-4 space-y-6">
-        <!-- heding -->
+        <!-- Heading -->
         <div class="flex items-center justify-between gap-4">
           <div class="flex flex-1 items-center gap-3">
-            <h2 class="category-title">अन्तर्वार्ता</h2>
+            <h2 class="category-title uppercase">Technology</h2>
             <div class="hr-line"></div>
           </div>
           <a
             href="#"
-            class="group flex items-center gap-1 text-sm font-medium text-[var(--meta-color)] hover:text-[var(--primary-color)]"
+            class="group flex items-center gap-2 text-sm font-medium text-[var(--meta-color)] hover:text-[var(--primary-color)]"
           >
-            <span class="hidden sm:inline">सबै</span>
+            <span class="hidden sm:inline">All</span>
             <i
-              class="ph ph-arrow-up-right inline-block -mt-1 transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              class="ph ph-arrow-right inline-block mt-1 transition-transform duration-500 group-hover:translate-x-0.5"
             ></i>
           </a>
         </div>
-        <!-- main section -->
+
+        <!-- Main Section -->
         <div class="grid grid-cols space-y-4">
-          <!-- top -->
+          <!-- Top Grid -->
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- card-1 -->
+            <!-- Card 1 -->
             <a
-              href=""
+              href="#"
               class="group grid grid-cols space-y-2 border-b border-[var(--border-color)] pb-4"
             >
               <div class="overflow-hidden">
                 <img
                   src="./assets/1.png"
-                  alt=""
+                  alt="Technology News"
                   class="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
               <h1 class="news-medium">
-                एनआरएनएमा पैसा, शक्ति र राजनीति हावी हुनुहुँदैनः डा हेमराज शर्मा
+                Money, Power, and Politics Should Not Dominate NRNA: Dr. Hem Raj
+                Sharma
               </h1>
 
               <div
@@ -1126,24 +1304,25 @@
                 <i
                   class="ph ph-clock text-base text-[var(--meta-color)] font-medium -mt-0.5"
                 ></i>
-                <span>३ घण्टा अघि</span>
+                <span>3 hours ago</span>
               </div>
             </a>
-            <!-- card-2 -->
+
+            <!-- Card 2 -->
             <a
-              href=""
+              href="#"
               class="group grid grid-cols space-y-2 border-b border-[var(--border-color)] pb-4"
             >
               <div class="overflow-hidden">
                 <img
                   src="./assets/2.png"
-                  alt=""
+                  alt="Technology News"
                   class="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
               <h1 class="news-medium">
-                हामीले हिम्मत हार्नु हुँदैन, यो देशलाई समृद्ध बनाउने दायित्व
-                हाम्रै होः अध्यक्ष ढकाल
+                We Must Not Lose Hope, It Is Our Responsibility to Make This
+                Country Prosperous: President Dhakal
               </h1>
 
               <div
@@ -1152,24 +1331,26 @@
                 <i
                   class="ph ph-clock text-base text-[var(--meta-color)] font-medium -mt-0.5"
                 ></i>
-                <span>३ घण्टा अघि</span>
+                <span>3 hours ago</span>
               </div>
             </a>
-            <!-- card-3 -->
+
+            <!-- Card 3 -->
             <a
-              href=""
+              href="#"
               class="group grid grid-cols space-y-2 border-b border-[var(--border-color)] pb-4"
             >
               <div class="overflow-hidden">
                 <img
                   src="./assets/3.png"
-                  alt=""
+                  alt="Technology News"
                   class="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
               <h1 class="news-medium">
-                अध्यादेशपछि राखेपको बोर्डमा रिक्तताः एशियन गेम्स र १० औं
-                राष्ट्रिय खेलकुदको तयारी प्रभावित नहुने सदस्यसचिवको दाबी
+                Vacancies in NSC Board After Ordinance: Member Secretary Claims
+                Preparations for Asian Games and 10th National Games Will Not Be
+                Affected
               </h1>
 
               <div
@@ -1178,19 +1359,19 @@
                 <i
                   class="ph ph-clock text-base text-[var(--meta-color)] font-medium -mt-0.5"
                 ></i>
-                <span>३ घण्टा अघि</span>
+                <span>3 hours ago</span>
               </div>
             </a>
           </div>
 
-          <!-- bottom -->
+          <!-- Bottom Grid -->
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- card 1 -->
-            <a href="" class="group flex items-start gap-4">
+            <!-- Card 1 -->
+            <a href="#" class="group flex items-start gap-4">
               <div class="space-y-4">
                 <h1 class="news-small">
-                  समतामूलक समृद्ध राज्य निर्माण नै गणतन्त्रको मूल मर्म र धर्म
-                  होः सचेतक परियार
+                  Building an Equitable and Prosperous State Is the Core Essence
+                  and Duty of a Republic: Whip Pariyar
                 </h1>
                 <div
                   class="flex items-center gap-2 text-[var(--meta-color)] text-sm"
@@ -1198,23 +1379,24 @@
                   <i
                     class="ph ph-clock text-sm text-[var(--meta-color)] font-medium -mt-0.5"
                   ></i>
-                  <span>३ घण्टा अघि</span>
+                  <span>3 hours ago</span>
                 </div>
               </div>
               <div>
                 <img
                   src="./assets/4.png"
-                  alt=""
+                  alt="Technology News"
                   class="h-[100px] w-[140px] flex-shrink-0 object-cover"
                 />
               </div>
             </a>
-            <!-- card 2 -->
-            <a href="" class="group flex items-start gap-4">
+
+            <!-- Card 2 -->
+            <a href="#" class="group flex items-start gap-4">
               <div class="space-y-4">
                 <h1 class="news-small">
-                  महाधिवेशनले नीति र नेतृत्वमा निखार ल्याउँछः महामन्त्री
-                  बुर्लाकोटी
+                  General Convention Refines Policy and Leadership: General
+                  Secretary Burlakoti
                 </h1>
                 <div
                   class="flex items-center gap-2 text-[var(--meta-color)] text-sm"
@@ -1222,23 +1404,24 @@
                   <i
                     class="ph ph-clock text-sm text-[var(--meta-color)] font-medium -mt-0.5"
                   ></i>
-                  <span>३ घण्टा अघि</span>
+                  <span>3 hours ago</span>
                 </div>
               </div>
               <div>
                 <img
                   src="./assets/5.png"
-                  alt=""
+                  alt="Technology News"
                   class="h-[100px] w-[140px] flex-shrink-0 object-cover"
                 />
               </div>
             </a>
-            <!-- card 3 -->
-            <a href="" class="group flex items-start gap-4">
+
+            <!-- Card 3 -->
+            <a href="#" class="group flex items-start gap-4">
               <div class="space-y-4">
                 <h1 class="news-small">
-                  भारतीय प्रधानमन्त्री मोदी माल्दिभ्समा, राष्ट्रपति मुइज्जु र
-                  अन्य वरिष्ठ नेताहरूद्वारा स्वागत
+                  Indian PM Modi in Maldives, Welcomed by President Muizzu and
+                  Senior Leaders
                 </h1>
                 <div
                   class="flex items-center gap-2 text-[var(--meta-color)] text-sm"
@@ -1246,13 +1429,13 @@
                   <i
                     class="ph ph-clock text-sm text-[var(--meta-color)] font-medium -mt-0.5"
                   ></i>
-                  <span>३ घण्टा अघि</span>
+                  <span>3 hours ago</span>
                 </div>
               </div>
               <div>
                 <img
                   src="./assets/6.png"
-                  alt=""
+                  alt="Technology News"
                   class="h-[100px] w-[140px] flex-shrink-0 object-cover"
                 />
               </div>
@@ -1262,99 +1445,103 @@
       </div>
     </section>
 
-    <!-- samaja -->
+    <!-- Society Section -->
     <section class="py-8">
       <div class="mx-auto max-w-7xl px-4 space-y-6">
         <!-- Heading -->
         <div class="flex items-center justify-between gap-4">
           <div class="flex flex-1 items-center gap-3">
-            <h2 class="category-title">समाज</h2>
+            <h2 class="category-title uppercase">Society</h2>
             <div class="hr-line"></div>
           </div>
           <a
             href="#"
-            class="group flex items-center gap-1 text-sm font-medium text-[var(--meta-color)] hover:text-[var(--primary-color)]"
+            class="group flex items-center gap-2 text-sm font-medium text-[var(--meta-color)] hover:text-[var(--primary-color)]"
           >
-            <span class="hidden sm:inline">सबै</span>
+            <span class="hidden sm:inline">All</span>
             <i
-              class="ph ph-arrow-up-right inline-block -mt-1 transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              class="ph ph-arrow-right inline-block mt-1 transition-transform duration-500 group-hover:translate-x-0.5"
             ></i>
           </a>
         </div>
-        <!-- news part -->
+
+        <!-- News Grid -->
         <div class="grid grid-cols-1 gap-6 lg:grid-cols-10">
-          <!-- LEFT-->
+          <!-- LEFT -->
           <div class="lg:col-span-5 space-y-4">
             <a href="#" class="group relative block">
               <div class="h-[260px] md:h-[483px] overflow-hidden">
                 <img
                   src="./assets/samaj1.png"
-                  alt="मुख्य समाचार"
+                  alt="Main Society News"
                   class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
             </a>
 
             <h1 class="news-big line-clamp-2">
-              स्कुल बसको ठक्करबाट ७५ वर्षीया वृद्धाको मृत्यु
+              75-Year-Old Woman Dies After Being Hit by a School Bus
             </h1>
           </div>
 
-          <!-- right -->
+          <!-- RIGHT -->
           <div class="lg:col-span-5 inline-grid grid-cols-2 gap-4">
+            <!-- Item 1 -->
             <a href="#" class="group flex flex-col gap-2">
               <div class="h-48 w-full overflow-hidden shrink-0">
                 <img
                   src="./assets/samaj2.jpg"
-                  alt=""
+                  alt="Society News"
                   class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
-
-              <h1 class="news-medium">
-                आवासीय र इन्टर्न चिकित्सकले गरे आन्दोलनको घोषणा
+              <h1 class="news-medium line-clamp-2">
+                Resident and Intern Doctors Announce Protests
               </h1>
             </a>
+
+            <!-- Item 2 -->
             <a href="#" class="group flex flex-col gap-2">
               <div class="h-48 w-full overflow-hidden shrink-0">
                 <img
                   src="./assets/samaj3.jpg"
-                  alt=""
+                  alt="Society News"
                   class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
-
-              <h1 class="news-medium">
-                कृषि र वातावरण क्षेत्रमा रोजगारीका अवसर सृजना गरिनेछ : मन्त्री
-                चौधरी
+              <h1 class="news-medium line-clamp-2">
+                Employment Opportunities Will Be Created in Agriculture and
+                Environment Sectors: Minister Chaudhary
               </h1>
             </a>
+
+            <!-- Item 3 -->
             <a href="#" class="group flex flex-col gap-2">
               <div class="h-48 w-full overflow-hidden shrink-0">
                 <img
                   src="./assets/samaj4.jpg"
-                  alt=""
+                  alt="Society News"
                   class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
-
-              <h1 class="news-medium">
-                युवाको अधिकार र अर्थपूर्ण सहभागिता सुनिश्चित गर्न मानव अधिकार
-                आयोगको आग्रह
+              <h1 class="news-medium line-clamp-2">
+                Human Rights Commission Urges Guarantee of Youth Rights and
+                Meaningful Participation
               </h1>
             </a>
+
+            <!-- Item 4 -->
             <a href="#" class="group flex flex-col gap-2">
               <div class="h-48 w-full overflow-hidden shrink-0">
                 <img
                   src="./assets/samaj5.jpg"
-                  alt=""
+                  alt="Society News"
                   class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
-
-              <h1 class="news-medium">
-                ‘अन्नपूर्ण र मनास्लु संरक्षण क्षेत्रको व्यवस्थापनको जिम्मा
-                प्रदेश मातहतमा हुनुपर्छ’
+              <h1 class="news-medium line-clamp-2">
+                'Management of Annapurna and Manaslu Conservation Areas Should
+                Be Under Provincial Jurisdiction'
               </h1>
             </a>
           </div>
@@ -1372,21 +1559,21 @@
         <!-- Heading -->
         <div class="flex items-center justify-between gap-4">
           <div class="flex flex-1 items-center gap-3">
-            <h2 class="category-title-white">स्वास्थ्य / जीवनशैली</h2>
+            <h2 class="category-title-white uppercase">Health / Lifestyle</h2>
             <div class="hr-line bg-white"></div>
           </div>
           <a
             href="#"
-            class="group flex items-center gap-1 text-sm font-medium text-[var(--secondary-color)]"
+            class="group flex items-center gap-2 text-sm font-medium text-[var(--secondary-color)]"
           >
-            <span class="hidden sm:inline">सबै</span>
+            <span class="hidden sm:inline">All</span>
             <i
-              class="ph ph-arrow-up-right inline-block -mt-1 transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              class="ph ph-arrow-right inline-block mt-1 transition-transform duration-500 group-hover:translate-x-0.5"
             ></i>
           </a>
         </div>
 
-        <!-- Tab Navigation Buttons  -->
+        <!-- Tab Navigation Buttons -->
         <div
           class="flex items-center gap-2 bg-[#f5c518] p-1 w-fit"
           role="tablist"
@@ -1395,17 +1582,17 @@
             type="button"
             class="tab-btn px-4 py-1.5 text-sm font-semibold text-[var(--footer-color)] transition-all duration-300 bg-[var(--secondary-color)] shadow"
             data-tab="health"
-            data-view-all="सबै स्वास्थ्य"
+            data-view-all="All Health"
           >
-            स्वास्थ्य
+            Health
           </button>
           <button
             type="button"
             class="tab-btn px-4 py-1.5 text-sm font-semibold text-[#091633] transition-all duration-300"
             data-tab="lifestyle"
-            data-view-all="सबै जीवनशैली"
+            data-view-all="All Lifestyle"
           >
-            जीवनशैली
+            Lifestyle
           </button>
         </div>
 
@@ -1424,47 +1611,47 @@
                 <div class="h-[260px] md:h-[448px] w-full overflow-hidden">
                   <img
                     src="/assets/health.jpg"
-                    alt="स्वास्थ्य समाचार"
+                    alt="Health News"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div class="flex flex-col justify-between flex-grow space-y-2">
                   <div class="space-y-2">
                     <h3 class="news-big-white line-clamp-2">
-                      ‘भिटामिन डी को कमीले शरीरमा विविध समस्या ल्याउँछ’
+                      'Vitamin D Deficiency Causes Various Health Issues in the
+                      Body'
                     </h3>
                     <p class="text-white/80 line-clamp-2">
-                      सन्तुलित भोजन र नियमित व्यायामले हाम्रो शरीरलाई कसरी
-                      स्वस्थ र स्फूर्त राख्न मद्दत गर्छ? जान्नुहोस् विशेषज्ञको
-                      सुझाव।
+                      How do a balanced diet and regular exercise help keep our
+                      bodies healthy and active? Learn expert advice.
                     </p>
                   </div>
                   <div class="flex items-center gap-2 text-white/70 text-base">
                     <i
                       class="ph ph-clock text-base text-white/70 font-medium -mt-0.5"
                     ></i>
-                    <span>३ घण्टा अघि</span>
+                    <span>3 hours ago</span>
                   </div>
                 </div>
               </article>
 
-              <!-- Side List  -->
+              <!-- Side List -->
               <div class="lg:col-span-4 flex flex-col gap-4">
                 <article class="group flex gap-4">
                   <img
                     src="./assets/health2.jpeg"
-                    alt=""
+                    alt="Health News"
                     class="h-[100px] w-[140px] flex-shrink-0 object-cover"
                   />
                   <div class="flex flex-col justify-between pl-1">
                     <h4 class="news-small-white line-clamp-3">
-                      इन्फ्लुएन्जा ‘फ्लू’बाट बच्न आग्रह
+                      Urged to Take Precautions Against Influenza 'Flu'
                     </h4>
                     <div class="flex items-center gap-2 text-white/70 text-sm">
                       <i
                         class="ph ph-clock text-sm text-white/70 font-medium -mt-0.5"
                       ></i>
-                      <span>३ घण्टा अघि</span>
+                      <span>3 hours ago</span>
                     </div>
                   </div>
                 </article>
@@ -1472,18 +1659,19 @@
                 <article class="group flex gap-4">
                   <img
                     src="./assets/health3.jpg"
-                    alt=""
+                    alt="Health News"
                     class="h-[100px] w-[140px] flex-shrink-0 object-cover"
                   />
                   <div class="flex flex-col justify-between pl-1">
                     <h4 class="news-small-white line-clamp-3">
-                      हैजा र झाडापखालाबाट बच्न शुद्धीकरण गरेर पानी पिउन आग्रह
+                      Urged to Drink Purified Water to Prevent Cholera and
+                      Diarrhea
                     </h4>
                     <div class="flex items-center gap-2 text-white/70 text-sm">
                       <i
                         class="ph ph-clock text-sm text-white/70 font-medium -mt-0.5"
                       ></i>
-                      <span>३ घण्टा अघि</span>
+                      <span>3 hours ago</span>
                     </div>
                   </div>
                 </article>
@@ -1491,18 +1679,18 @@
                 <article class="group flex gap-4">
                   <img
                     src="./assets/healthh4.jpg"
-                    alt=""
+                    alt="Health News"
                     class="h-[100px] w-[140px] flex-shrink-0 object-cover"
                   />
                   <div class="flex flex-col justify-between pl-1">
                     <h4 class="news-small-white line-clamp-3">
-                      टाउको दुखाइ कम गर्ने पाँच प्रभावकारी तरिका
+                      Five Effective Ways to Reduce Headaches
                     </h4>
                     <div class="flex items-center gap-2 text-white/70 text-sm">
                       <i
                         class="ph ph-clock text-sm text-white/70 font-medium -mt-0.5"
                       ></i>
-                      <span>३ घण्टा अघि</span>
+                      <span>3 hours ago</span>
                     </div>
                   </div>
                 </article>
@@ -1510,18 +1698,19 @@
                 <article class="group flex gap-4">
                   <img
                     src="./assets/health.jpg"
-                    alt=""
+                    alt="Health News"
                     class="h-[100px] w-[140px] flex-shrink-0 object-cover"
                   />
                   <div class="flex flex-col justify-between pl-1">
                     <h4 class="news-small-white line-clamp-3">
-                      मानसिक तनाव कम गर्न हरेक बिहान गर्नुहोस् यी ३ योग आसन
+                      Do These 3 Yoga Asanas Every Morning to Relieve Mental
+                      Stress
                     </h4>
                     <div class="flex items-center gap-2 text-white/70 text-sm">
                       <i
                         class="ph ph-clock text-sm text-white/70 font-medium -mt-0.5"
                       ></i>
-                      <span>३ घण्टा अघि</span>
+                      <span>3 hours ago</span>
                     </div>
                   </div>
                 </article>
@@ -1542,47 +1731,47 @@
                 <div class="h-[260px] md:h-[448px] w-full overflow-hidden">
                   <img
                     src="/assets/4.png"
-                    alt="स्वास्थ्य समाचार"
+                    alt="Lifestyle News"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div class="flex flex-col justify-between flex-grow space-y-2">
                   <div class="space-y-2">
                     <h3 class="news-big-white line-clamp-2">
-                      महिलाले सधैँ गोप्य राख्छन् यी कुरा
+                      Things Women Always Keep Secret
                     </h3>
                     <p class="text-white/80 line-clamp-2">
-                      सन्तुलित भोजन र नियमित व्यायामले हाम्रो शरीरलाई कसरी
-                      स्वस्थ र स्फूर्त राख्न मद्दत गर्छ? जान्नुहोस् विशेषज्ञको
-                      सुझाव।
+                      How do a balanced diet and regular exercise help keep our
+                      bodies healthy and active? Learn expert advice.
                     </p>
                   </div>
                   <div class="flex items-center gap-2 text-white/70 text-base">
                     <i
                       class="ph ph-clock text-base text-white/70 font-medium -mt-0.5"
                     ></i>
-                    <span>३ घण्टा अघि</span>
+                    <span>3 hours ago</span>
                   </div>
                 </div>
               </article>
 
-              <!-- Side List  -->
+              <!-- Side List -->
               <div class="lg:col-span-4 flex flex-col gap-4">
                 <article class="group flex gap-4">
                   <img
                     src="./assets/samaj3.jpg"
-                    alt=""
+                    alt="Lifestyle News"
                     class="h-[100px] w-[140px] flex-shrink-0 object-cover"
                   />
                   <div class="flex flex-col justify-between pl-1">
                     <h4 class="news-small-white line-clamp-3">
-                      मानसिक तनाव कम गर्न हरेक बिहान गर्नुहोस् यी ३ योग आसन
+                      Do These 3 Yoga Asanas Every Morning to Relieve Mental
+                      Stress
                     </h4>
                     <div class="flex items-center gap-2 text-white/70 text-sm">
                       <i
                         class="ph ph-clock text-sm text-white/70 font-medium -mt-0.5"
                       ></i>
-                      <span>३ घण्टा अघि</span>
+                      <span>3 hours ago</span>
                     </div>
                   </div>
                 </article>
@@ -1590,18 +1779,19 @@
                 <article class="group flex gap-4">
                   <img
                     src="./assets/3.png"
-                    alt=""
+                    alt="Lifestyle News"
                     class="h-[100px] w-[140px] flex-shrink-0 object-cover"
                   />
                   <div class="flex flex-col justify-between pl-1">
                     <h4 class="news-small-white line-clamp-3">
-                      मानसिक तनाव कम गर्न हरेक बिहान गर्नुहोस् यी ३ योग आसन
+                      Do These 3 Yoga Asanas Every Morning to Relieve Mental
+                      Stress
                     </h4>
                     <div class="flex items-center gap-2 text-white/70 text-sm">
                       <i
                         class="ph ph-clock text-sm text-white/70 font-medium -mt-0.5"
                       ></i>
-                      <span>३ घण्टा अघि</span>
+                      <span>3 hours ago</span>
                     </div>
                   </div>
                 </article>
@@ -1609,18 +1799,19 @@
                 <article class="group flex gap-4">
                   <img
                     src="./assets/samaj5.jpg"
-                    alt=""
+                    alt="Lifestyle News"
                     class="h-[100px] w-[140px] flex-shrink-0 object-cover"
                   />
                   <div class="flex flex-col justify-between pl-1">
                     <h4 class="news-small-white line-clamp-3">
-                      मानसिक तनाव कम गर्न हरेक बिहान गर्नुहोस् यी ३ योग आसन
+                      Do These 3 Yoga Asanas Every Morning to Relieve Mental
+                      Stress
                     </h4>
                     <div class="flex items-center gap-2 text-white/70 text-sm">
                       <i
                         class="ph ph-clock text-sm text-white/70 font-medium -mt-0.5"
                       ></i>
-                      <span>३ घण्टा अघि</span>
+                      <span>3 hours ago</span>
                     </div>
                   </div>
                 </article>
@@ -1628,18 +1819,19 @@
                 <article class="group flex gap-4">
                   <img
                     src="./assets/samaj3.jpg"
-                    alt=""
+                    alt="Lifestyle News"
                     class="h-[100px] w-[140px] flex-shrink-0 object-cover"
                   />
                   <div class="flex flex-col justify-between pl-1">
                     <h4 class="news-small-white line-clamp-3">
-                      मानसिक तनाव कम गर्न हरेक बिहान गर्नुहोस् यी ३ योग आसन
+                      Do These 3 Yoga Asanas Every Morning to Relieve Mental
+                      Stress
                     </h4>
                     <div class="flex items-center gap-2 text-white/70 text-sm">
                       <i
                         class="ph ph-clock text-sm text-white/70 font-medium -mt-0.5"
                       ></i>
-                      <span>३ घण्टा अघि</span>
+                      <span>3 hours ago</span>
                     </div>
                   </div>
                 </article>
@@ -1650,22 +1842,22 @@
       </div>
     </section>
 
-    <!-- entertainment -->
+    <!-- Profiles Section -->
     <section class="py-8">
       <div class="mx-auto max-w-7xl px-4 space-y-6">
         <!-- Heading -->
         <div class="flex items-center justify-between gap-4">
           <div class="flex flex-1 items-center gap-3">
-            <h2 class="category-title">मनोरञ्जन</h2>
+            <h2 class="category-title uppercase">Profiles</h2>
             <div class="hr-line"></div>
           </div>
           <a
             href="#"
-            class="group flex items-center gap-1 text-sm font-medium text-[var(--meta-color)] hover:text-[var(--primary-color)]"
+            class="group flex items-center gap-2 text-sm font-medium text-[var(--meta-color)] hover:text-[var(--primary-color)]"
           >
-            <span class="hidden sm:inline">सबै</span>
+            <span class="hidden sm:inline">All </span>
             <i
-              class="ph ph-arrow-up-right inline-block -mt-1 transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              class="ph ph-arrow-right inline-block mt-1 transition-transform duration-500 group-hover:translate-x-0.5"
             ></i>
           </a>
         </div>
@@ -1676,25 +1868,24 @@
             href="#"
             class="group grid grid-cols-1 items-center gap-4 md:grid-cols-12 bg-[var(--footer-color)]"
           >
-            <!-- Left-->
+            <!-- Left -->
             <div class="overflow-hidden md:col-span-6">
               <img
                 src="./assets/enter1.png"
-                alt="मुख्य समाचार"
+                alt="Featured Profile"
                 class="h-[260px] md:h-[420px] w-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
             </div>
 
-            <!-- Right  -->
+            <!-- Right -->
             <div class="space-y-4 md:col-span-6 px-4">
               <h2 class="news-big-white">
-                म्युजिक भिडियो कलाकार सङ्घको वार्षिक क्यालेन्डर विमोचन
+                Unveiling the Journey of Visionary Artists and Industry Leaders
               </h2>
               <p class="line-clamp-5 text-white/80">
-                म्युजिक भिडियो कलाकार सङ्घको आयोजनामा वार्षिक क्यालेन्डर तथा
-                भित्तेपात्रो विमोचन, विशिष्ट तथा वरिष्ठ कलाकारहरूलाई मानार्थ
-                सदस्यता परिचयपत्र वितरण तथा सङ्घका मनोनित सल्लाहकारहरूलाई
-                नियुक्तिपत्र प्रदान।
+                An in-depth look into the lives, achievements, and contributions
+                of prominent figures, senior creators, and influential advisors
+                who continue to shape contemporary art and culture.
               </p>
             </div>
           </a>
@@ -1706,12 +1897,12 @@
               <div class="overflow-hidden">
                 <img
                   src="./assets/enter2.png"
-                  alt="समाचार"
+                  alt="Profile Article"
                   class="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
               <h3 class="news-medium">
-                अभिनेत्रीहरूले बोक्न थाले चलचित्रको कथा
+                How Leading Actresses Are Shaping Modern Cinematic Storytelling
               </h3>
             </a>
 
@@ -1720,12 +1911,12 @@
               <div class="overflow-hidden">
                 <img
                   src="./assets/enter3.png"
-                  alt="समाचार"
+                  alt="Profile Article"
                   class="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
               <h3 class="news-medium">
-                अभिनेत्रीहरूले बोक्न थाले चलचित्रको कथा
+                Spotlight on Iconic Performers Redefining the Industry Standard
               </h3>
             </a>
 
@@ -1734,12 +1925,12 @@
               <div class="overflow-hidden">
                 <img
                   src="./assets/enter4.png"
-                  alt="समाचार"
+                  alt="Profile Article"
                   class="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
               <h3 class="news-medium">
-                दयाहाङ र मिरुनाको नयाँ चलचित्र ‘रातो घेरा’ घोषणा
+                Dayahang and Miruna Reunite for New Feature Film 'Rato Ghera'
               </h3>
             </a>
           </div>
@@ -1754,24 +1945,25 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
           <!-- Column 1 -->
           <div class="lg:col-span-5 space-y-6">
-            <h3 class="category-title text-[#f5c518]">हाम्रो बारेमा</h3>
-            <p class="text-white/80 text-[20px] font-normal leading-[33px]">
-              जोय नेपाल (Joy Nepal) आधिकारिक समाचार पोर्टल हो। यस पोर्टल मार्फत
-              समसामयिक समाचार, ताजा अपडेट तथा विभिन्न क्षेत्रका विश्वसनीय सूचना
-              र जानकारी पाठकमाझ निष्पक्ष, छिटो र तथ्यपरक रूपमा प्रस्तुत गरिन्छ।
+            <h3 class="category-title text-[#f5c518]">About Us</h3>
+            <p class="text-white/80 text-[18px] font-normal leading-[33px]">
+              Joy Nepal is an official news portal dedicated to delivering
+              contemporary news, latest updates, and reliable information across
+              various sectors to readers in an unbiased, fast, and factual
+              manner.
             </p>
 
             <div class="space-y-4 text-lg">
               <p class="text-white/80 font-thin">
-                <span class="font-semibold text-white">ठेगाना -</span> का.म.पा.
-                वडा नं. १०, नयाँबानेश्वर, काठमाडौं
+                <span class="font-semibold text-white">Address -</span> KMC Ward
+                No. 10, Naya Baneshwor, Kathmandu
               </p>
               <p class="text-white/80 font-thin">
-                <span class="font-semibold text-white">फोन न -</span> +९७७
-                ०१-४२२२३८०
+                <span class="font-semibold text-white">Phone No -</span> +977
+                01-4222380
               </p>
               <p class="text-white/80 font-thin">
-                <span class="font-semibold text-white">ई-मेल -</span>
+                <span class="font-semibold text-white">Email -</span>
                 info@joynepal.com, news@joynepal.com
               </p>
             </div>
@@ -1779,7 +1971,7 @@
 
           <!-- Column 2 -->
           <div class="lg:col-span-7 space-y-6">
-            <h3 class="category-title text-[#f5c518]">उपयोगी लिङ्कहरू</h3>
+            <h3 class="category-title text-[#f5c518]">Useful Links</h3>
 
             <div
               class="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-4 text-lg text-white/80 font-thin"
@@ -1787,62 +1979,72 @@
               <a
                 href="#"
                 class="hover:text-[var(--color-yellow)] transition-colors"
-                >गृहपृष्ठ</a
+                >Home</a
               >
               <a
                 href="#"
                 class="hover:text-[var(--color-yellow)] transition-colors"
-                >मनोरञ्जन</a
+                >Entertainment</a
               >
               <a
                 href="#"
                 class="hover:text-[var(--color-yellow)] transition-colors"
-                >स्वास्थ्य</a
+                >Model Watch</a
               >
               <a
                 href="#"
                 class="hover:text-[var(--color-yellow)] transition-colors"
-                >जीवनशैली</a
+                >Lifestyle</a
               >
               <a
                 href="#"
                 class="hover:text-[var(--color-yellow)] transition-colors"
-                >सूचना-प्रविधि</a
+                >Fashion</a
               >
               <a
                 href="#"
                 class="hover:text-[var(--color-yellow)] transition-colors"
-                >समाज</a
+                >Interviews</a
               >
               <a
                 href="#"
                 class="hover:text-[var(--color-yellow)] transition-colors"
-                >मोडल वाच</a
+                >Profiles</a
               >
               <a
                 href="#"
                 class="hover:text-[var(--color-yellow)] transition-colors"
-                >राजनीति</a
+                >Health</a
               >
               <a
                 href="#"
                 class="hover:text-[var(--color-yellow)] transition-colors"
-                >खेलकुद</a
+                >Tourism</a
               >
               <a
                 href="#"
                 class="hover:text-[var(--color-yellow)] transition-colors"
-                >अर्थ</a
+                >Sports</a
               >
               <a
                 href="#"
                 class="hover:text-[var(--color-yellow)] transition-colors"
-                >डेट कन्भर्टर</a
+                >Technology</a
               >
               <a
                 href="#"
                 class="hover:text-[var(--color-yellow)] transition-colors"
-                >युनिकोड</a
+                >Society</a
+              >
+              <a
+                href="#"
+                class="hover:text-[var(--color-yellow)] transition-colors"
+                >Beauty</a
+              >
+              <a
+                href="#"
+                class="hover:text-[var(--color-yellow)] transition-colors"
+                >Culture</a
               >
             </div>
           </div>
@@ -1863,10 +2065,10 @@
             />
             <div class="border-l border-white/20 pl-4">
               <p class="font-normal text-lg text-white">
-                क्रेडिबल मल्टिमिडिया प्रा.लि.
+                Credible Multimedia Pvt. Ltd.
               </p>
               <p class="text-base font-thin text-white/80">
-                दर्ता नं. : ४३३४-२०८०/२०८१
+                Reg No. : 4334-2080/2081
               </p>
             </div>
           </div>
@@ -1877,27 +2079,27 @@
           >
             <div class="text-center md:text-left space-y-2">
               <span class="block font-thin text-white/80 text-base"
-                >अध्यक्ष</span
+                >Chairman</span
               >
               <span class="font-medium text-white text-lg"
-                >प्रमोदराज सेढाई</span
+                >Pramod Raj Sedhai</span
               >
             </div>
             <div class="h-8 w-[1px] bg-white/20 hidden sm:block"></div>
             <div class="text-center md:text-left space-y-2">
               <span class="block text-white/80 text-base font-thin"
-                >सम्पादक</span
+                >Editor</span
               >
               <span class="font-medium text-white text-lg"
-                >अनिल थापा (अर्घेलो)</span
+                >Anil Thapa (Arghelo)</span
               >
             </div>
             <div class="h-8 w-[1px] bg-white/20 hidden sm:block"></div>
             <div class="text-center md:text-left space-y-2">
               <span class="block text-white/50 text-base font-thin"
-                >सूचना विभाग दर्ता नं</span
+                >Dept. of Information Reg No.</span
               >
-              <span class="font-medium text-white text-lg">४३३४-२०८०/२०८१</span>
+              <span class="font-medium text-white text-lg">4334-2080/2081</span>
             </div>
           </div>
 
@@ -1935,7 +2137,7 @@
         >
           <!-- Copyright -->
           <div class="text-[16px] font-normal">
-            © 2026 Joy Nepal. सर्वाधिकार सुरक्षित
+            © 2026 Joy Nepal. All rights reserved.
           </div>
 
           <!-- Quick Nav Links -->
@@ -1944,13 +2146,17 @@
             <span>|</span>
             <a href="#" class="hover:underline">Privacy Policy</a>
             <span>|</span>
-            <a href="#" class="hover:underline">Terms & Condition</a>
+            <a href="#" class="hover:underline">Terms & Conditions</a>
           </div>
 
           <!-- Developer Credit -->
           <div class="flex items-center gap-4">
             <span class="text-[16px] font-medium"> Developed by </span>
-            <img src="./assets/kit-logo-white.png" class="h-7 w-auto" alt="" />
+            <img
+              src="./assets/kit-logo-white.png"
+              class="h-7 w-auto"
+              alt="Developer Logo"
+            />
           </div>
         </div>
       </div>

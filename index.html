@@ -26,7 +26,7 @@
       <!-- TOP HEADER CONTAINER -->
       <div
         id="topHeaderWrapper"
-        class="grid grid-rows-[1fr] transition-[grid-template-rows,opacity] duration-300 ease-in-out [.is-scrolled_&]:grid-rows-[0fr] [.is-scrolled_&]:opacity-0 [.is-scrolled_&]:pointer-events-none"
+        class="grid grid-rows-[1fr] transition-[grid-template-rows,opacity] duration-300 ease-in-out lg:[.is-scrolled_&]:grid-rows-[0fr] lg:[.is-scrolled_&]:opacity-0 lg:[.is-scrolled_&]:pointer-events-none"
       >
         <!-- Overflow hidden wrapper inside grid -->
         <div class="overflow-hidden">
@@ -54,7 +54,7 @@
               <a
                 href="/"
                 aria-label="Joy Nepal Home"
-                class="text-2xl font-black tracking-widest uppercase md:text-4xl"
+                class="text-center text-xl font-bold leading-tight tracking-widest uppercase md:text-4xl"
               >
                 JOY NEPAL
               </a>
@@ -84,22 +84,22 @@
         </div>
       </div>
 
-      <!-- TOP / NAV SEPARATOR -->
+      <!-- TOP / NAV SEPARATOR (Only visible on desktop) -->
       <div
         id="headerDivider"
-        class="mx-auto max-w-7xl border-t border-white/20 transition-opacity duration-300 [.is-scrolled_&]:opacity-0 [.is-scrolled_&]:border-transparent"
+        class="hidden lg:block mx-auto max-w-7xl border-t border-white/20 transition-opacity duration-300 [.is-scrolled_&]:opacity-0 [.is-scrolled_&]:border-transparent"
       ></div>
 
-      <!-- MAIN NAVIGATION BAR -->
+      <!-- MAIN NAVIGATION BAR (Desktop links & Desktop sticky logo) -->
       <nav
         id="mainNavbar"
-        class="mx-auto flex h-[56px] max-w-7xl items-center px-4"
+        class="hidden lg:flex mx-auto h-[56px] max-w-7xl items-center px-4"
       >
-        <!-- STICKY LOGO -->
+        <!-- STICKY LOGO (Desktop only) -->
         <a
           id="stickyLogo"
           href="/"
-          class="flex items-center overflow-hidden text-lg font-black tracking-widest uppercase transition-all duration-300 ease-in-out w-0 opacity-0 pointer-events-none mr-0 [.is-scrolled_&]:w-auto [.is-scrolled_&]:mr-6 [.is-scrolled_&]:opacity-100 [.is-scrolled_&]:pointer-events-auto shrink-0"
+          class="flex items-center whitespace-nowrap max-w-none text-lg font-bold tracking-widest uppercase transition-all duration-300 ease-in-out w-0 opacity-0 pointer-events-none mr-0 [.is-scrolled_&]:w-auto [.is-scrolled_&]:mr-6 [.is-scrolled_&]:opacity-100 [.is-scrolled_&]:pointer-events-auto shrink-0"
           aria-label="Joy Nepal Home"
         >
           JOY NEPAL
@@ -108,7 +108,7 @@
         <!-- NAV LINKS -->
         <div
           id="desktopNavLinks"
-          class="nav-links hidden flex-1 items-center justify-center gap-10 text-sm font-semibold tracking-wide whitespace-nowrap lg:flex"
+          class="nav-links flex flex-1 items-center justify-center gap-10 text-sm font-semibold tracking-wide whitespace-nowrap"
         >
           <a href="/" class="hover:opacity-80 transition-opacity">Home</a>
           <a href="./category.html" class="hover:opacity-80 transition-opacity"
@@ -524,50 +524,66 @@
         </div>
 
         <!-- News Grid -->
-        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-12">
           <!-- LEFT COLUMN -->
-          <div
-            class="flex flex-col justify-between divide-y divide-[#d1d5db] md:border-r md:border-[#d1d5db] pr-0 lg:pr-4"
-          >
-            <div class="py-2 first:pt-0 last:pb-0">
-              <a href="./single.html" class="news-medium">
-                5 Effective Ways to Control Blood Glucose Levels After Dinner
+          <div class="flex flex-col justify-between space-y-6 lg:col-span-4">
+            <!-- Top 2-Column Grid for Small Images -->
+            <div class="grid grid-cols-2 gap-4">
+              <a href="./single.html" class="group block space-y-2">
+                <img
+                  src="./assets/news-4.jpg"
+                  alt="News"
+                  class="h-32 w-full object-cover"
+                />
+                <h4 class="news-small line-clamp-2">
+                  5 Effective Ways to Control Blood Glucose Levels After Dinner
+                </h4>
               </a>
-            </div>
-            <div class="py-2 first:pt-0 last:pb-0">
-              <a href="#" class="news-medium">
-                Aloe Vera: A Versatile Natural Remedy and Its Top Health
-                Benefits
+
+              <a href="#" class="group block space-y-2">
+                <img
+                  src="./assets/news-5.png"
+                  alt="News"
+                  class="h-32 w-full object-cover"
+                />
+                <h4 class="news-small line-clamp-2">
+                  Aloe Vera: A Versatile Natural Remedy and Its Top Health
+                  Benefits
+                </h4>
               </a>
-            </div>
-            <div class="py-2 first:pt-0 last:pb-0">
-              <a href="#" class="news-medium">
-                Morning Walks for Better Health: Essential Benefits You Should
-                Know
+              <a href="#" class="group block space-y-2">
+                <img
+                  src="./assets/news-5.png"
+                  alt="News"
+                  class="h-32 w-full object-cover"
+                />
+                <h4 class="news-small line-clamp-2">
+                  Aloe Vera: A Versatile Natural Remedy and Its Top Health
+                  Benefits
+                </h4>
               </a>
-            </div>
-            <div class="py-2 first:pt-0 last:pb-0">
-              <a href="#" class="news-medium">
-                Simple and Effective Home Remedies to Reduce Stress Easily
-              </a>
-            </div>
-            <div class="py-2 first:pt-0 last:pb-0">
-              <a href="#" class="news-medium">
-                The Vital Importance of a Balanced Diet and Healthy Lifestyle
+              <a href="#" class="group block space-y-2">
+                <img
+                  src="./assets/news-5.png"
+                  alt="News"
+                  class="h-32 w-full object-cover"
+                />
+                <h4 class="news-small line-clamp-2">
+                  Aloe Vera: A Versatile Natural Remedy and Its Top Health
+                  Benefits
+                </h4>
               </a>
             </div>
           </div>
 
           <!-- CENTER COLUMN -->
-          <div
-            class="flex flex-col md:border-r md:border-[#d1d5db] pr-0 lg:pr-6"
-          >
+          <div class="flex flex-col space-y-4 lg:col-span-5">
             <a href="#" class="group block space-y-4">
               <figure class="overflow-hidden">
                 <img
                   src="./assets/news-3.jpg"
                   alt="Main News"
-                  class="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  class="h-72 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </figure>
               <div class="space-y-2">
@@ -584,60 +600,40 @@
           </div>
 
           <!-- RIGHT COLUMN -->
-          <div class="flex flex-col space-y-4">
-            <!-- Item 1 -->
-            <a href="#" class="group flex items-start gap-4">
-              <img
-                src="./assets/news-4.jpg"
-                alt="News"
-                class="h-[100px] w-[120px] flex-shrink-0 object-cover"
-              />
-              <div>
+          <div
+            class="flex flex-col justify-between divide-y divide-[#d1d5db] lg:col-span-3"
+          >
+            <div class="py-1 first:pt-0">
+              <a href="#" class="group block">
+                <h4 class="news-small">
+                  Simple and Effective Home Remedies to Reduce Stress Easily
+                </h4>
+              </a>
+            </div>
+
+            <div class="py-1">
+              <a href="#" class="group block">
+                <h4 class="news-small">
+                  The Vital Importance of a Balanced Diet and Healthy Lifestyle
+                </h4>
+              </a>
+            </div>
+
+            <div class="py-1">
+              <a href="#" class="group block">
                 <h4 class="news-small">
                   Unmonitored Rehabilitation Centers Raise Concerns
                 </h4>
-              </div>
-            </a>
+              </a>
+            </div>
 
-            <!-- Item 2 -->
-            <a href="#" class="group flex items-start gap-4">
-              <img
-                src="./assets/news-5.png"
-                alt="News"
-                class="h-[100px] w-[120px] flex-shrink-0 object-cover"
-              />
-              <div>
+            <div class="py-1 last:pb-0">
+              <a href="#" class="group block">
                 <h4 class="news-small">
                   Trapped in Exploitation Under the Promise of Jobs
                 </h4>
-              </div>
-            </a>
-
-            <!-- Item 3 -->
-            <a href="#" class="group flex items-start gap-4">
-              <img
-                src="./assets/news-6.jpeg"
-                alt="News"
-                class="h-[100px] w-[120px] flex-shrink-0 object-cover"
-              />
-              <div>
-                <h4 class="news-small">Cartoon of the Week</h4>
-              </div>
-            </a>
-
-            <!-- Item 4 -->
-            <a href="#" class="group flex items-start gap-4">
-              <img
-                src="./assets/news-7.jpg"
-                alt="News"
-                class="h-[100px] w-[120px] flex-shrink-0 object-cover"
-              />
-              <div>
-                <h4 class="news-small">
-                  Lack of Preparation to Support an Aging Society
-                </h4>
-              </div>
-            </a>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -771,94 +767,58 @@
                 </a>
               </div>
 
-              <!-- Lifestyle Grid (6 Cards) -->
-              <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
-                <!-- Card 1 -->
-                <a href="#" class="group block space-y-2">
-                  <div class="overflow-hidden">
-                    <img
-                      src="./assets/rajniti1.png"
-                      alt="Lifestyle News"
-                      class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                  </div>
-                  <h3 class="news-small">
-                    "Social Media Has Become a Powerful New Tool for Cultural
-                    Revolution"
-                  </h3>
-                </a>
+              <!-- Layout: Big Featured Left, 2 Stacked Cards Right -->
+              <div class="grid grid-cols-1 gap-6 lg:grid-cols-12">
+                <!-- LEFT FEATURED -->
+                <div class="space-y-4 lg:col-span-7">
+                  <a href="#" class="group block space-y-4">
+                    <h3 class="news-big">
+                      Special Report "Social Media Has Become a Powerful New
+                      Tool for Cultural Revolution"
+                    </h3>
+                    <div class="overflow-hidden">
+                      <img
+                        src="./assets/rajniti1.png"
+                        alt="Lifestyle News"
+                        class="h-[370px] w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                  </a>
+                </div>
 
-                <!-- Card 2 -->
-                <a href="#" class="group block space-y-2">
-                  <div class="overflow-hidden">
-                    <img
-                      src="./assets/rajniti2.jpg"
-                      alt="Lifestyle News"
-                      class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                  </div>
-                  <h3 class="news-small">
-                    New Land Policy: A 600-Day Target, Urbanization Pressures,
-                    and Ground Realities
-                  </h3>
-                </a>
+                <!-- RIGHT COLUMN -->
+                <div
+                  class="flex flex-col space-y-4 lg:col-span-5 lg:border-l lg:border-[#d1d5db] lg:pl-6"
+                >
+                  <!-- Card 2 -->
+                  <a href="#" class="group block space-y-2">
+                    <div class="overflow-hidden">
+                      <img
+                        src="./assets/rajniti2.jpg"
+                        alt="Lifestyle News"
+                        class="h-44 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                    <h3 class="news-small">
+                      New Land Policy: A 600-Day Target, Urbanization Pressures,
+                      and Ground Realities
+                    </h3>
+                  </a>
 
-                <!-- Card 3 -->
-                <a href="#" class="group block space-y-2">
-                  <div class="overflow-hidden">
-                    <img
-                      src="./assets/rajniti3.png"
-                      alt="Lifestyle News"
-                      class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                  </div>
-                  <h3 class="news-small">
-                    Modern Ideologies: A Period of Rebirth and Transformation
-                  </h3>
-                </a>
-
-                <!-- Card 4 -->
-                <a href="#" class="group block space-y-2">
-                  <div class="overflow-hidden">
-                    <img
-                      src="./assets/rajniti4.png"
-                      alt="Lifestyle News"
-                      class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                  </div>
-                  <h3 class="news-small">
-                    Key Questions to Clarify Prior to Constitutional Amendments
-                  </h3>
-                </a>
-
-                <!-- Card 5 -->
-                <a href="#" class="group block space-y-2">
-                  <div class="overflow-hidden">
-                    <img
-                      src="./assets/rajniti5.jpg"
-                      alt="Lifestyle News"
-                      class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                  </div>
-                  <h3 class="news-small">
-                    Navigating Civic Responsibilities in Today's Nation
-                  </h3>
-                </a>
-
-                <!-- Card 6 -->
-                <a href="#" class="group block space-y-2">
-                  <div class="overflow-hidden">
-                    <img
-                      src="./assets/rajniti6.png"
-                      alt="Lifestyle News"
-                      class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                  </div>
-                  <h3 class="news-small">
-                    Traditional Parties in Regional Governance: Why Ignore the
-                    Public Mandate?
-                  </h3>
-                </a>
+                  <!-- Card 3 -->
+                  <a href="#" class="group block space-y-2">
+                    <div class="overflow-hidden">
+                      <img
+                        src="./assets/rajniti3.png"
+                        alt="Lifestyle News"
+                        class="h-44 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                    <h3 class="news-small">
+                      Modern Ideologies: A Period of Rebirth and Transformation
+                    </h3>
+                  </a>
+                </div>
               </div>
             </section>
           </div>
@@ -1143,113 +1103,82 @@
           </a>
         </div>
 
-        <!-- News Grid -->
-        <div class="grid grid-cols-1 gap-6 lg:grid-cols-10">
-          <!-- LEFT -->
-          <div class="lg:col-span-4">
-            <a
-              href="#"
-              class="group relative block h-full min-h-[350px] overflow-hidden"
-            >
+        <!-- Main Section -->
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-12">
+          <!-- LEFT COLUMN -->
+          <div class="lg:col-span-5">
+            <a href="#" class="group block h-full overflow-hidden">
               <img
                 src="./assets/sport1.jpg"
-                alt="Main Health News"
-                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                alt="Sports Portrait"
+                class="h-[300px] sm:h-[380px] lg:h-full lg:min-h-[420px] w-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
+            </a>
+          </div>
 
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
-              ></div>
-
-              <div class="absolute bottom-0 left-0 right-0 p-4">
-                <h2 class="news-big-white">
+          <!-- RIGHT COLUMN -->
+          <div class="flex flex-col justify-between space-y-6 lg:col-span-7">
+            <!-- TOP FEATURED HEADLINE -->
+            <a href="#" class="group block space-y-2">
+              <div class="flex items-start gap-4">
+                <!-- Hidden on mobile (hidden), shown on desktop (lg:block) -->
+                <i
+                  class="ph ph-arrow-fat-left hidden lg:block text-2xl text-[#091633] shrink-0 mt-2 group-hover:text-[var(--primary-color)]"
+                ></i>
+                <h3
+                  class="news-big text-2xl sm:text-3xl lg:text-[36px] font-bold leading-tight lg:leading-[44px]"
+                >
                   Argentina 3–1 Victory Over Jordan: Another Goal Added to
                   Messi's Tally
-                </h2>
+                </h3>
               </div>
             </a>
-          </div>
 
-          <!-- CENTER -->
-          <div class="lg:col-span-3">
-            <a
-              href="#"
-              class="group relative block h-full min-h-[350px] overflow-hidden"
-            >
-              <img
-                src="./assets/sport2.jpg"
-                alt="Main Health News"
-                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-              />
+            <!-- DIVIDER LINE -->
+            <div class="border-t border-[#d1d5db]"></div>
 
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
-              ></div>
-
-              <div class="absolute bottom-0 left-0 right-0 p-4">
-                <h2 class="news-big-white">
+            <!-- BOTTOM 3-COLUMN CARDS GRID -->
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+              <!-- Card 1 -->
+              <a href="#" class="group block space-y-2">
+                <div class="overflow-hidden">
+                  <img
+                    src="./assets/sport2.jpg"
+                    alt="Sports News"
+                    class="h-44 sm:h-32 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <h4 class="news-small">
                   France Wins Group I After Defeating Norway
-                </h2>
-              </div>
-            </a>
-          </div>
-
-          <!-- RIGHT -->
-          <div class="lg:col-span-3">
-            <div class="flex flex-col space-y-4">
-              <!-- Item 1 -->
-              <a href="#" class="group flex items-start gap-4">
-                <img
-                  src="./assets/sport3.png"
-                  alt="Health News"
-                  class="h-[100px] w-[120px] flex-shrink-0 object-cover"
-                />
-                <div>
-                  <h4 class="news-small">
-                    Australia Advances to the World Cup Knockout Stage
-                  </h4>
-                </div>
+                </h4>
               </a>
 
-              <!-- Item 2 -->
-              <a href="#" class="group flex items-start gap-4">
-                <img
-                  src="./assets/sport4.jpg"
-                  alt="Health News"
-                  class="h-[100px] w-[120px] flex-shrink-0 object-cover"
-                />
-                <div>
-                  <h4 class="news-small">
-                    Senegal Secures an Impressive Win Against Iraq
-                  </h4>
+              <!-- Card 2 -->
+              <a href="#" class="group block space-y-2">
+                <div class="overflow-hidden">
+                  <img
+                    src="./assets/sport3.png"
+                    alt="Sports News"
+                    class="h-44 sm:h-32 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
                 </div>
+                <h4 class="news-small">
+                  Australia Advances to the World Cup Knockout Stage
+                </h4>
               </a>
 
-              <!-- Item 3 -->
-              <a href="#" class="group flex items-start gap-4">
-                <img
-                  src="./assets/sport5.jpg"
-                  alt="Health News"
-                  class="h-[100px] w-[120px] flex-shrink-0 object-cover"
-                />
-                <div>
-                  <h4 class="news-small">
-                    Brazil and Morocco into Knockout Stage, Scotland Still Holds
-                    Hopes
-                  </h4>
+              <!-- Card 3 -->
+              <a href="#" class="group block space-y-2">
+                <div class="overflow-hidden">
+                  <img
+                    src="./assets/sport4.jpg"
+                    alt="Sports News"
+                    class="h-44 sm:h-32 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
                 </div>
-              </a>
-
-              <!-- Item 4 -->
-              <a href="#" class="group flex items-start gap-4">
-                <img
-                  src="./assets/sport6.jpg"
-                  alt="Health News"
-                  class="h-[100px] w-[120px] flex-shrink-0 object-cover"
-                />
-                <div>
-                  <h4 class="news-small">FIFA Suspends ANFA</h4>
-                </div>
+                <h4 class="news-small">
+                  Senegal Secures an Impressive Win Against Iraq
+                </h4>
               </a>
             </div>
           </div>
@@ -1412,110 +1341,6 @@
                   class="h-full w-full object-cover"
                 />
               </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Society Section -->
-    <section class="py-8">
-      <div class="mx-auto max-w-7xl px-4 space-y-6">
-        <!-- Heading -->
-        <div class="flex items-center justify-between gap-4">
-          <div class="flex flex-1 items-center gap-3">
-            <h2 class="category-title uppercase">Society</h2>
-            <div class="hr-line"></div>
-          </div>
-          <a
-            href="#"
-            class="group flex items-center gap-2 text-sm font-medium text-[var(--meta-color)] hover:text-[var(--primary-color)]"
-          >
-            <span class="hidden sm:inline">All</span>
-            <i
-              class="ph ph-arrow-right inline-block mt-1 transition-transform duration-500 group-hover:translate-x-0.5"
-            ></i>
-          </a>
-        </div>
-
-        <!-- News Grid -->
-        <div class="grid grid-cols-1 gap-6 lg:grid-cols-10">
-          <!-- LEFT -->
-          <div class="lg:col-span-5 space-y-4">
-            <a href="#" class="group relative block">
-              <div class="h-[260px] md:h-[483px] overflow-hidden">
-                <img
-                  src="./assets/samaj1.png"
-                  alt="Main Society News"
-                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-            </a>
-
-            <h1 class="news-big line-clamp-2">
-              75-Year-Old Woman Dies After Being Hit by a School Bus
-            </h1>
-          </div>
-
-          <!-- RIGHT -->
-          <div class="lg:col-span-5 inline-grid grid-cols-2 gap-4">
-            <!-- Item 1 -->
-            <a href="#" class="group flex flex-col gap-2">
-              <div class="h-48 w-full overflow-hidden shrink-0">
-                <img
-                  src="./assets/samaj2.jpg"
-                  alt="Society News"
-                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <h1 class="news-medium line-clamp-2">
-                Resident and Intern Doctors Announce Protests
-              </h1>
-            </a>
-
-            <!-- Item 2 -->
-            <a href="#" class="group flex flex-col gap-2">
-              <div class="h-48 w-full overflow-hidden shrink-0">
-                <img
-                  src="./assets/samaj3.jpg"
-                  alt="Society News"
-                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <h1 class="news-medium line-clamp-2">
-                Employment Opportunities Will Be Created in Agriculture and
-                Environment Sectors: Minister Chaudhary
-              </h1>
-            </a>
-
-            <!-- Item 3 -->
-            <a href="#" class="group flex flex-col gap-2">
-              <div class="h-48 w-full overflow-hidden shrink-0">
-                <img
-                  src="./assets/samaj4.jpg"
-                  alt="Society News"
-                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <h1 class="news-medium line-clamp-2">
-                Human Rights Commission Urges Guarantee of Youth Rights and
-                Meaningful Participation
-              </h1>
-            </a>
-
-            <!-- Item 4 -->
-            <a href="#" class="group flex flex-col gap-2">
-              <div class="h-48 w-full overflow-hidden shrink-0">
-                <img
-                  src="./assets/samaj5.jpg"
-                  alt="Society News"
-                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <h1 class="news-medium line-clamp-2">
-                'Management of Annapurna and Manaslu Conservation Areas Should
-                Be Under Provincial Jurisdiction'
-              </h1>
             </a>
           </div>
         </div>
@@ -1815,6 +1640,110 @@
       </div>
     </section>
 
+    <!-- Society Section -->
+    <section class="py-8">
+      <div class="mx-auto max-w-7xl px-4 space-y-6">
+        <!-- Heading -->
+        <div class="flex items-center justify-between gap-4">
+          <div class="flex flex-1 items-center gap-3">
+            <h2 class="category-title uppercase">Society</h2>
+            <div class="hr-line"></div>
+          </div>
+          <a
+            href="#"
+            class="group flex items-center gap-2 text-sm font-medium text-[var(--meta-color)] hover:text-[var(--primary-color)]"
+          >
+            <span class="hidden sm:inline">All</span>
+            <i
+              class="ph ph-arrow-right inline-block mt-1 transition-transform duration-500 group-hover:translate-x-0.5"
+            ></i>
+          </a>
+        </div>
+
+        <!-- News Grid -->
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-10">
+          <!-- LEFT -->
+          <div class="lg:col-span-5 space-y-4">
+            <a href="#" class="group relative block">
+              <div class="h-[260px] md:h-[483px] overflow-hidden">
+                <img
+                  src="./assets/samaj1.png"
+                  alt="Main Society News"
+                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+            </a>
+
+            <h1 class="news-big line-clamp-2">
+              75-Year-Old Woman Dies After Being Hit by a School Bus
+            </h1>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="lg:col-span-5 inline-grid grid-cols-2 gap-4">
+            <!-- Item 1 -->
+            <a href="#" class="group flex flex-col gap-2">
+              <div class="h-48 w-full overflow-hidden shrink-0">
+                <img
+                  src="./assets/samaj2.jpg"
+                  alt="Society News"
+                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <h1 class="news-medium line-clamp-2">
+                Resident and Intern Doctors Announce Protests
+              </h1>
+            </a>
+
+            <!-- Item 2 -->
+            <a href="#" class="group flex flex-col gap-2">
+              <div class="h-48 w-full overflow-hidden shrink-0">
+                <img
+                  src="./assets/samaj3.jpg"
+                  alt="Society News"
+                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <h1 class="news-medium line-clamp-2">
+                Employment Opportunities Will Be Created in Agriculture and
+                Environment Sectors: Minister Chaudhary
+              </h1>
+            </a>
+
+            <!-- Item 3 -->
+            <a href="#" class="group flex flex-col gap-2">
+              <div class="h-48 w-full overflow-hidden shrink-0">
+                <img
+                  src="./assets/samaj4.jpg"
+                  alt="Society News"
+                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <h1 class="news-medium line-clamp-2">
+                Human Rights Commission Urges Guarantee of Youth Rights and
+                Meaningful Participation
+              </h1>
+            </a>
+
+            <!-- Item 4 -->
+            <a href="#" class="group flex flex-col gap-2">
+              <div class="h-48 w-full overflow-hidden shrink-0">
+                <img
+                  src="./assets/samaj5.jpg"
+                  alt="Society News"
+                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <h1 class="news-medium line-clamp-2">
+                'Management of Annapurna and Manaslu Conservation Areas Should
+                Be Under Provincial Jurisdiction'
+              </h1>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Profiles Section -->
     <section class="py-8">
       <div class="mx-auto max-w-7xl px-4 space-y-6">
@@ -1835,78 +1764,72 @@
           </a>
         </div>
 
-        <div class="space-y-6">
-          <!-- TOP FEATURED SECTION -->
-          <a
-            href="#"
-            class="group grid grid-cols-1 items-center gap-4 md:grid-cols-12 bg-[var(--footer-color)]"
-          >
-            <!-- Left -->
-            <div class="overflow-hidden md:col-span-6">
+        <!-- 3-Column Layout-->
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <!-- COLUMN 1-->
+          <div class="flex flex-col justify-between divide-y divide-[#d1d5db]">
+            <div class="py-4 first:pt-0">
+              <a href="#" class="group flex items-start">
+                <h4 class="news-small">
+                  Unveiling the Journey of Visionary Artists and Industry
+                  Leaders
+                </h4>
+              </a>
+            </div>
+
+            <div class="py-4">
+              <a href="#" class="group flex items-start">
+                <h4 class="news-small">
+                  How Leading Actresses Are Shaping Modern Cinematic
+                  Storytelling
+                </h4>
+              </a>
+            </div>
+
+            <div class="py-4 last:pb-0">
+              <a href="#" class="group flex items-start">
+                <h4 class="news-small">
+                  Dayahang and Miruna Reunite for New Feature Film 'Rato Ghera'
+                </h4>
+              </a>
+            </div>
+
+            <div class="py-4 last:pb-0">
+              <a href="#" class="group flex items-start">
+                <h4 class="news-small">
+                  Dayahang and Miruna Reunite for New Feature Film 'Rato Ghera'
+                </h4>
+              </a>
+            </div>
+          </div>
+
+          <!-- COLUMN 2 -->
+          <a href="#" class="group block space-y-3">
+            <div class="overflow-hidden">
               <img
                 src="./assets/enter1.png"
-                alt="Featured Profile"
-                class="h-[260px] md:h-[420px] w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                alt="Profile Article"
+                class="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
             </div>
-
-            <!-- Right -->
-            <div class="space-y-4 md:col-span-6 px-4">
-              <h2 class="news-big-white">
-                Unveiling the Journey of Visionary Artists and Industry Leaders
-              </h2>
-              <p class="line-clamp-5 text-white/80">
-                An in-depth look into the lives, achievements, and contributions
-                of prominent figures, senior creators, and influential advisors
-                who continue to shape contemporary art and culture.
-              </p>
-            </div>
+            <h3 class="news-medium">
+              Spotlight on Iconic Performers Redefining the Industry Standard
+            </h3>
           </a>
 
-          <!-- BOTTOM 3-COLUMN CARDS SECTION -->
-          <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
-            <!-- Bottom Card 1 -->
-            <a href="#" class="group block space-y-2">
-              <div class="overflow-hidden">
-                <img
-                  src="./assets/enter2.png"
-                  alt="Profile Article"
-                  class="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <h3 class="news-medium">
-                How Leading Actresses Are Shaping Modern Cinematic Storytelling
-              </h3>
-            </a>
-
-            <!-- Bottom Card 2 -->
-            <a href="#" class="group block space-y-2">
-              <div class="overflow-hidden">
-                <img
-                  src="./assets/enter3.png"
-                  alt="Profile Article"
-                  class="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <h3 class="news-medium">
-                Spotlight on Iconic Performers Redefining the Industry Standard
-              </h3>
-            </a>
-
-            <!-- Bottom Card 3 -->
-            <a href="#" class="group block space-y-2">
-              <div class="overflow-hidden">
-                <img
-                  src="./assets/enter4.png"
-                  alt="Profile Article"
-                  class="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <h3 class="news-medium">
-                Dayahang and Miruna Reunite for New Feature Film 'Rato Ghera'
-              </h3>
-            </a>
-          </div>
+          <!-- COLUMN 3 -->
+          <a href="#" class="group block space-y-3">
+            <div class="overflow-hidden">
+              <img
+                src="./assets/enter2.png"
+                alt="Profile Article"
+                class="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+            <h3 class="news-medium">
+              An In-Depth Look Into Contemporary Art and Culture Pioneers
+            </h3>
+          </a>
         </div>
       </div>
     </section>

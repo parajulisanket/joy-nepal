@@ -163,3 +163,154 @@ document.addEventListener("DOMContentLoaded", () => {
     loadWeather();
   }
 });
+
+// banner carousle
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll(".carousel-slide");
+  const counterEl = document.getElementById("slide-counter");
+
+  const nextBtn = document.getElementById("next-btn");
+  const prevBtn = document.getElementById("prev-btn");
+
+  let currentIndex = 0;
+  let isAnimating = false;
+  let autoRotateTimer = null;
+
+  if (!slides.length) return;
+
+  function updateButtons() {
+    // Disable previous button on first slide
+    if (currentIndex === 0) {
+      prevBtn?.classList.add("opacity-30", "pointer-events-none");
+    } else {
+      prevBtn?.classList.remove("opacity-30", "pointer-events-none");
+    }
+
+    // Disable next button on last slide
+    if (currentIndex === slides.length - 1) {
+      nextBtn?.classList.add("opacity-30", "pointer-events-none");
+    } else {
+      nextBtn?.classList.remove("opacity-30", "pointer-events-none");
+    }
+  }
+
+  function setSlideStates(newIndex, direction) {
+    if (isAnimating || newIndex === currentIndex) return;
+
+    // Don't allow movement outside carousel
+    if (newIndex < 0 || newIndex >= slides.length) return;
+
+    isAnimating = true;
+
+    const currentSlide = slides[currentIndex];
+    const nextSlide = slides[newIndex];
+
+    nextSlide.classList.remove("pointer-events-none", "opacity-0", "z-0");
+
+    nextSlide.classList.add("z-10");
+
+    // Position incoming slide
+    if (direction === "next") {
+      nextSlide.classList.remove("-translate-x-full");
+      nextSlide.classList.add("translate-x-full");
+    } else {
+      nextSlide.classList.remove("translate-x-full");
+      nextSlide.classList.add("-translate-x-full");
+    }
+
+    // Force repaint
+    void nextSlide.offsetWidth;
+
+    // Move current slide away
+    if (direction === "next") {
+      currentSlide.classList.remove("translate-x-0");
+      currentSlide.classList.add("-translate-x-full");
+    } else {
+      currentSlide.classList.remove("translate-x-0");
+      currentSlide.classList.add("translate-x-full");
+    }
+
+    // Bring new slide in
+    nextSlide.classList.remove("translate-x-full", "-translate-x-full");
+
+    nextSlide.classList.add("translate-x-0");
+
+    setTimeout(() => {
+      currentSlide.classList.remove("z-10");
+
+      currentSlide.classList.add("z-0", "pointer-events-none", "opacity-0");
+
+      currentIndex = newIndex;
+
+      updateButtons();
+
+      isAnimating = false;
+    }, 500);
+
+    if (counterEl) {
+      counterEl.textContent = `${newIndex + 1} / ${slides.length}`;
+    }
+  }
+
+  function nextSlide() {
+    // STOP if already at last slide
+    if (currentIndex >= slides.length - 1) {
+      stopTimer();
+      return;
+    }
+
+    setSlideStates(currentIndex + 1, "next");
+  }
+
+  function prevSlide() {
+    // STOP if already at first slide
+    if (currentIndex <= 0) return;
+
+    setSlideStates(currentIndex - 1, "prev");
+  }
+
+  function startTimer() {
+    stopTimer();
+
+    autoRotateTimer = setInterval(() => {
+      // Stop automatic carousel when last slide is reached
+      if (currentIndex >= slides.length - 1) {
+        stopTimer();
+        return;
+      }
+
+      nextSlide();
+    }, 10000);
+  }
+
+  function stopTimer() {
+    if (autoRotateTimer) {
+      clearInterval(autoRotateTimer);
+      autoRotateTimer = null;
+    }
+  }
+
+  function resetTimer() {
+    stopTimer();
+
+    // Only restart if we're not on the last slide
+    if (currentIndex < slides.length - 1) {
+      startTimer();
+    }
+  }
+
+  nextBtn?.addEventListener("click", () => {
+    nextSlide();
+    resetTimer();
+  });
+
+  prevBtn?.addEventListener("click", () => {
+    prevSlide();
+    resetTimer();
+  });
+
+  // Initial button state
+  updateButtons();
+
+  startTimer();
+});

@@ -359,144 +359,291 @@
       </div>
     </aside>
 
-    <!-- News Banner / Breaking Banners + Sticky Sidebar -->
+    <!-- banner -->
     <section class="py-8">
       <div class="mx-auto max-w-7xl px-4">
-        <div class="grid grid-cols-1 gap-8 lg:grid-cols-[70%_30%]">
-          <div class="divide-y divide-[var(--border-color)]">
-            <!-- Breaking Banner 1 -->
-            <div class="pb-6">
-              <div class="mx-auto text-center space-y-2">
-                <a href="./single.html" class="news-banner">
-                  Aloe Vera: A Versatile Natural Remedy & Its Top Health
-                  Benefits
-                </a>
-
-                <!-- Meta -->
-                <div class="flex items-center justify-center gap-2">
-                  <img
-                    src="./assets/dummy.jpeg"
-                    alt="Shambhu Regmi"
-                    class="h-9 w-9 rounded-full border border-gray-400 object-cover p-0.5"
-                  />
-                  <div class="text-left">
-                    <p class="meta-author text-sm font-medium">Shambhu Regmi</p>
-                  </div>
-                </div>
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-12">
+          <!-- LEFT COLUMN: TRENDING NOW -->
+          <aside class="lg:col-span-3 space-y-6">
+            <!-- Heading -->
+            <div class="flex items-center justify-between gap-4">
+              <div class="flex flex-1 items-center gap-3">
+                <h2 class="category-title">Trending Now</h2>
+                <div class="hr-line"></div>
               </div>
             </div>
 
-            <!-- Banner 2 with Image -->
-            <div class="py-6 space-y-4">
-              <div class="mx-auto text-center space-y-2">
-                <a href="./single.html" class="news-banner">
-                  The Struggle for a Separate Special Bench
-                </a>
-
-                <!-- Meta -->
-                <div class="flex items-center justify-center gap-2">
-                  <img
-                    src="./assets/dummy.jpeg"
-                    alt="Shambhu Regmi"
-                    class="h-9 w-9 rounded-full border border-gray-400 object-cover p-0.5"
-                  />
-                  <div class="text-left">
-                    <p class="meta-author text-sm font-medium">Shambhu Regmi</p>
+            <ul class="space-y-4">
+              <!-- Item 1 -->
+              <li>
+                <a href="#" class="group flex items-start gap-3">
+                  <div class="relative flex-shrink-0">
+                    <img
+                      src="./assets/news-3.jpg"
+                      alt="News"
+                      class="h-[114px] w-[114px] object-cover"
+                    />
                   </div>
-                </div>
+                  <h4 class="trending">
+                    Hayden Panettiere Shared Heartbreaking Final Post Weeks
+                    Before Death
+                  </h4>
+                </a>
+              </li>
+              <!-- Item 2 -->
+              <li>
+                <a href="#" class="group flex items-start gap-3">
+                  <div class="relative flex-shrink-0">
+                    <img
+                      src="./assets/news-1.jpg"
+                      alt="News"
+                      class="h-[114px] w-[114px] object-cover"
+                    />
+                  </div>
+                  <h4 class="trending">
+                    Hayden Panettiere Shared Heartbreaking Final Post Weeks
+                    Before Death
+                  </h4>
+                </a>
+              </li>
+              <!-- Item 3 -->
+              <li>
+                <a href="#" class="group flex items-start gap-3">
+                  <div class="relative flex-shrink-0">
+                    <img
+                      src="./assets/news-6.jpeg"
+                      alt="News"
+                      class="h-[114px] w-[114px] object-cover"
+                    />
+                  </div>
+                  <h4 class="trending">
+                    Hayden Panettiere Shared Heartbreaking Final Post Weeks
+                    Before Death
+                  </h4>
+                </a>
+              </li>
+              <!-- Item 4 -->
+              <li>
+                <a href="#" class="group flex items-start gap-3">
+                  <div class="relative flex-shrink-0">
+                    <img
+                      src="./assets/news-2.jpeg"
+                      alt="News"
+                      class="h-[114px] w-[114px] object-cover"
+                    />
+                  </div>
+                  <h4 class="trending">
+                    Hayden Panettiere Shared Heartbreaking Final Post Weeks
+                    Before Death
+                  </h4>
+                </a>
+              </li>
+              <!-- Item 5 -->
+              <li>
+                <a href="#" class="group flex items-start gap-3">
+                  <div class="relative flex-shrink-0">
+                    <img
+                      src="./assets/news-6.jpeg"
+                      alt="News"
+                      class="h-[114px] w-[114px] object-cover"
+                    />
+                  </div>
+                  <h4 class="trending">
+                    Hayden Panettiere Shared Heartbreaking Final Post Weeks
+                    Before Death
+                  </h4>
+                </a>
+              </li>
+            </ul>
+          </aside>
+
+          <!-- MIDDLE COLUMN -->
+          <main class="lg:col-span-6 bg-[#091633] p-4 flex flex-col min-h-0">
+            <!-- Header -->
+            <div class="flex items-center justify-between gap-4 shrink-0 mb-4">
+              <div class="flex flex-1 items-center gap-3">
+                <h2
+                  class="category-title-white italic uppercase font-bold text-xl text-white tracking-wide whitespace-nowrap"
+                >
+                  Today's Hot Photos
+                </h2>
+
+                <div class="hr-line bg-gray-600 h-[1px] flex-1"></div>
               </div>
-
-              <!-- Image -->
-              <figure class="overflow-hidden">
-                <img
-                  src="./assets/news-2.jpeg"
-                  alt="History Standing in the Forest"
-                  class="h-[260px] w-full object-cover md:h-[340px] lg:h-[500px]"
-                />
-              </figure>
             </div>
-          </div>
 
-          <!-- RIGHT COLUMN: Sticky Trending Now Sidebar -->
-          <aside class="relative">
-            <div class="sticky top-24 border-l border-[#d1d5db] p-6">
-              <!-- Header -->
-              <div
-                class="mb-4 flex items-center gap-2 border-b border-[#d1d5db] pb-2"
+            <!-- Carousel Area -->
+            <div
+              id="hot-photos-carousel"
+              class="relative w-full flex-1 min-h-0"
+            >
+              <!-- NAVIGATION ARROWS -->
+              <button
+                id="prev-btn"
+                class="absolute left-2 top-[45%] -translate-y-1/2 z-30 text-white/90 hover:text-[#091633] focus:outline-none p-1 cursor-pointer drop-shadow-md"
+                aria-label="Previous Slide"
               >
-                <i
-                  class="ph ph-trend-up text-3xl text-[var(--primary-color)]"
-                ></i>
-                <h3 class="category-title uppercase">Trending</h3>
+                <i class="ph ph-caret-left font-bold text-4xl"></i>
+              </button>
+
+              <button
+                id="next-btn"
+                class="absolute right-2 top-[45%] -translate-y-1/2 z-30 text-white/90 hover:text-[#091633] focus:outline-none p-1 cursor-pointer drop-shadow-md"
+                aria-label="Next Slide"
+              >
+                <i class="ph ph-caret-right font-bold text-4xl"></i>
+              </button>
+
+              <!-- SLIDES CONTAINER -->
+              <div
+                class="slides-wrapper relative w-full h-full overflow-hidden"
+              >
+                <!-- Slide 1 -->
+                <div
+                  class="carousel-slide relative lg:absolute lg:inset-0 w-full lg:h-full flex flex-col transition-transform duration-500 ease-in-out translate-x-0 z-10"
+                >
+                  <div
+                    class="relative w-full aspect-[4/3] lg:aspect-auto lg:flex-1 lg:min-h-0 overflow-hidden bg-[#091633]"
+                  >
+                    <img
+                      src="./assets/news-2.jpeg"
+                      alt="Vanessa Hudgens"
+                      class="absolute inset-0 w-full h-full object-cover object-center"
+                    />
+
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"
+                    ></div>
+                  </div>
+
+                  <div class="pt-3 space-y-1 shrink-0">
+                    <h2 class="news-big-white">Vanessa Hudgens</h2>
+
+                    <p class="text-gray-300 line-clamp-2">
+                      Basically, what she's going to do is slay. The "Sneaker
+                      Night" singer attends the 2026 event in Los Angeles.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div
+                  class="carousel-slide absolute inset-0 w-full h-full flex flex-col transition-transform duration-500 ease-in-out translate-x-full z-0 pointer-events-none opacity-0"
+                >
+                  <div
+                    class="relative w-full flex-1 min-h-0 overflow-hidden bg-[#091633]"
+                  >
+                    <img
+                      src="./assets/news-1.jpg"
+                      alt="Vanessa Hudgens"
+                      class="absolute inset-0 w-full h-full object-cover object-center"
+                    />
+
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"
+                    ></div>
+                  </div>
+                  <div class="pt-3 space-y-1 shrink-0">
+                    <h2 class="news-big-white">Second News Title</h2>
+
+                    <p class="text-gray-300 line-clamp-2">
+                      Description for the second news item goes here. Adjust
+                      text as needed.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div
+                  class="carousel-slide absolute inset-0 w-full h-full flex flex-col transition-transform duration-500 ease-in-out translate-x-full z-0 pointer-events-none opacity-0"
+                >
+                  <div
+                    class="relative w-full flex-1 min-h-0 overflow-hidden bg-[#091633]"
+                  >
+                    <img
+                      src="./assets/news-3.jpg"
+                      alt="Vanessa Hudgens"
+                      class="absolute inset-0 w-full h-full object-cover object-center"
+                    />
+
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"
+                    ></div>
+                  </div>
+
+                  <div class="pt-3 space-y-1 shrink-0">
+                    <h2 class="news-big-white">Third News Title</h2>
+
+                    <p class="text-gray-300 line-clamp-2">
+                      Description for the third news item goes here. Adjust text
+                      as needed.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+
+          <!-- RIGHT COLUMN -->
+          <aside class="lg:col-span-3 space-y-6">
+            <div class="flex items-center justify-between gap-4">
+              <div class="flex flex-1 items-center gap-3">
+                <h2 class="category-title">This Just In</h2>
+                <div class="hr-line"></div>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <!-- Featured Lead Item -->
+              <div class="space-y-2">
+                <img
+                  src="./assets/2.png"
+                  alt="Anne Hathaway"
+                  class="w-full h-64 object-cover"
+                />
+                <a href="./single.html" class="trending">
+                  Pregnant Anne Hathaway Has Funny Reaction to Question About
+                  Baby's Sex
+                </a>
               </div>
 
-              <!-- Trending List -->
-              <ul class="divide-y divide-[#d1d5db]">
-                <li class="py-3 first:pt-0 last:pb-0">
-                  <a href="./single.html" class="group flex">
-                    <div>
-                      <h4 class="news-small">
-                        Tech Innovations Reshaping Digital Media in 2026
-                      </h4>
-                      <span class="mt-4 block text-sm text-gray-500"
-                        >Technology • 5 min read</span
-                      >
-                    </div>
-                  </a>
+              <hr class="border-[#d1d5db]" />
+
+              <!-- Text Articles List -->
+              <ul class="space-y-4">
+                <li>
+                  <a href="#" class="trending"
+                    >Pregnant Anne Hathaway Has Funny Reaction to Question About
+                    Baby's Sex</a
+                  >
                 </li>
 
-                <li class="py-3 first:pt-0 last:pb-0">
-                  <a href="./single.html" class="group flex">
-                    <div>
-                      <h4 class="news-small">
-                        Sustainable Lifestyle Choices for Modern Living
-                      </h4>
-                      <span class="mt-4 block text-sm text-gray-500"
-                        >Lifestyle • 3 min read</span
-                      >
-                    </div>
-                  </a>
+                <li>
+                  <a href="#" class="trending"
+                    >Nicola Coughlan Makes Rare Comment About Boyfriend Jake
+                    Dunn</a
+                  >
                 </li>
 
-                <li class="py-3 first:pt-0 last:pb-0">
-                  <a href="./single.html" class="group flex">
-                    <div>
-                      <h4 class="news-small">
-                        Top Cultural Destinations to Visit This Season
-                      </h4>
-                      <span class="mt-4 block text-sm text-gray-500"
-                        >Tourism • 4 min read</span
-                      >
-                    </div>
-                  </a>
+                <li>
+                  <a href="#" class="trending"
+                    >Harry Jowsey Slams Claim Amber Mozo Wedding Was "Fake"</a
+                  >
                 </li>
 
-                <li class="py-3 first:pt-0 last:pb-0">
-                  <a href="./single.html" class="group flex">
-                    <div>
-                      <h4 class="news-small">
-                        Health Benefits of Daily Mindful Practices
-                      </h4>
-                      <span class="mt-4 block text-sm text-gray-500"
-                        >Health • 6 min read</span
-                      >
-                    </div>
-                  </a>
-                </li>
-
-                <li class="py-3 first:pt-0 last:pb-0">
-                  <a href="./single.html" class="group flex">
-                    <div>
-                      <h4 class="news-small">
-                        The Evolution of Himalayan Fashion & Modern Trends
-                      </h4>
-                      <span class="mt-4 block text-sm text-gray-500"
-                        >Fashion • 4 min read</span
-                      >
-                    </div>
-                  </a>
+                <li>
+                  <a href="#" class="trending"
+                    >Make Your Dorm Feel Like Home With These Personalized
+                    Finds</a
+                  >
                 </li>
               </ul>
+
+              <div class="pt-4 flex justify-end items-center">
+                <a href="#" class="text-sm font-bold uppercase text-[#e2107a]"
+                  >See More <i class="ph ph-caret-right font-black"></i
+                ></a>
+              </div>
             </div>
           </aside>
         </div>

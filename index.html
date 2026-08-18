@@ -376,7 +376,7 @@
             <ul class="space-y-4">
               <!-- Item 1 -->
               <li>
-                <a href="#" class="group flex items-start gap-3">
+                <a href="/single.html" class="group flex items-start gap-3">
                   <div class="relative flex-shrink-0">
                     <img
                       src="./assets/news-3.jpg"
@@ -1267,13 +1267,9 @@
           <div class="flex flex-col justify-between space-y-6 lg:col-span-7">
             <!-- TOP FEATURED HEADLINE -->
             <a href="#" class="group block space-y-2">
-              <div class="flex items-start gap-4">
-                <!-- Hidden on mobile (hidden), shown on desktop (lg:block) -->
-                <i
-                  class="ph ph-arrow-fat-left hidden lg:block text-2xl text-[#091633] shrink-0 mt-2 group-hover:text-[var(--primary-color)]"
-                ></i>
+              <div class="flex items-start">
                 <h3
-                  class="news-big text-2xl sm:text-3xl lg:text-[36px] font-bold leading-tight lg:leading-[44px]"
+                  class="news-banner text-2xl sm:text-3xl lg:text-[36px] font-bold leading-tight lg:leading-[44px]"
                 >
                   Argentina 3–1 Victory Over Jordan: Another Goal Added to
                   Messi's Tally
@@ -1375,10 +1371,10 @@
               </h1>
 
               <div
-                class="flex items-center gap-2 text-[var(--meta-color)] text-base"
+                class="flex items-center gap-2 text-[var(--meta-color)] text-sm"
               >
                 <i
-                  class="ph ph-clock text-base text-[var(--meta-color)] font-medium -mt-0.5"
+                  class="ph ph-clock text-sm text-[var(--meta-color)] font-medium mt-0.5"
                 ></i>
                 <span>3 hours ago</span>
               </div>
@@ -1402,10 +1398,10 @@
               </h1>
 
               <div
-                class="flex items-center gap-2 text-[var(--meta-color)] text-base"
+                class="flex items-center gap-2 text-[var(--meta-color)] text-sm"
               >
                 <i
-                  class="ph ph-clock text-base text-[var(--meta-color)] font-medium -mt-0.5"
+                  class="ph ph-clock text-sm text-[var(--meta-color)] font-medium mt-0.5"
                 ></i>
                 <span>3 hours ago</span>
               </div>
@@ -1430,10 +1426,10 @@
               </h1>
 
               <div
-                class="flex items-center gap-2 text-[var(--meta-color)] text-base"
+                class="flex items-center gap-2 text-[var(--meta-color)] text-sm"
               >
                 <i
-                  class="ph ph-clock text-base text-[var(--meta-color)] font-medium -mt-0.5"
+                  class="ph ph-clock text-sm text-[var(--meta-color)] font-medium mt-0.5"
                 ></i>
                 <span>3 hours ago</span>
               </div>
@@ -1495,16 +1491,12 @@
     </section>
 
     <!-- Health & Lifestyle Section -->
-    <section
-      class="py-8 bg-[var(--footer-color)]"
-      id="health-lifestyle-section"
-      data-tabs-container
-    >
+    <section class="py-8 bg-[var(--footer-color)]">
       <div class="max-w-7xl mx-auto px-4 space-y-6">
         <!-- Heading -->
         <div class="flex items-center justify-between gap-4">
           <div class="flex flex-1 items-center gap-3">
-            <h2 class="category-title-white uppercase">Health / Lifestyle</h2>
+            <h2 class="category-title-white uppercase">Health</h2>
             <div class="hr-line bg-white"></div>
           </div>
           <a
@@ -1518,34 +1510,10 @@
           </a>
         </div>
 
-        <!-- Tab Navigation Buttons -->
-        <div
-          class="flex items-center gap-2 bg-[#f5c518] p-1 w-fit"
-          role="tablist"
-        >
-          <button
-            type="button"
-            class="tab-btn px-4 py-1.5 text-sm font-semibold text-[var(--footer-color)] transition-all duration-300 bg-[var(--secondary-color)] shadow"
-            data-tab="health"
-            data-view-all="All Health"
-          >
-            Health
-          </button>
-          <button
-            type="button"
-            class="tab-btn px-4 py-1.5 text-sm font-semibold text-[#091633] transition-all duration-300"
-            data-tab="lifestyle"
-            data-view-all="All Lifestyle"
-          >
-            Lifestyle
-          </button>
-        </div>
-
         <!-- Tab Content Wrapper -->
-        <div class="tab-content-wrapper relative min-h-[350px]">
+        <div class="relative min-h-[350px]">
           <!-- HEALTH TAB CONTENT -->
           <div
-            data-pane="health"
             class="tab-pane transition-opacity duration-300 opacity-100 block"
           >
             <div class="grid grid-cols-1 lg:grid-cols-10 gap-6">
@@ -1644,127 +1612,6 @@
                   <img
                     src="./assets/health.jpg"
                     alt="Health News"
-                    class="h-[100px] w-[140px] flex-shrink-0 object-cover"
-                  />
-                  <div class="flex flex-col justify-between pl-1">
-                    <h4 class="news-small-white line-clamp-3">
-                      Do These 3 Yoga Asanas Every Morning to Relieve Mental
-                      Stress
-                    </h4>
-                    <div class="flex items-center gap-2 text-white/70 text-sm">
-                      <i
-                        class="ph ph-clock text-sm text-white/70 font-medium -mt-0.5"
-                      ></i>
-                      <span>3 hours ago</span>
-                    </div>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </div>
-
-          <!-- LIFESTYLE TAB CONTENT -->
-          <div
-            data-pane="lifestyle"
-            class="tab-pane transition-opacity duration-300 opacity-0 hidden"
-          >
-            <div class="grid grid-cols-1 lg:grid-cols-10 gap-6">
-              <!-- Featured Main -->
-              <article
-                class="lg:col-span-6 group relative overflow-hidden flex flex-col gap-4"
-              >
-                <div class="h-[260px] md:h-[448px] w-full overflow-hidden">
-                  <img
-                    src="/assets/4.png"
-                    alt="Lifestyle News"
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div class="flex flex-col justify-between flex-grow space-y-2">
-                  <div class="space-y-2">
-                    <h3 class="news-big-white line-clamp-2">
-                      Things Women Always Keep Secret
-                    </h3>
-                    <p class="text-white/80 line-clamp-2">
-                      How do a balanced diet and regular exercise help keep our
-                      bodies healthy and active? Learn expert advice.
-                    </p>
-                  </div>
-                  <div class="flex items-center gap-2 text-white/70 text-base">
-                    <i
-                      class="ph ph-clock text-base text-white/70 font-medium -mt-0.5"
-                    ></i>
-                    <span>3 hours ago</span>
-                  </div>
-                </div>
-              </article>
-
-              <!-- Side List -->
-              <div class="lg:col-span-4 flex flex-col gap-4">
-                <article class="group flex gap-4">
-                  <img
-                    src="./assets/samaj3.jpg"
-                    alt="Lifestyle News"
-                    class="h-[100px] w-[140px] flex-shrink-0 object-cover"
-                  />
-                  <div class="flex flex-col justify-between pl-1">
-                    <h4 class="news-small-white line-clamp-3">
-                      Do These 3 Yoga Asanas Every Morning to Relieve Mental
-                      Stress
-                    </h4>
-                    <div class="flex items-center gap-2 text-white/70 text-sm">
-                      <i
-                        class="ph ph-clock text-sm text-white/70 font-medium -mt-0.5"
-                      ></i>
-                      <span>3 hours ago</span>
-                    </div>
-                  </div>
-                </article>
-
-                <article class="group flex gap-4">
-                  <img
-                    src="./assets/3.png"
-                    alt="Lifestyle News"
-                    class="h-[100px] w-[140px] flex-shrink-0 object-cover"
-                  />
-                  <div class="flex flex-col justify-between pl-1">
-                    <h4 class="news-small-white line-clamp-3">
-                      Do These 3 Yoga Asanas Every Morning to Relieve Mental
-                      Stress
-                    </h4>
-                    <div class="flex items-center gap-2 text-white/70 text-sm">
-                      <i
-                        class="ph ph-clock text-sm text-white/70 font-medium -mt-0.5"
-                      ></i>
-                      <span>3 hours ago</span>
-                    </div>
-                  </div>
-                </article>
-
-                <article class="group flex gap-4">
-                  <img
-                    src="./assets/samaj5.jpg"
-                    alt="Lifestyle News"
-                    class="h-[100px] w-[140px] flex-shrink-0 object-cover"
-                  />
-                  <div class="flex flex-col justify-between pl-1">
-                    <h4 class="news-small-white line-clamp-3">
-                      Do These 3 Yoga Asanas Every Morning to Relieve Mental
-                      Stress
-                    </h4>
-                    <div class="flex items-center gap-2 text-white/70 text-sm">
-                      <i
-                        class="ph ph-clock text-sm text-white/70 font-medium -mt-0.5"
-                      ></i>
-                      <span>3 hours ago</span>
-                    </div>
-                  </div>
-                </article>
-
-                <article class="group flex gap-4">
-                  <img
-                    src="./assets/samaj3.jpg"
-                    alt="Lifestyle News"
                     class="h-[100px] w-[140px] flex-shrink-0 object-cover"
                   />
                   <div class="flex flex-col justify-between pl-1">
@@ -2208,6 +2055,5 @@
     <!-- scripts -->
     <script src="./scripts/index.js"></script>
     <script src="./scripts/carousel.js"></script>
-    <script src="./scripts/tabs.js"></script>
   </body>
 </html>

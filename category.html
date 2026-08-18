@@ -26,7 +26,7 @@
       <!-- TOP HEADER CONTAINER -->
       <div
         id="topHeaderWrapper"
-        class="grid grid-rows-[1fr] transition-[grid-template-rows,opacity] duration-300 ease-in-out [.is-scrolled_&]:grid-rows-[0fr] [.is-scrolled_&]:opacity-0 [.is-scrolled_&]:pointer-events-none"
+        class="grid grid-rows-[1fr] transition-[grid-template-rows,opacity] duration-300 ease-in-out lg:[.is-scrolled_&]:grid-rows-[0fr] lg:[.is-scrolled_&]:opacity-0 lg:[.is-scrolled_&]:pointer-events-none"
       >
         <!-- Overflow hidden wrapper inside grid -->
         <div class="overflow-hidden">
@@ -54,7 +54,7 @@
               <a
                 href="/"
                 aria-label="Joy Nepal Home"
-                class="text-2xl font-black tracking-widest uppercase md:text-4xl"
+                class="text-center text-xl font-bold leading-tight tracking-widest uppercase md:text-4xl"
               >
                 JOY NEPAL
               </a>
@@ -84,22 +84,22 @@
         </div>
       </div>
 
-      <!-- TOP / NAV SEPARATOR -->
+      <!-- TOP / NAV SEPARATOR (Only visible on desktop) -->
       <div
         id="headerDivider"
-        class="mx-auto max-w-7xl border-t border-white/20 transition-opacity duration-300 [.is-scrolled_&]:opacity-0 [.is-scrolled_&]:border-transparent"
+        class="hidden lg:block mx-auto max-w-7xl border-t border-white/20 transition-opacity duration-300 [.is-scrolled_&]:opacity-0 [.is-scrolled_&]:border-transparent"
       ></div>
 
-      <!-- MAIN NAVIGATION BAR -->
+      <!-- MAIN NAVIGATION BAR (Desktop links & Desktop sticky logo) -->
       <nav
         id="mainNavbar"
-        class="mx-auto flex h-[56px] max-w-7xl items-center px-4"
+        class="hidden lg:flex mx-auto h-[56px] max-w-7xl items-center px-4"
       >
-        <!-- STICKY LOGO -->
+        <!-- STICKY LOGO (Desktop only) -->
         <a
           id="stickyLogo"
           href="/"
-          class="flex items-center overflow-hidden text-lg font-black tracking-widest uppercase transition-all duration-300 ease-in-out w-0 opacity-0 pointer-events-none mr-0 [.is-scrolled_&]:w-auto [.is-scrolled_&]:mr-6 [.is-scrolled_&]:opacity-100 [.is-scrolled_&]:pointer-events-auto shrink-0"
+          class="flex items-center whitespace-nowrap max-w-none text-lg font-bold tracking-widest uppercase transition-all duration-300 ease-in-out w-0 opacity-0 pointer-events-none mr-0 [.is-scrolled_&]:w-auto [.is-scrolled_&]:mr-6 [.is-scrolled_&]:opacity-100 [.is-scrolled_&]:pointer-events-auto shrink-0"
           aria-label="Joy Nepal Home"
         >
           JOY NEPAL
@@ -108,7 +108,7 @@
         <!-- NAV LINKS -->
         <div
           id="desktopNavLinks"
-          class="nav-links hidden flex-1 items-center justify-center gap-10 text-sm font-semibold tracking-wide whitespace-nowrap lg:flex"
+          class="nav-links flex flex-1 items-center justify-center gap-10 text-sm font-semibold tracking-wide whitespace-nowrap"
         >
           <a href="/" class="hover:opacity-80 transition-opacity">Home</a>
           <a href="./category.html" class="hover:opacity-80 transition-opacity"
@@ -198,7 +198,7 @@
       <!-- Search Box -->
       <div
         id="searchBox"
-        class="w-full max-w-3xl -translate-y-4 rounded-2xl bg-white p-5 opacity-0 shadow-2xl transition-all duration-300 md:p-7"
+        class="w-full max-w-3xl -translate-y-4 bg-white p-5 opacity-0 shadow-2xl transition-all duration-300 md:p-7"
       >
         <!-- Search Top -->
         <div class="mb-5 flex items-center justify-between">
@@ -218,7 +218,7 @@
         <!-- Search Form -->
         <form id="searchForm">
           <div
-            class="flex items-center overflow-hidden rounded-xl border border-gray-200 bg-gray-50 focus-within:border-[var(--primary-color)] focus-within:bg-white"
+            class="flex items-center overflow-hidden border border-gray-200 bg-gray-50 focus-within:border-[var(--primary-color)] focus-within:bg-white"
           >
             <i class="ph ph-magnifying-glass ml-4 text-xl text-gray-400"></i>
 
@@ -232,7 +232,7 @@
 
             <button
               type="submit"
-              class="mr-2 rounded-lg bg-[var(--primary-color)] px-5 py-2.5 font-medium text-white transition hover:opacity-90"
+              class="mr-2 bg-[var(--primary-color)] px-5 py-2.5 font-medium text-white transition hover:opacity-90"
             >
               Search
             </button>
@@ -263,7 +263,7 @@
         <button
           id="closeSidebarButton"
           type="button"
-          class="sidebar-close-btn flex h-10 w-10 items-center justify-center rounded-full transition hover:bg-white/10"
+          class="sidebar-close-btn flex h-10 w-10 items-center justify-center text-white rounded-full transition hover:bg-white/10"
           aria-label="Close menu"
         >
           <i class="ph ph-x text-2xl"></i>
@@ -275,41 +275,13 @@
         class="sidebar-content h-[calc(100vh-80px)] overflow-y-auto px-4 py-5"
       >
         <nav class="sidebar-nav flex flex-col gap-1">
-          <a
-            href="#"
-            class="sidebar-link px-3 py-2 text-gray-700 hover:bg-gray-100 font-medium"
-            >Home</a
-          >
-          <a
-            href="#"
-            class="sidebar-link px-3 py-2 text-gray-700 hover:bg-gray-100 font-medium"
-            >Entertainment</a
-          >
-          <a
-            href="#"
-            class="sidebar-link px-3 py-2 text-gray-700 hover:bg-gray-100 font-medium"
-            >Model Watch</a
-          >
-          <a
-            href="#"
-            class="sidebar-link px-3 py-2 text-gray-700 hover:bg-gray-100 font-medium"
-            >Lifestyle</a
-          >
-          <a
-            href="#"
-            class="sidebar-link px-3 py-2 text-gray-700 hover:bg-gray-100 font-medium"
-            >Fashion</a
-          >
-          <a
-            href="#"
-            class="sidebar-link px-3 py-2 text-gray-700 hover:bg-gray-100 font-medium"
-            >Interviews</a
-          >
-          <a
-            href="#"
-            class="sidebar-link px-3 py-2 text-gray-700 hover:bg-gray-100 font-medium"
-            >Profiles</a
-          >
+          <a href="#" class="sidebar-link">Home</a>
+          <a href="#" class="sidebar-link">Entertainment</a>
+          <a href="#" class="sidebar-link">Model Watch</a>
+          <a href="#" class="sidebar-link">Lifestyle</a>
+          <a href="#" class="sidebar-link">Fashion</a>
+          <a href="#" class="sidebar-link">Interviews</a>
+          <a href="#" class="sidebar-link">Profiles</a>
 
           <!-- Sidebar Section -->
           <div class="sidebar-section mt-4 pt-4">
@@ -321,37 +293,37 @@
 
             <a
               href="#"
-              class="sidebar-sub-link block px-3 py-2 text-gray-700 hover:bg-gray-100 font-medium"
+              class="sidebar-sub-link block text-gray-700 hover:bg-gray-100"
               >Health</a
             >
             <a
               href="#"
-              class="sidebar-sub-link block px-3 py-2 text-gray-700 hover:bg-gray-100 font-medium"
+              class="sidebar-sub-link block text-gray-700 hover:bg-gray-100"
               >Tourism</a
             >
             <a
               href="#"
-              class="sidebar-sub-link block px-3 py-2 text-gray-700 hover:bg-gray-100 font-medium"
+              class="sidebar-sub-link block text-gray-700 hover:bg-gray-100"
               >Sports</a
             >
             <a
               href="#"
-              class="sidebar-sub-link block px-3 py-2 text-gray-700 hover:bg-gray-100 font-medium"
+              class="sidebar-sub-link block text-gray-700 hover:bg-gray-100"
               >Technology</a
             >
             <a
               href="#"
-              class="sidebar-sub-link block px-3 py-2 text-gray-700 hover:bg-gray-100 font-medium"
+              class="sidebar-sub-link block text-gray-700 hover:bg-gray-100"
               >Society</a
             >
             <a
               href="#"
-              class="sidebar-sub-link block px-3 py-2 text-gray-700 hover:bg-gray-100 font-medium"
+              class="sidebar-sub-link block text-gray-700 hover:bg-gray-100"
               >Beauty</a
             >
             <a
               href="#"
-              class="sidebar-sub-link block px-3 py-2 text-gray-700 hover:bg-gray-100 font-medium"
+              class="sidebar-sub-link block text-gray-700 hover:bg-gray-100"
               >Culture</a
             >
           </div>
@@ -472,7 +444,7 @@
           <!-- Column 1 -->
           <div class="lg:col-span-5 space-y-6">
             <h3 class="category-title text-[#f5c518]">About Us</h3>
-            <p class="text-white/80 text-[18px] font-normal leading-[33px]">
+            <p class="text-white/80 text-[18px] font-thin leading-[27px]">
               Joy Nepal is an official news portal dedicated to delivering
               contemporary news, latest updates, and reliable information across
               various sectors to readers in an unbiased, fast, and factual
@@ -500,76 +472,76 @@
             <h3 class="category-title text-[#f5c518]">Useful Links</h3>
 
             <div
-              class="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-4 text-lg text-white/80 font-thin"
+              class="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-2 text-base text-white/80 font-thin"
             >
               <a
                 href="#"
-                class="hover:text-[var(--color-yellow)] transition-colors"
+                class="hover:text-[var(--color-yellow)] transition-colors uppercase"
                 >Home</a
               >
               <a
                 href="#"
-                class="hover:text-[var(--color-yellow)] transition-colors"
+                class="hover:text-[var(--color-yellow)] transition-colors uppercase"
                 >Entertainment</a
               >
               <a
                 href="#"
-                class="hover:text-[var(--color-yellow)] transition-colors"
+                class="hover:text-[var(--color-yellow)] transition-colors uppercase"
                 >Model Watch</a
               >
               <a
                 href="#"
-                class="hover:text-[var(--color-yellow)] transition-colors"
+                class="hover:text-[var(--color-yellow)] transition-colors uppercase"
                 >Lifestyle</a
               >
               <a
                 href="#"
-                class="hover:text-[var(--color-yellow)] transition-colors"
+                class="hover:text-[var(--color-yellow)] transition-colors uppercase"
                 >Fashion</a
               >
               <a
                 href="#"
-                class="hover:text-[var(--color-yellow)] transition-colors"
+                class="hover:text-[var(--color-yellow)] transition-colors uppercase"
                 >Interviews</a
               >
               <a
                 href="#"
-                class="hover:text-[var(--color-yellow)] transition-colors"
+                class="hover:text-[var(--color-yellow)] transition-colors uppercase"
                 >Profiles</a
               >
               <a
                 href="#"
-                class="hover:text-[var(--color-yellow)] transition-colors"
+                class="hover:text-[var(--color-yellow)] transition-colors uppercase"
                 >Health</a
               >
               <a
                 href="#"
-                class="hover:text-[var(--color-yellow)] transition-colors"
+                class="hover:text-[var(--color-yellow)] transition-colors uppercase"
                 >Tourism</a
               >
               <a
                 href="#"
-                class="hover:text-[var(--color-yellow)] transition-colors"
+                class="hover:text-[var(--color-yellow)] transition-colors uppercase"
                 >Sports</a
               >
               <a
                 href="#"
-                class="hover:text-[var(--color-yellow)] transition-colors"
+                class="hover:text-[var(--color-yellow)] transition-colors uppercase"
                 >Technology</a
               >
               <a
                 href="#"
-                class="hover:text-[var(--color-yellow)] transition-colors"
+                class="hover:text-[var(--color-yellow)] transition-colors uppercase"
                 >Society</a
               >
               <a
                 href="#"
-                class="hover:text-[var(--color-yellow)] transition-colors"
+                class="hover:text-[var(--color-yellow)] transition-colors uppercase"
                 >Beauty</a
               >
               <a
                 href="#"
-                class="hover:text-[var(--color-yellow)] transition-colors"
+                class="hover:text-[var(--color-yellow)] transition-colors uppercase"
                 >Culture</a
               >
             </div>
@@ -676,14 +648,14 @@
           </div>
 
           <!-- Developer Credit -->
-          <div class="flex items-center gap-4">
+          <!-- <div class="flex items-center gap-4">
             <span class="text-[16px] font-medium"> Developed by </span>
             <img
               src="./assets/kit-logo-white.png"
               class="h-7 w-auto"
               alt="Developer Logo"
             />
-          </div>
+          </div> -->
         </div>
       </div>
     </footer>

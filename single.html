@@ -30,8 +30,38 @@
       >
         <!-- Overflow hidden wrapper inside grid -->
         <div class="overflow-hidden">
+          <!-- MOBILE HEADER BAR (Logo Left, Controls Right) -->
+          <div class="flex items-center justify-between px-4 py-3 lg:hidden">
+            <a
+              href="/"
+              aria-label="Joy Nepal Home"
+              class="text-xl font-bold leading-tight tracking-widest uppercase"
+            >
+              JOY NEPAL
+            </a>
+            <div class="flex items-center gap-1">
+              <button
+                type="button"
+                onclick="document.getElementById('searchButton').click()"
+                class="flex h-9 w-9 items-center justify-center rounded-full transition hover:bg-white/10"
+                aria-label="Search"
+              >
+                <i class="ph ph-magnifying-glass text-xl"></i>
+              </button>
+              <button
+                type="button"
+                onclick="document.getElementById('menuButton').click()"
+                class="flex h-9 w-9 items-center justify-center rounded-full transition hover:bg-white/10"
+                aria-label="Open menu"
+              >
+                <i class="ph ph-list text-2xl"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- DESKTOP TOP HEADER (Hidden on mobile) -->
           <div
-            class="mx-auto grid max-w-7xl grid-cols-3 items-center px-4 py-4 md:px-6"
+            class="hidden mx-auto max-w-7xl grid-cols-3 items-center px-4 py-4 lg:grid md:px-6"
           >
             <!-- DATE / DAY -->
             <div class="text-start">
@@ -60,42 +90,128 @@
               </a>
             </div>
 
-            <!-- RIGHT ACTIONS (Search, Toggle, Menu) -->
-            <div class="flex items-center justify-end gap-1 md:gap-2">
-              <button
-                id="searchButton"
-                type="button"
-                class="flex h-10 w-10 items-center justify-center rounded-full transition hover:bg-white/10"
-                aria-label="Search"
-              >
-                <i class="ph ph-magnifying-glass text-xl md:text-2xl"></i>
-              </button>
+            <!-- RIGHT - utilities -->
+            <div class="flex items-center justify-end gap-[10px]">
+              <!-- Forex -->
+              <div class="relative group inline-block">
+                <div
+                  class="h-9 w-9 rounded-full flex justify-center items-center border-[1.3px] border-white"
+                >
+                  <a href="">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="20px"
+                      viewBox="0 -960 960 960"
+                      width="20px"
+                      fill="#FFFFFF"
+                    >
+                      <path
+                        d="M480-68q-118 0-213.85-59.43-95.84-59.42-148.07-159.73v133.31h-52v-220h220v52H158.46q43.38 91.39 129.73 146.62Q374.54-120 480-120q73.46 0 137.81-27.15 64.34-27.16 112.65-74.12 48.31-46.96 77.58-110.92 29.27-63.96 31.58-137.81h51.99q-1.92 84.23-35.15 157.35-33.23 73.11-88.46 127.38Q712.77-131 638.69-99.5 564.61-68 480-68Zm-25.31-155.69v-46.46q-17.92-4.24-55.04-22.97-37.11-18.73-56.65-78.26L390.61-392q4.31 4.08 23.47 40.39 19.15 36.3 71.92 36.3 27.15 0 55.31-16.04 28.15-16.03 28.15-52.65 0-29.31-19.34-46.38-19.35-17.08-65.12-33.47-33.69-12.15-81-35.11T356.69-585q0-.69 12.43-45.35 12.42-44.65 86.57-59.5v-46.46h50.62v45.46q50.69 8.62 71.04 36.35 20.34 27.73 25.88 37.65L558.85-598q-5.31-9.23-22.47-28.46-17.15-19.23-53.38-19.23-22.31 0-49 14.19T407.31-586q0 29.31 22.19 44.08t76.27 33.31q67 23 90.27 53.8Q619.31-424 619.31-384q0 36.62-15.58 59.23-15.58 22.62-35.65 35.35-20.08 12.73-38.39 16.77-18.31 4.03-24.38 3.5v45.46h-50.62ZM68.39-490q2.69-86.15 36.3-159.46 33.62-73.31 89.23-127.19 55.62-53.89 129.12-84.62Q396.54-892 480-892q116.85 0 213.85 59.62 97 59.61 148.07 161.08v-134.85h52v220h-220v-52h127.62Q759.31-728 672.77-784 586.23-840 480-840q-71.92 0-136.08 26.77-64.15 26.77-112.84 73.34-48.69 46.58-78.54 110.54-29.85 63.96-32.16 139.35H68.39Z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+                <span
+                  class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-5 opacity-0 group-hover:opacity-100 transition-all duration-200 text-white bg-black/60 text-[9px] px-2 py-0.5 whitespace-nowrap"
+                >
+                  Forex
+                </span>
+              </div>
 
-              <button
-                id="menuButton"
-                type="button"
-                class="flex h-10 w-10 items-center justify-center rounded-full transition hover:bg-white/10"
-                aria-label="Open menu"
-              >
-                <i class="ph ph-list text-2xl md:text-3xl"></i>
-              </button>
+              <!-- Gold and Silver -->
+              <div class="relative group inline-block">
+                <div
+                  class="h-9 w-9 rounded-full flex justify-center items-center border-[1.3px] border-white"
+                >
+                  <a href="">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="20px"
+                      viewBox="0 -960 960 960"
+                      width="20px"
+                      fill="#FFFFFF"
+                    >
+                      <path
+                        d="M479.5-164q-135.11 0-225.31-36.47Q164-236.93 164-291.85V-672q0-51.92 92.04-87.96Q348.08-796 479.5-796q131.42 0 223.96 36.04Q796-723.92 796-672v380.15q0 54.92-90.69 91.38Q614.61-164 479.5-164Zm.47-438.69q84.49 0 163.15-20.73 78.65-20.73 99.73-49.35-20.7-28.38-99.66-49.81Q564.23-744 479.97-744q-84.05 0-164.55 21.23-80.5 21.23-99.04 48.46 18.16 29 97.27 50.31 79.12 21.31 166.32 21.31Zm.03 193.15q41.62 0 80-4.5t72.27-12.69q33.88-8.19 62.19-21.08 28.31-12.88 49.54-29.27V-608q-23.48 13.61-52.66 24.38-29.19 10.77-63.4 17.81-34.22 7.04-71.77 10.69-37.55 3.66-76.67 3.66-39.88 0-77.69-3.85-37.81-3.84-71.39-10.88-33.57-7.04-62.88-17.73Q238.23-594.62 216-608v130.92q21.64 16.33 49.25 29.05 27.6 12.72 61.29 20.91 33.69 8.2 72.38 12.89 38.7 4.69 81.08 4.69Zm.32 193.54q46.01 0 90.17-5.82 44.15-5.82 80.28-15.94t60.98-23.56q24.85-13.44 32.25-28.3v-124.46q-23.48 13.61-52.66 24.38-29.19 10.78-63.4 17.82-34.22 7.04-71.77 10.69-37.55 3.65-76.67 3.65-39.88 0-77.69-3.84-37.81-3.85-71.39-10.89-33.57-7.04-62.88-17.73-29.31-10.69-51.54-24.08V-288q7.69 14.54 32.81 27.73 25.11 13.19 61.07 22.81 35.97 9.61 80.2 15.54 44.23 5.92 90.24 5.92Z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+                <span
+                  class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-5 opacity-0 group-hover:opacity-100 transition-all duration-200 text-white bg-black/60 text-[9px] px-2 py-0.5 whitespace-nowrap"
+                >
+                  Gold & Silver
+                </span>
+              </div>
+
+              <!-- AQI -->
+              <div class="relative group inline-block">
+                <div
+                  class="h-9 w-9 rounded-full flex justify-center items-center border-[1.3px] border-white"
+                >
+                  <a href="">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="20px"
+                      viewBox="0 -960 960 960"
+                      width="20px"
+                      fill="#FFFFFF"
+                    >
+                      <path
+                        d="M456-158.62q-43.08 0-74.04-29.03-30.96-29.04-34.42-70.96h52.77q3.07 20.38 18.61 34.19 15.53 13.81 37.08 13.81 24.25 0 41.12-16.88Q514-244.37 514-268.62q0-24.24-16.88-41.12-16.87-16.88-41.12-16.88H106v-51.99h350q45.77 0 77.88 32.11Q566-314.38 566-268.62q0 45.77-32.12 77.89-32.11 32.11-77.88 32.11ZM106-557.39v-51.99h530q28.85 0 49.42-20.58Q706-650.54 706-679.38q0-28.85-20.58-49.43-20.57-20.58-49.42-20.58-26.54 0-45.96 17.5-19.43 17.5-22.5 42.5h-52.77q3.46-47.3 38.31-79.65 34.84-32.34 82.92-32.34 50.77 0 86.38 35.61Q758-730.15 758-679.38q0 50.76-35.62 86.38-35.61 35.61-86.38 35.61H106Zm636 306.62v-52.77q25-3.07 42.5-22.5Q802-345.46 802-372q0-28.85-20.58-49.42Q760.85-442 731.95-442H106v-52h626q50.77 0 86.38 35.62Q854-422.77 854-372q0 48.08-32.35 82.92-32.34 34.85-79.65 38.31Z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+                <span
+                  class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-5 opacity-0 group-hover:opacity-100 transition-all duration-200 text-white bg-black/60 text-[9px] px-2 py-0.5 whitespace-nowrap"
+                >
+                  AQI
+                </span>
+              </div>
+
+              <!-- Weather -->
+              <div class="relative group inline-block">
+                <div
+                  class="h-9 w-9 rounded-full flex justify-center items-center border-[1.3px] border-white cursor-pointer"
+                >
+                  <a href="#">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="20px"
+                      viewBox="0 -960 960 960"
+                      width="20px"
+                      fill="#FFFFFF"
+                    >
+                      <path
+                        d="M454-736.54v-131.69h52v131.69h-52Zm225.92 92.77-37.15-37.54 93.54-94.15 37.15 38.15-93.54 93.54ZM735.54-455v-52h131.69v52H735.54Zm-.23 266.46-91.54-94.54 35.54-36.54 94.15 92.93-38.15 38.15ZM280.46-643.38l-93.3-94.31 36.15-36.39 95.31 93.54-38.16 37.16Zm-4.92 429.69h148.31q28.84 0 49.42-20.79 20.58-20.78 20.58-49.92t-20.18-49.52q-20.17-20.39-49.44-20.39h-29.84l.69-8.46q-7.77-46.54-42.12-76.81-34.34-30.27-81.27-30.27-52.69 0-89.42 36.23-36.73 36.23-36.73 89.22 0 54.53 37.88 92.62 37.89 38.09 92.12 38.09Zm0 52q-75.45 0-128.72-53.55-53.28-53.55-53.28-129.39 0-74.68 51.93-125.95 51.93-51.27 126.22-51.27 57.31 0 102.81 32.24 45.5 32.23 65.81 85.3 44.15 8 74.65 38.66 30.5 30.65 30.89 78.26.76 51.16-35.09 88.43-35.85 37.27-86.91 37.27H275.54Zm267.54-158.39q-6.85-11-14.2-22.69-7.34-11.69-14.19-22.69 39.16-11.39 62.23-43.52Q600-441.11 600-481q0-50-35.25-84.5T480-600q-46.15 0-80.06 29.04-33.9 29.04-38.32 72.81-12-4.85-24.12-10.58-12.11-5.73-24.11-10.58 14.69-57.84 60.92-95.27Q420.54-652 480-652q71.54 0 121.77 49.94Q652-552.12 652-481q0 53.46-29.35 97.46-29.34 44-79.57 63.46ZM481-481Z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+                <span
+                  class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-5 opacity-0 group-hover:opacity-100 transition-all duration-200 text-white bg-black/60 text-[9px] px-2 py-0.5 whitespace-nowrap"
+                >
+                  Weather
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- TOP / NAV SEPARATOR (Only visible on desktop) -->
+      <!-- TOP / NAV SEPARATOR -->
       <div
         id="headerDivider"
         class="hidden lg:block mx-auto max-w-7xl border-t border-white/20 transition-opacity duration-300 [.is-scrolled_&]:opacity-0 [.is-scrolled_&]:border-transparent"
       ></div>
 
-      <!-- MAIN NAVIGATION BAR (Desktop links & Desktop sticky logo) -->
+      <!-- MAIN NAVIGATION BAR (Desktop) -->
       <nav
         id="mainNavbar"
         class="hidden lg:flex mx-auto h-[56px] max-w-7xl items-center px-4"
       >
-        <!-- STICKY LOGO (Desktop only) -->
+        <!-- STICKY LOGO -->
         <a
           id="stickyLogo"
           href="/"
@@ -108,7 +224,7 @@
         <!-- NAV LINKS -->
         <div
           id="desktopNavLinks"
-          class="nav-links flex flex-1 items-center justify-center gap-10 text-sm font-semibold tracking-wide whitespace-nowrap"
+          class="nav-links flex flex-1 items-center justify-center gap-5 whitespace-nowrap"
         >
           <a href="/" class="hover:opacity-80 transition-opacity">Home</a>
           <a href="./category.html" class="hover:opacity-80 transition-opacity"
@@ -141,51 +257,48 @@
             >
               More
               <i
-                class="ph ph-caret-down text-xs transition-transform duration-200 group-hover:rotate-180"
+                class="ph ph-caret-down text-xs font-bold transition-transform duration-200 group-hover:rotate-180"
               ></i>
             </button>
 
             <!-- Dropdown menu -->
             <div
-              class="invisible absolute left-1/2 top-full z-[70] mt-3 w-48 -translate-x-1/2 translate-y-2 rounded-xl bg-white py-2 text-[var(--dark-text-color)] opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
+              class="invisible absolute left-1/2 top-full z-[70] mt-2 w-48 -translate-x-1/2 translate-y-2 rounded-xl bg-white py-2 text-[var(--dark-text-color)] opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
             >
               <div
                 class="absolute -top-2 left-1/2 h-4 w-4 -translate-x-1/2 rotate-45 bg-white"
               ></div>
               <div class="dropdown-links relative">
-                <a
-                  href="./category.html"
-                  class="block px-5 py-2 hover:bg-gray-100 transition"
-                  >Interviews</a
-                >
-                <a
-                  href="./category.html"
-                  class="block px-5 py-2 hover:bg-gray-100 transition"
-                  >Profiles</a
-                >
-                <a
-                  href="./category.html"
-                  class="block px-5 py-2 hover:bg-gray-100 transition"
-                  >Tourism</a
-                >
-                <a
-                  href="./category.html"
-                  class="block px-5 py-2 hover:bg-gray-100 transition"
-                  >Sports</a
-                >
-                <a
-                  href="./category.html"
-                  class="block px-5 py-2 hover:bg-gray-100 transition"
-                  >Beauty</a
-                >
-                <a
-                  href="./category.html"
-                  class="block px-5 py-2 hover:bg-gray-100 transition"
-                  >Culture</a
-                >
+                <a href="./category.html" class="block px-4 py-2">Interviews</a>
+                <a href="./category.html" class="block px-4 py-2">Profiles</a>
+                <a href="./category.html" class="block px-4 py-2">Tourism</a>
+                <a href="./category.html" class="block px-4 py-2">Sports</a>
+                <a href="./category.html" class="block px-4 py-2">Beauty</a>
+                <a href="./category.html" class="block px-4 py-2">Culture</a>
               </div>
             </div>
           </div>
+        </div>
+
+        <!-- RIGHT ACTIONS (Search, Menu) -->
+        <div class="flex items-center justify-end gap-1 md:gap-2">
+          <button
+            id="searchButton"
+            type="button"
+            class="flex h-10 w-10 items-center justify-center rounded-full transition hover:bg-white/10"
+            aria-label="Search"
+          >
+            <i class="ph ph-magnifying-glass text-xl md:text-2xl"></i>
+          </button>
+
+          <button
+            id="menuButton"
+            type="button"
+            class="flex h-10 w-10 items-center justify-center rounded-full transition hover:bg-white/10"
+            aria-label="Open menu"
+          >
+            <i class="ph ph-list text-2xl md:text-3xl"></i>
+          </button>
         </div>
       </nav>
     </header>
@@ -226,7 +339,7 @@
               id="searchInput"
               type="search"
               autocomplete="off"
-              placeholder="Search articles, categories..."
+              placeholder="Search articles..."
               class="w-full bg-transparent px-4 py-4 text-[var(--dark-text-color)] outline-none placeholder:text-gray-400"
             />
 
@@ -250,11 +363,11 @@
     <!-- SIDEBAR -->
     <aside
       id="sidebar"
-      class="fixed right-0 top-0 z-[120] h-screen w-[350px] max-w-[90vw] translate-x-full bg-white shadow-2xl transition-transform duration-300"
+      class="fixed right-0 top-0 z-[120] flex h-screen w-[400px] max-w-[90vw] translate-x-full flex-col bg-white shadow-2xl transition-transform duration-300"
     >
       <!-- Sidebar Header -->
       <div
-        class="sidebar-header flex items-center justify-between bg-[var(--primary-color)] px-5 py-5 text-white"
+        class="sidebar-header flex shrink-0 items-center justify-between bg-[var(--primary-color)] px-5 py-5 text-white"
       >
         <a href="/" class="text-xl font-black tracking-widest uppercase">
           JOY NEPAL
@@ -270,10 +383,8 @@
         </button>
       </div>
 
-      <!-- Sidebar Content -->
-      <div
-        class="sidebar-content h-[calc(100vh-80px)] overflow-y-auto px-4 py-5"
-      >
+      <!-- Sidebar Content  -->
+      <div class="sidebar-content flex-1 overflow-y-auto px-5 py-5">
         <nav class="sidebar-nav flex flex-col gap-1">
           <a href="#" class="sidebar-link">Home</a>
           <a href="#" class="sidebar-link">Entertainment</a>
@@ -284,50 +395,63 @@
           <a href="#" class="sidebar-link">Profiles</a>
 
           <!-- Sidebar Section -->
-          <div class="sidebar-section mt-4 pt-4">
-            <p
-              class="sidebar-section-title px-3 text-xs font-bold uppercase tracking-wider text-gray-400 mb-2"
-            >
-              More Categories
-            </p>
+          <div class="sidebar-section mt-4">
+            <p class="sidebar-section-title mb-2">More Categories</p>
 
-            <a
-              href="#"
-              class="sidebar-sub-link block text-gray-700 hover:bg-gray-100"
-              >Health</a
-            >
-            <a
-              href="#"
-              class="sidebar-sub-link block text-gray-700 hover:bg-gray-100"
-              >Tourism</a
-            >
-            <a
-              href="#"
-              class="sidebar-sub-link block text-gray-700 hover:bg-gray-100"
-              >Sports</a
-            >
-            <a
-              href="#"
-              class="sidebar-sub-link block text-gray-700 hover:bg-gray-100"
-              >Technology</a
-            >
-            <a
-              href="#"
-              class="sidebar-sub-link block text-gray-700 hover:bg-gray-100"
-              >Society</a
-            >
-            <a
-              href="#"
-              class="sidebar-sub-link block text-gray-700 hover:bg-gray-100"
-              >Beauty</a
-            >
-            <a
-              href="#"
-              class="sidebar-sub-link block text-gray-700 hover:bg-gray-100"
-              >Culture</a
-            >
+            <a href="#" class="sidebar-sub-link block">Health</a>
+            <a href="#" class="sidebar-sub-link block">Tourism</a>
+            <a href="#" class="sidebar-sub-link block">Sports</a>
+            <a href="#" class="sidebar-sub-link block">Technology</a>
+            <a href="#" class="sidebar-sub-link block">Society</a>
+            <a href="#" class="sidebar-sub-link block">Beauty</a>
+            <a href="#" class="sidebar-sub-link block">Culture</a>
           </div>
         </nav>
+      </div>
+
+      <!-- Sidebar Footer  -->
+      <div
+        class="sidebar-footer shrink-0 border-t border-[var(--border-color)] px-5 py-5 bg-white"
+      >
+        <div
+          class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-500"
+        >
+          <a href="#" class="hover:text-[#e2107a]">About Us</a>
+          <a href="#" class="hover:text-[#e2107a]">Privacy Policy</a>
+          <a href="#" class="hover:text-[#e2107a]">Terms & Conditions</a>
+        </div>
+
+        <!-- Get Connected Section -->
+        <div class="mt-5 border-t border-[var(--border-color)] pt-4">
+          <h3
+            class="text-xs font-bold uppercase tracking-wider text-[#091633] mb-3"
+          >
+            GET CONNECTED
+          </h3>
+          <div class="flex items-center gap-3">
+            <a
+              href="#"
+              aria-label="Facebook"
+              class="flex h-10 w-10 items-center justify-center rounded-full border border-black text-black transition hover:bg-black hover:text-white"
+            >
+              <i class="ph ph-facebook-logo text-lg"></i>
+            </a>
+            <a
+              href="#"
+              aria-label="Instagram"
+              class="flex h-10 w-10 items-center justify-center rounded-full border border-black text-black transition hover:bg-black hover:text-white"
+            >
+              <i class="ph ph-instagram-logo text-lg"></i>
+            </a>
+            <a
+              href="#"
+              aria-label="YouTube"
+              class="flex h-10 w-10 items-center justify-center rounded-full border border-black text-black transition hover:bg-black hover:text-white"
+            >
+              <i class="ph ph-youtube-logo text-lg"></i>
+            </a>
+          </div>
+        </div>
       </div>
     </aside>
 
@@ -635,41 +759,43 @@
 
     <!-- footer -->
     <footer class="bg-[var(--footer-color)] pt-12">
-      <!-- TIER 1: Main Info & Useful Links -->
+      <!-- TIER 1 -->
       <div class="mx-auto max-w-7xl px-4 pb-10">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
           <!-- Column 1 -->
-          <div class="lg:col-span-5 space-y-6">
-            <h3 class="category-title text-[#f5c518]">About Us</h3>
-            <p class="text-white/80 text-[18px] font-thin leading-[27px]">
+          <div class="lg:col-span-5 space-y-4">
+            <h3 class="category-title text-[#f5c518] not-italic">About Us</h3>
+            <p class="text-white/80 text-[18px] font-thin leading-[25px]">
               Joy Nepal is an official news portal dedicated to delivering
               contemporary news, latest updates, and reliable information across
               various sectors to readers in an unbiased, fast, and factual
               manner.
             </p>
 
-            <div class="space-y-4 text-lg">
+            <div class="text-base">
               <p class="text-white/80 font-thin">
-                <span class="font-semibold text-white">Address -</span> KMC Ward
+                <span class="font-medium text-white">Address -</span> KMC Ward
                 No. 10, Naya Baneshwor, Kathmandu
               </p>
               <p class="text-white/80 font-thin">
-                <span class="font-semibold text-white">Phone No -</span> +977
+                <span class="font-medium text-white">Phone No -</span> +977
                 01-4222380
               </p>
               <p class="text-white/80 font-thin">
-                <span class="font-semibold text-white">Email -</span>
+                <span class="font-medium text-white">Email -</span>
                 info@joynepal.com, news@joynepal.com
               </p>
             </div>
           </div>
 
           <!-- Column 2 -->
-          <div class="lg:col-span-7 space-y-6">
-            <h3 class="category-title text-[#f5c518]">Useful Links</h3>
+          <div class="lg:col-span-7 space-y-4">
+            <h3 class="category-title text-[#f5c518] not-italic">
+              Useful Links
+            </h3>
 
             <div
-              class="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-2 text-base text-white/80 font-thin"
+              class="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-2 text-base text-white/80 font-medium"
             >
               <a
                 href="#"
@@ -746,8 +872,8 @@
         </div>
       </div>
 
-      <!-- TIER 2: Middle Management & Social Bar -->
-      <div class="border-t border-b border-white/10 bg-black/20 py-6">
+      <!-- TIER  -->
+      <div class="border-t border-b border-white/10 bg-black/20 py-4">
         <div
           class="mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-between gap-6"
         >
@@ -825,23 +951,25 @@
         </div>
       </div>
 
-      <!-- TIER 3: Bottom Copyright & Developer Credit -->
-      <div class="bg-black/40 py-4 text-white/80">
+      <!-- TIER  -->
+      <div class="bg-black/40 py-4 text-white/50">
         <div
           class="mx-auto max-w-7xl px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left"
         >
           <!-- Copyright -->
-          <div class="text-[16px] font-normal">
+          <div class="text-[14px] font-thin">
             © 2026 Joy Nepal. All rights reserved.
           </div>
 
           <!-- Quick Nav Links -->
-          <div class="flex items-center gap-4 text-[16px] text-white/80">
-            <a href="#" class="hover:underline">About</a>
+          <div
+            class="flex items-center font-thin gap-4 text-[14px] text-white/50"
+          >
+            <a href="#" class="hover:text-white/70">About</a>
             <span>|</span>
-            <a href="#" class="hover:underline">Privacy Policy</a>
+            <a href="#" class="hover:text-white/70">Privacy Policy</a>
             <span>|</span>
-            <a href="#" class="hover:underline">Terms & Conditions</a>
+            <a href="#" class="hover:text-white/70">Terms & Conditions</a>
           </div>
 
           <!-- Developer Credit -->

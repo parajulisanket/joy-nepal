@@ -74,10 +74,10 @@ body {
 
 .nav-links {
   color: var(--text-color);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   line-height: 24px;
-  letter-spacing: 1.2px;
+  letter-spacing: 0.6px;
 }
 
 .nav-links a,
@@ -98,15 +98,14 @@ body {
 
 /* Dropdown Links */
 .nav-links .dropdown-links a {
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 29px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
   color: var(--dark-text-color);
   opacity: 1;
 }
 
 .nav-links .dropdown-links a:hover {
-  background-color: var(--background-color);
   color: var(--primary-color);
 }
 
@@ -164,7 +163,7 @@ body {
 
 /*  Sidebar Navigation  */
 .sidebar-nav {
-  font-family: "Teko", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 /*  Main Links  */
@@ -173,12 +172,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 14px 14px 16px;
+  padding: 14px 14px 14px 12px;
   color: var(--dark-text-color);
-  font-size: 19px;
-  font-weight: 600;
-  line-height: 20px;
-  border-bottom: 1px solid var(--border-color);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 16px;
+  border-bottom: 0.5px solid var(--border-color);
   transition:
     color 0.2s ease,
     background-color 0.2s ease,
@@ -203,8 +202,6 @@ body {
 /* Main Link Hover  */
 .sidebar-link:hover {
   color: var(--primary-color);
-  background-color: #fdf2f8;
-  padding-left: 21px;
 }
 
 /* Other Section  */
@@ -215,10 +212,11 @@ body {
 
 .sidebar-section-title {
   margin-bottom: 8px;
-  padding: 0 14px;
-  color: var(--primary-color);
-  font-size: 23px;
-  font-weight: 600;
+  padding: 0 12px;
+  color: rgb(174, 170, 170);
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 700;
   line-height: 1.2;
 }
 
@@ -228,14 +226,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 11px 14px;
+  padding: 6px 12px;
   color: var(--dark-text-color);
-  font-size: 19px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
   line-height: 20px;
-
   border-radius: 7px;
-
   transition:
     color 0.2s ease,
     background-color 0.2s ease,
@@ -244,8 +240,6 @@ body {
 
 .sidebar-sub-link:hover {
   color: var(--primary-color);
-  background-color: #fdf2f8;
-  padding-left: 19px;
 }
 
 /* hr line in heading  */
